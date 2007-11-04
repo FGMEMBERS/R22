@@ -45,7 +45,7 @@ teetering hinge ...
 <rotor name="main" x="0.0" y="0.0" z="0.0" nx="0" ny="0" nz="1.0" fx="1" fy="0" fz="0" ccw="1"
   maxcollective="18" mincollective="0.0"
   mincyclicele="-5" maxcyclicele="5"
-  mincyclicail="-5" maxcyclicail="5.7"
+  mincyclicail="-5" maxcyclicail="5.9"
   diameter="7.67" numblades="2" weightperblade="25" relbladecenter="0.5"
   dynamic="0.7" rpm="530" rellenflaphinge="0.02" delta3="0.33"
   delta=".2"
@@ -69,16 +69,16 @@ teetering hinge ...
   rel-len-where-incidence-is-measured="0.7"
   rel-len-blade-start="0.02"
 
-  airfoil-lift-coefficient="6.0"
+  airfoil-lift-coefficient="6.5"
   airfoil-drag-coefficient0="0.0075"
-  airfoil-drag-coefficient1="0.1"
+  airfoil-drag-coefficient1="0.25"
   incidence-stall-zero-speed="15"
   incidence-stall-half-sonic-speed="14.5"
   lift-factor-stall="0.18"
   stall-change-over="5.5"
   drag-factor-stall="2.0"
   cyclic-factor="0.8"
-  rotor-correction-factor="0.9"
+  rotor-correction-factor="1.0"
 >
   <control-input axis="/controls/flight/aileron-trim" control="CYCLICAIL" split="true"/>
   <control-input axis="/controls/flight/aileron" control="CYCLICAIL"
@@ -95,14 +95,14 @@ teetering hinge ...
 
 
 <rotor name="tail" x="-4.41" y="-0.2" z="-0.94" nx="0.0" ny="-1" nz="0.0" fx="1" fy="0" fz="0" ccw="1"
-  maxcollective="20" mincollective="3"
+  maxcollective="20" mincollective="2.5"
   diameter="1.0668" numblades="2" weightperblade="2" relbladecenter="0.55"
   dynamic="0.70" rpm="3356" rellenflaphinge="0.0" delta3="0" translift="0" delta="0.5"
   pitch-a="10"
   pitch-b="15"
   airfoil-lift-coefficient="7.0"
-  airfoil-drag-coefficient0="0.0025"
-  airfoil-drag-coefficient1="0.15"
+  airfoil-drag-coefficient0="0.0035"
+  airfoil-drag-coefficient1="0.1"
   notorque="0"
   taper="1"
   chord="0.1016"
@@ -114,7 +114,7 @@ teetering hinge ...
   lift-factor-stall="0.18"
   stall-change-over="5.5"
   drag-factor-stall="8"
-  rotor-correction-factor="0.7"
+  rotor-correction-factor="0.85"
 >
 <control-input axis="/controls/flight/rudder" control="COLLECTIVE" invert="true" 
     src0="-1.0" src1="1.0"
@@ -129,7 +129,7 @@ teetering hinge ...
   max-power-engine="125"
   max-power-rotor-brake="100"
   rotorgear-friction="1.5"
-  engine-prop-factor="0.005"
+  engine-prop-factor="0.05"
   engine-accel-limit="10"
 
   yasimdragfactor="10"
@@ -187,8 +187,8 @@ spring="0.1" sfric="1" dfric="1"/>
 <weight x="0.5" y="-0.5" z="-1.6" mass-prop="/sim/weight[1]/weight-lb"/><!-- cargo -->
 
 
-<ballast x="-0.15" y="0.0" z="-1.6" mass="500"/>
-<ballast x="-0.1" y="0.0" z="-1.5" mass="200"/>
+<ballast x="-0.15" y="0.0" z="-1.6" mass="400"/>
+<ballast x="0.0" y="0.0" z="-1.5" mass="200"/>
 
 
 </airplane>

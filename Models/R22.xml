@@ -163,28 +163,6 @@
     <animation>
         <type>rotate</type>
         <object-name>Hub</object-name>
-        <object-name>Hinge1</object-name>
-        <object-name>Hinge2</object-name> 
-        <object-name>Mblade1</object-name>
-        <object-name>Mblade2</object-name>
-        <object-name>Fblade1</object-name>
-        <object-name>Fblade2</object-name>
-        <property>rotors/main/tilt/pitch-deg</property>
-        <center>
-            <x-m>0</x-m>
-            <y-m>0</y-m>
-            <z-m>0</z-m>
-        </center>
-        <axis>
-            <x>0.0</x>
-            <y>1.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>Hub</object-name>
         <object-name>Shaft</object-name>
         <property>rotors/main/blade/position-deg</property>
         <center>
@@ -334,6 +312,43 @@
                     <value>1.0</value>
                 </less-than>
         </condition>
+    </animation>
+
+<!-- Controls -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Yokeshaft</object-name>
+        <object-name>Yoke</object-name>
+        <property>controls/flight/elevator</property>
+        <factor>15</factor>
+        <center>
+            <x-m>-0.954</x-m>
+            <y-m>0</y-m>
+            <z-m>-1.846</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Yoke</object-name>
+        <property>controls/flight/aileron</property>
+        <factor>30</factor> 
+        <center>
+            <x-m>-0.893</x-m>
+            <y-m>0</y-m>
+            <z-m>-1.416</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
     </animation>
 
 </PropertyList>
