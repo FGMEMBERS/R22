@@ -69,7 +69,7 @@ teetering hinge ...
   rel-len-where-incidence-is-measured="0.7"
   rel-len-blade-start="0.02"
 
-  airfoil-lift-coefficient="5.8"
+  airfoil-lift-coefficient="6.0"
   airfoil-drag-coefficient0="0.0075"
   airfoil-drag-coefficient1="0.1"
   incidence-stall-zero-speed="15"

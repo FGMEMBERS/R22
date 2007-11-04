@@ -170,5 +170,30 @@
             </position>
         </crash>
 
+        <alert>
+            <name>rpm warning</name>
+            <mode>once</mode>
+            <path>Sounds/beep.wav</path>
+            <condition>
+                <and>
+                    <property>instrumentation/alerts/rpm</property>
+                    <less-than>
+                        <property>rotors/main/rpm</property>
+                        <value>500</value>
+                    </less-than>
+                </and>
+            </condition>
+            <max-dist>2</max-dist>
+            <reference-dist>1</reference-dist>
+            <volume>
+                <factor>1</factor>
+            </volume>
+            <position>
+                <x>0</x>
+                <y>0</y>
+                <z>-1.5</z>
+            </position>
+        </alert>
+
     </fx>
 </PropertyList>

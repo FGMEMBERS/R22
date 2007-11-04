@@ -315,10 +315,24 @@
         <type>select</type>
         <object-name>rpm.annun</object-name>
         <condition>
-            <less-than>
-                <property>rotors/main/rpm</property>
-                <value>450</value>
-            </less-than>
+            <and>
+                <property>instrumentation/alerts/rpm</property>
+                <less-than>
+                    <property>rotors/main/rpm</property>
+                    <value>503</value>
+                </less-than>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>fuel.annun</object-name>
+        <condition>
+                <less-than>
+                    <property>consumables/fuel/tank/level-gal_us</property>
+                    <value>1.0</value>
+                </less-than>
         </condition>
     </animation>
 

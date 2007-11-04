@@ -179,6 +179,7 @@ Syd Adams
     <nasal>
         <R22>
             <file>Aircraft/R22/Nasal/Electrical.nas</file>
+            <file>Aircraft/R22/Nasal/R22.nas</file>
         </R22>
     </nasal>
 
