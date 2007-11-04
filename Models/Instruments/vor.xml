@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>vor.ac</path>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>VOR.needle</object-name>
+        <property>instrumentation/nav/heading-needle-deflection</property>
+        <interpolation>
+            <entry><ind>-10.0</ind><dep>-25.5</dep></entry>
+            <entry><ind>0.0</ind><dep>0</dep></entry>
+            <entry><ind>10.0</ind><dep>25.5</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.020</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>VOR.compass</object-name>
+        <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>VOR.to</object-name>
+        <condition>
+            <property>instrumentation/nav/to-flag</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>VOR.from</object-name>
+        <condition>
+            <property>instrumentation/nav/from-flag</property>
+        </condition>
+    </animation>
+
+</PropertyList>

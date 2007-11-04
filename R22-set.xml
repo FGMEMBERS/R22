@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<!--
+############
+Robinson R-22 
+Syd Adams
+############
+-->
+
+<PropertyList>
+
+    <sim>
+        <description>Robinson R22</description>
+        <author>Syd Adams</author>
+        <flight-model>yasim</flight-model>
+        <aero>R22</aero>
+        <fuel-fraction>0.8</fuel-fraction>
+
+
+        <model>
+            <path>Aircraft/R22/Models/R22.xml</path>
+            <variant type="int">0</variant>
+        </model>
+
+        <hud>
+            <enable3d>false</enable3d>
+        </hud>
+
+        <systems>
+            <electrical>
+                <path></path>
+            </electrical>
+        </systems>
+
+        <instrumentation>
+            <path>Aircraft/R22/instrumentation.xml</path>
+        </instrumentation>
+
+        <sound>
+            <path>Aircraft/R22/R22-sound.xml</path>
+        </sound>
+
+        <virtual-cockpit archive="y">true</virtual-cockpit>
+        <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+        <view>
+            <internal archive="y">true</internal>
+            <config>
+                <x-offset-m archive="y">0.20</x-offset-m>
+                <y-offset-m archive="y">-1.125</y-offset-m>
+                <z-offset-m archive="y">-0.4</z-offset-m>
+                <pitch-offset-deg>-12</pitch-offset-deg>
+                <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+            </config>
+        </view>
+
+    <view n="1">
+        <config>
+            <target-y-offset-m archive="y" type="double">-1.2</target-y-offset-m>
+            <target-z-offset-m archive="y" type="double">-0.5</target-z-offset-m>
+            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        </config>
+    </view>
+        
+    <view n="2">
+        <config>
+            <target-y-offset-m archive="y" type="double">-1.2</target-y-offset-m>
+            <target-z-offset-m archive="y" type="double">-0.5</target-z-offset-m>
+            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        </config>
+    </view>
+    
+        
+    <view n="4">
+        <config>
+            <target-y-offset-m archive="y" type="double">-1.2</target-y-offset-m>
+            <target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
+            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        </config>
+    </view>
+        
+        
+    <view n="6">
+        <config>
+            <target-y-offset-m archive="y" type="double">-1.2</target-y-offset-m>
+            <target-z-offset-m archive="y" type="double">-0.5</target-z-offset-m>
+            <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+        </config>
+    </view>
+
+    <view n="100">
+        <name>Panel View</name>
+        <type>lookfrom</type>
+        <internal type="bool">true</internal>
+        <config>
+            <from-model type="bool">true</from-model>
+            <from-model-idx type="int">0</from-model-idx>
+            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+            <default-field-of-view-deg type="double">22.0</default-field-of-view-deg>
+            <default-pitch-deg type="double">0</default-pitch-deg>
+            <default-heading-deg type="double">0</default-heading-deg>
+            <front-direction-deg type="double">0</front-direction-deg>
+            <front-left-direction-deg type="double">45</front-left-direction-deg>
+            <left-direction-deg type="double">90</left-direction-deg>
+            <back-left-direction-deg type="double">135</back-left-direction-deg>
+            <back-direction-deg type="double">180</back-direction-deg>
+            <back-right-direction-deg type="double">225</back-right-direction-deg>
+            <right-direction-deg type="double">270</right-direction-deg>
+            <front-right-direction-deg type="double">315</front-right-direction-deg>
+            <x-offset-m archive="y">0.18</x-offset-m>
+            <y-offset-m archive="y">-1.2</y-offset-m>
+            <z-offset-m archive="y">-0.55</z-offset-m>
+            <heading-offset-deg>12.25</heading-offset-deg>
+            <pitch-offset-deg>-20</pitch-offset-deg>
+        </config>
+    </view>
+
+        <chase-distance-m type="double" archive="y">-12.0</chase-distance-m>
+
+    <weight n="0">
+            <name>Pilot</name>
+            <weight-lb>180</weight-lb>
+            <max-lb>180</max-lb>
+            <min-lb>130</min-lb>
+        </weight>
+
+        <weight n="1">
+            <name>Pax</name>
+            <weight-lb>180</weight-lb>
+            <max-lb>180</max-lb>
+            <min-lb>130</min-lb>
+        </weight>
+
+        <help>
+            <title>Robinson R-22</title>
+            <line></line>
+        </help>
+
+    </sim>
+
+    <engines>
+        <engine>
+            <rpm>0</rpm>
+            <running type="bool">false</running>
+        </engine>
+    </engines>
+
+    <controls>
+        <engines>
+            <engine>
+                <throttle>1.0</throttle>
+            </engine>
+        </engines>
+        <flight>
+            <aileron-trim>0</aileron-trim>
+            <elevator-trim>0</elevator-trim>
+        </flight>
+        <gear>
+            <brake-parking>1</brake-parking>
+        </gear>
+        <electric>
+            <battery-switch>1</battery-switch>
+            <engine>
+                <generator>1</generator>
+            </engine>
+        </electric>
+    </controls>
+
+    <instrumentation>
+        <gsdi>
+            <serviceable type="bool">true</serviceable>
+        </gsdi>
+            <inst-vertical-speed-indicator>
+                <serviceable type="bool">true</serviceable>
+            </inst-vertical-speed-indicator>
+    </instrumentation>
+
+    <nasal>
+        <R22>
+            <file>Aircraft/R22/Nasal/Electrical.nas</file>
+        </R22>
+    </nasal>
+
+</PropertyList>
