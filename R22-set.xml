@@ -14,7 +14,9 @@ Syd Adams
         <flight-model>yasim</flight-model>
         <aero>R22</aero>
         <fuel-fraction>0.8</fuel-fraction>
-
+        <startup>
+            <splash-texture>Aircraft/R22/splash.rgb</splash-texture>
+        </startup>
 
         <model>
             <path>Aircraft/R22/Models/R22.xml</path>
@@ -48,7 +50,7 @@ Syd Adams
                 <x-offset-m archive="y">0.20</x-offset-m>
                 <y-offset-m archive="y">-1.125</y-offset-m>
                 <z-offset-m archive="y">-0.4</z-offset-m>
-                <pitch-offset-deg>-12</pitch-offset-deg>
+                <pitch-offset-deg>-8</pitch-offset-deg>
                 <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
             </config>
         </view>

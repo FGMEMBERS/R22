@@ -85,6 +85,20 @@
 
     <animation>
         <type>select</type>
+        <object-name>glass</object-name>
+        <object-name>Rdoor.glass</object-name>
+        <object-name>Ldoor.glass</object-name>
+        <condition>
+            <not-equals>
+                <property>sim/current-view/view-number</property>
+                <value>0</value>
+            </not-equals>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>select</type>
         <object-name>Mblade1</object-name>
         <object-name>Mblade2</object-name>
         <condition>

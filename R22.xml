@@ -48,7 +48,7 @@ teetering hinge ...
   mincyclicail="-5" maxcyclicail="5.7"
   diameter="7.67" numblades="2" weightperblade="25" relbladecenter="0.5"
   dynamic="0.7" rpm="530" rellenflaphinge="0.02" delta3="0.33"
-  delta=".25"
+  delta=".2"
   pitch-a="10"
   pitch-b="15"
   flapmin="-15"
@@ -69,9 +69,9 @@ teetering hinge ...
   rel-len-where-incidence-is-measured="0.7"
   rel-len-blade-start="0.02"
 
-  airfoil-lift-coefficient="6.2"
+  airfoil-lift-coefficient="5.8"
   airfoil-drag-coefficient0="0.0075"
-  airfoil-drag-coefficient1="0.15"
+  airfoil-drag-coefficient1="0.1"
   incidence-stall-zero-speed="15"
   incidence-stall-half-sonic-speed="14.5"
   lift-factor-stall="0.18"
@@ -95,12 +95,12 @@ teetering hinge ...
 
 
 <rotor name="tail" x="-4.41" y="-0.2" z="-0.94" nx="0.0" ny="-1" nz="0.0" fx="1" fy="0" fz="0" ccw="1"
-  maxcollective="25" mincollective="-2"
+  maxcollective="20" mincollective="3"
   diameter="1.0668" numblades="2" weightperblade="2" relbladecenter="0.55"
   dynamic="0.70" rpm="3356" rellenflaphinge="0.0" delta3="0" translift="0" delta="0.5"
   pitch-a="10"
   pitch-b="15"
-  airfoil-lift-coefficient="7.50"
+  airfoil-lift-coefficient="7.0"
   airfoil-drag-coefficient0="0.0025"
   airfoil-drag-coefficient1="0.15"
   notorque="0"
@@ -188,7 +188,7 @@ spring="0.1" sfric="1" dfric="1"/>
 
 
 <ballast x="-0.15" y="0.0" z="-1.6" mass="500"/>
-<ballast x="0.0" y="0.0" z="-1.5" mass="200"/>
+<ballast x="-0.1" y="0.0" z="-1.5" mass="200"/>
 
 
 </airplane>
