@@ -33,7 +33,7 @@ teetering hinge ...
 -->
 <airplane mass="835">
 
-<approach speed="45" aoa="16">
+<approach speed="50" aoa="16">
   <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
 </approach>
 
@@ -43,11 +43,11 @@ teetering hinge ...
 
 
 <rotor name="main" x="0.0" y="0.0" z="0.0" nx="0" ny="0" nz="1.0" fx="1" fy="0" fz="0" ccw="1"
-  maxcollective="18" mincollective="0.0"
+  maxcollective="16" mincollective="-2.0"
   mincyclicele="-5" maxcyclicele="5"
-  mincyclicail="-5" maxcyclicail="5.9"
+  mincyclicail="-5" maxcyclicail="5"
   diameter="7.67" numblades="2" weightperblade="25" relbladecenter="0.5"
-  dynamic="0.7" rpm="530" rellenflaphinge="0.02" delta3="0.33"
+  dynamic="0.8" rpm="530" rellenflaphinge="0.02" delta3="0.33"
   delta=".2"
   pitch-a="10"
   pitch-b="15"
@@ -95,9 +95,9 @@ teetering hinge ...
 
 
 <rotor name="tail" x="-4.41" y="-0.2" z="-0.94" nx="0.0" ny="-1" nz="0.0" fx="1" fy="0" fz="0" ccw="1"
-  maxcollective="20" mincollective="2.5"
+  maxcollective="18" mincollective="0"
   diameter="1.0668" numblades="2" weightperblade="2" relbladecenter="0.55"
-  dynamic="0.70" rpm="3356" rellenflaphinge="0.0" delta3="0" translift="0" delta="0.5"
+  dynamic="0.85" rpm="3356" rellenflaphinge="0.0" delta3="0" translift="0" delta="0.5"
   pitch-a="10"
   pitch-b="15"
   airfoil-lift-coefficient="7.0"
@@ -114,14 +114,11 @@ teetering hinge ...
   lift-factor-stall="0.18"
   stall-change-over="5.5"
   drag-factor-stall="8"
-  rotor-correction-factor="0.85"
+  rotor-correction-factor="0.9"
 >
 <control-input axis="/controls/flight/rudder" control="COLLECTIVE" invert="true" 
     src0="-1.0" src1="1.0"
     dst0="-1.0" dst1="1.0"/>
-<control-input axis="/controls/engines/engine[0]/throttle" control="COLLECTIVE"
-    src0="0.1" src1="1.0"
-    dst0=".0005" dst1="-.00055"/>
 </rotor>
 
 
@@ -164,31 +161,31 @@ teetering hinge ...
 
 
 <gear x="3.458" y="0.92" z="-2.558" skid="1" compression="0.10"
-spring="1.0" sfric="0.5" dfric="0.4">
+spring="0.8" sfric="0.4" dfric="0.4">
   </gear>
 <gear x="3.458" y="-0.92" z="-2.558" skid="1" compression="0.10"
-spring="1.0" sfric="0.5" dfric="0.4">
+spring="0.8" sfric="0.4" dfric="0.4">
   </gear>
 <gear x="-0.366" y="0.92" z="-2.558" skid="1" compression="0.10"
-spring="1.0" sfric="0.5" dfric="0.4">
+spring="0.8" sfric="0.4" dfric="0.4">
   </gear>
 <gear x="-0.366" y="-0.92" z="-2.558" skid="1" compression="0.10"
-spring="1.0" sfric="0.5" dfric="0.4">
+spring="0.8" sfric="0.4" dfric="0.4">
   </gear>
+
 
 <!-- tail rotor guard-->
 <gear x="-4.47" y="0.00" z="-1.8" skid="1" compression="0.01"
 spring="0.1" sfric="1" dfric="1"/>
 
-<tank x="0" y="0.0" z="-1.7" capacity="128.6" jet="true"/>
+<tank x="0" y="0.0" z="-1.7" capacity="115.2" jet="false"/>
 <tank x="0" y="0.0" z="-1.7" capacity="0"/>
 
-<weight x="0.5" y="0.5"  z="-1.6" mass-prop="/sim/weight[0]/weight-lb"/><!-- crew -->
-<weight x="0.5" y="-0.5" z="-1.6" mass-prop="/sim/weight[1]/weight-lb"/><!-- cargo -->
+<weight x="0.5" y="-0.2"  z="-1.5" mass-prop="/sim/weight[0]/weight-lb"/><!-- pilot -->
+<weight x="0.5" y="0.2" z="-1.5" mass-prop="/sim/weight[1]/weight-lb"/><!-- pax -->
 
 
-<ballast x="-0.15" y="0.0" z="-1.6" mass="400"/>
-<ballast x="0.0" y="0.0" z="-1.5" mass="200"/>
+<ballast x="-0.1" y="0.0" z="-1.6" mass="350"/>
 
 
 </airplane>

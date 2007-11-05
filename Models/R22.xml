@@ -337,12 +337,13 @@
     <animation>
         <type>rotate</type>
         <object-name>Yoke</object-name>
+        <object-name>Yokeshaft</object-name>
         <property>controls/flight/aileron</property>
-        <factor>30</factor> 
+        <factor>15</factor>
         <center>
-            <x-m>-0.893</x-m>
+            <x-m>-0.954</x-m>
             <y-m>0</y-m>
-            <z-m>-1.416</z-m>
+            <z-m>-1.846</z-m>
         </center>
         <axis>
             <x>-1</x>

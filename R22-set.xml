@@ -50,7 +50,7 @@ Syd Adams
                 <x-offset-m archive="y">0.20</x-offset-m>
                 <y-offset-m archive="y">-1.125</y-offset-m>
                 <z-offset-m archive="y">-0.4</z-offset-m>
-                <pitch-offset-deg>-8</pitch-offset-deg>
+                <pitch-offset-deg>-12</pitch-offset-deg>
                 <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
             </config>
         </view>
@@ -120,16 +120,16 @@ Syd Adams
 
     <weight n="0">
             <name>Pilot</name>
-            <weight-lb>180</weight-lb>
+            <weight-lb>140</weight-lb>
             <max-lb>180</max-lb>
-            <min-lb>130</min-lb>
+            <min-lb>100</min-lb>
         </weight>
 
         <weight n="1">
             <name>Pax</name>
-            <weight-lb>180</weight-lb>
+            <weight-lb>140</weight-lb>
             <max-lb>180</max-lb>
-            <min-lb>130</min-lb>
+            <min-lb>0</min-lb>
         </weight>
 
         <help>
