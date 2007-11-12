@@ -18,6 +18,10 @@ Syd Adams
             <splash-texture>Aircraft/R22/splash.rgb</splash-texture>
         </startup>
 
+        <tutorials>
+        <tutorial include="Tutorials/startup_tutorial.xml"/>
+        </tutorials>
+
         <model>
             <path>Aircraft/R22/Models/R22.xml</path>
             <variant type="int">0</variant>
@@ -47,8 +51,8 @@ Syd Adams
         <view>
             <internal archive="y">true</internal>
             <config>
-                <x-offset-m archive="y">0.20</x-offset-m>
-                <y-offset-m archive="y">-1.08</y-offset-m>
+                <x-offset-m archive="y">-0.20</x-offset-m>
+                <y-offset-m archive="y">-1.04</y-offset-m>
                 <z-offset-m archive="y">-0.4</z-offset-m>
                 <pitch-offset-deg>-12</pitch-offset-deg>
                 <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
@@ -108,10 +112,10 @@ Syd Adams
             <back-right-direction-deg type="double">225</back-right-direction-deg>
             <right-direction-deg type="double">270</right-direction-deg>
             <front-right-direction-deg type="double">315</front-right-direction-deg>
-            <x-offset-m archive="y">0.18</x-offset-m>
+            <x-offset-m archive="y">-0.2</x-offset-m>
             <y-offset-m archive="y">-1.2</y-offset-m>
             <z-offset-m archive="y">-0.55</z-offset-m>
-            <heading-offset-deg>12.25</heading-offset-deg>
+            <heading-offset-deg>-12.25</heading-offset-deg>
             <pitch-offset-deg>-20</pitch-offset-deg>
         </config>
     </view>
@@ -122,7 +126,7 @@ Syd Adams
             <name>Pilot</name>
             <weight-lb>180</weight-lb>
             <max-lb>240</max-lb>
-            <min-lb>100</min-lb>
+            <min-lb>140</min-lb>
         </weight>
 
         <weight n="1">
@@ -135,7 +139,13 @@ Syd Adams
         <help>
             <title>Robinson R-22</title>
             <line></line>
+            <key>
+                <name>y</name>
+                <desc>Toggle yokes on / off</desc>
+            </key>
         </help>
+
+    <yokes-visible type="bool">1</yokes-visible>
 
     </sim>
 
@@ -150,6 +160,7 @@ Syd Adams
         <engines>
             <engine>
                 <throttle>1.0</throttle>
+                <clutch type="bool">0</clutch>
             </engine>
         </engines>
         <flight>
@@ -160,6 +171,7 @@ Syd Adams
             <brake-parking>1</brake-parking>
         </gear>
         <electric>
+            <key type="int">0</key>
             <battery-switch>1</battery-switch>
             <engine>
                 <generator>1</generator>
@@ -175,6 +187,19 @@ Syd Adams
                 <serviceable type="bool">true</serviceable>
             </inst-vertical-speed-indicator>
     </instrumentation>
+
+    <input>
+        <keyboard>
+        <key n="121">
+        <name>y</name>
+        <desc>Toggle yokes</desc>
+        <binding>
+        <command>property-toggle</command>
+        <property>/sim/yokes-visible</property>
+        </binding>
+        </key>
+    </keyboard>
+    </input>
 
     <nasal>
         <R22>

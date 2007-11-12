@@ -2,6 +2,76 @@
 <PropertyList>
     <fx>
 
+    <crank>
+        <name>crank</name>
+        <mode>looped</mode>
+        <path>Sounds/cranking.wav</path>
+        <max-dist>5</max-dist>
+        <reference-dist>2</reference-dist>
+        <condition>
+            <property>controls/engines/engine/starter</property>
+            <not>
+                <property>/engines/engine/running</property>
+            </not>
+        </condition>
+        <volume>
+        <offset>-0.5</offset>
+        </volume>
+        <pitch>
+        <property>/engines/engine/cranking</property>
+        <factor>2.0</factor>
+        </pitch>
+            <position>
+                <x>-0.3</x>
+                <y>0</y>
+                <z>-1.5</z>
+            </position>
+    </crank>
+
+    <crank>
+        <name>cough</name>
+        <path>Sounds/coughing.wav</path>
+        <property>/engines/engine/running</property>
+        <max-dist>20</max-dist>
+        <reference-dist>10</reference-dist>
+        <volume>
+            <offset>-0.50</offset>
+        </volume>
+        <pitch>
+            <property>/engines/engine/running</property>
+            <factor>1.0</factor>
+        </pitch>
+        <position>
+            <x>-0.3</x>
+            <y>0</y>
+            <z>-1.5</z>
+        </position>
+    </crank>
+
+    <engine>
+        <name>engine</name>
+        <path>Sounds/wasp.wav</path>
+        <mode>looped</mode>
+            <max-dist>500</max-dist>
+            <reference-dist>150</reference-dist>
+        <condition>
+            <property>/engines/engine/running</property>
+        </condition>
+        <volume>
+            <offset>-0.20</offset>
+        </volume>
+        <pitch>
+            <property>/engines/engine/running</property>
+            <offset>0</offset>
+            <factor>0.7</factor>
+        </pitch>
+        <position>
+            <x>-0.3</x>
+            <y>0</y>
+            <z>-1.5</z>
+        </position>
+    </engine>
+
         <rotor>
             <name>main rotor out</name>
             <condition>
@@ -22,9 +92,9 @@
             </condition>
             <volume>
                 <property>rotors/main/rpm</property>
-                <factor>0.01</factor>
+                <factor>0.005</factor>
                 <min>0</min>
-                <max>1.0</max>
+                <max>0.7</max>
             </volume>
             <pitch>
                 <property>rotors/main/rpm</property>

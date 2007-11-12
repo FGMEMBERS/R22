@@ -4,73 +4,113 @@
 
     <path>r22.ac</path>
 
+    <panel>
+        <name>Center Panel</name>
+        <path>Aircraft/R22/Panels/center-panel.xml</path>
+        <bottom-left>
+            <x-m>-1.121</x-m>
+            <y-m>-0.087</y-m>
+            <z-m>-1.683</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>-1.121</x-m>
+            <y-m>0.087</y-m>
+            <z-m>-1.683</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>-1.328</x-m>
+            <y-m>-0.087</y-m>
+            <z-m>-1.587</z-m>
+        </top-left>			
+    </panel>
+
+    <panel>
+        <name>Lower Panel</name>
+        <path>Aircraft/R22/Panels/lower-panel.xml</path>
+        <bottom-left>
+            <x-m>-1.033</x-m>
+            <y-m>-0.087</y-m>
+            <z-m>-1.864</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>-1.033</x-m>
+            <y-m>0.087</y-m>
+            <z-m>-1.864</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>-1.120</x-m>
+            <y-m>-0.087</y-m>
+            <z-m>-1.684</z-m>
+        </top-left>
+    </panel>
+
     <model>
         <path>Aircraft/R22/Models/Instruments/alt.xml</path>
         <offsets>
-            <x-m>-1.364</x-m>
+            <x-m>-1.331</x-m>
             <y-m>-0.078</y-m>
-            <z-m>-1.585</z-m>
-            <pitch-deg>-10.0</pitch-deg>
+            <z-m>-1.539</z-m>
+            <pitch-deg>-5.0</pitch-deg>
         </offsets>
     </model>
 
     <model>
         <path>Aircraft/R22/Models/Instruments/vor.xml</path>
         <offsets>
-            <x-m>-1.364</x-m>
+            <x-m>-1.331</x-m>
             <y-m>0.0</y-m>
-            <z-m>-1.585</z-m>
-            <pitch-deg>-10.0</pitch-deg>
+            <z-m>-1.539</z-m>
+            <pitch-deg>-5.0</pitch-deg>
         </offsets>
     </model>
 
     <model>
         <path>Aircraft/R22/Models/Instruments/plug.xml</path>
         <offsets>
-            <x-m>-1.364</x-m>
+            <x-m>-1.331</x-m>
             <y-m>0.078</y-m>
-            <z-m>-1.585</z-m>
-            <pitch-deg>-10.0</pitch-deg>
+            <z-m>-1.539</z-m>
+            <pitch-deg>-5.0</pitch-deg>
         </offsets>
     </model>
 
     <model>
         <path>Aircraft/R22/Models/Instruments/vsi.xml</path>
         <offsets>
-            <x-m>-1.378</x-m>
+            <x-m>-1.338</x-m>
             <y-m>-0.116</y-m>
-            <z-m>-1.505</z-m>
-            <pitch-deg>-10.0</pitch-deg>
+            <z-m>-1.457</z-m>
+            <pitch-deg>-5.0</pitch-deg>
         </offsets>
     </model>
 
     <model>
         <path>Aircraft/R22/Models/Instruments/plug.xml</path>
         <offsets>
-            <x-m>-1.378</x-m>
+            <x-m>-1.338</x-m>
             <y-m>-0.039</y-m>
-            <z-m>-1.505</z-m>
-            <pitch-deg>-10.0</pitch-deg>
+            <z-m>-1.457</z-m>
+            <pitch-deg>-5.0</pitch-deg>
         </offsets>
     </model>
 
     <model>
         <path>Aircraft/R22/Models/Instruments/asi.xml</path>
         <offsets>
-            <x-m>-1.378</x-m>
+            <x-m>-1.338</x-m>
             <y-m>0.039</y-m>
-            <z-m>-1.505</z-m>
-            <pitch-deg>-10.0</pitch-deg>
+            <z-m>-1.457</z-m>
+            <pitch-deg>-5.0</pitch-deg>
         </offsets>
     </model>
 
     <model>
         <path>Aircraft/R22/Models/Instruments/rpm.xml</path>
         <offsets>
-            <x-m>-1.378</x-m>
+            <x-m>-1.338</x-m>
             <y-m>0.116</y-m>
-            <z-m>-1.505</z-m>
-            <pitch-deg>-10.0</pitch-deg>
+            <z-m>-1.457</z-m>
+            <pitch-deg>-5.0</pitch-deg>
         </offsets>
     </model>
 
@@ -106,6 +146,14 @@
         </condition>
     </animation>
 
+    <animation>
+        <type>select</type>
+        <object-name>Yoke</object-name>
+        <object-name>Yokeshaft</object-name>
+        <condition>
+                <property>sim/yokes-visible</property>
+        </condition>
+    </animation>
 
     <animation>
         <type>select</type>
@@ -359,6 +407,167 @@
             <x>-1</x>
             <y>0.0</y>
             <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>RHpedal</object-name>
+        <property>controls/flight/rudder</property>
+        <factor>20</factor>
+        <center>
+            <x-m>-1.333</x-m>
+            <y-m>0</y-m>
+            <z-m>-1.982</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>LHpedal</object-name>
+        <property>controls/flight/rudder</property>
+        <factor>-20</factor>
+        <center>
+            <x-m>-1.333</x-m>
+            <y-m>0</y-m>
+            <z-m>-1.982</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+<!-- panel switches-->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Key</object-name>
+        <property>controls/electric/key</property>
+        <factor>-20</factor>
+        <center>
+            <x-m>-1.157</x-m>
+            <y-m>0.052</y-m>
+            <z-m>-1.665</z-m>
+        </center>
+        <axis>
+            <x>0.423</x>
+            <y>0</y>
+            <z>0.906</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Key</object-name>
+        <condition>
+            <equals>
+                <property>controls/electric/key</property>
+                <value>3</value>
+            </equals>
+        </condition>
+        <property>controls/engines/engine/starter</property>
+        <factor>-20</factor>
+        <center>
+            <x-m>-1.157</x-m>
+            <y-m>0.052</y-m>
+            <z-m>-1.665</z-m>
+        </center>
+        <axis>
+            <x>0.423</x>
+            <y>0</y>
+            <z>0.906</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Nav.switch</object-name>
+        <property>controls/lighting/nav-lights</property>
+        <factor>20</factor>
+        <center>
+            <x-m>-1.158</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-1.667</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Strobe.switch</object-name>
+        <property>controls/lighting/strobe</property>
+        <factor>20</factor>
+        <center>
+            <x-m>-1.158</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-1.667</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Alt.switch</object-name>
+        <property>controls/electric/engine/generator</property>
+        <factor>20</factor>
+        <center>
+            <x-m>-1.158</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-1.667</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Batt.switch</object-name>
+        <property>controls/electric/battery-switch</property>
+        <factor>20</factor>
+        <center>
+            <x-m>-1.158</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-1.667</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Clutch.switch</object-name>
+        <property>controls/engines/engine/clutch</property>
+        <factor>30</factor>
+        <center>
+            <x-m>-1.158</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-1.667</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
         </axis>
     </animation>
 

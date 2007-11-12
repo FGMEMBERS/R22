@@ -97,6 +97,9 @@ Alternator = {
 var battery = Battery.new(12,30,12,1.0,7.0);
 var alternator1 = Alternator.new("/rotors/main/rpm",250.0,12.0,30.0);
 
+strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
+aircraft.light.new("/controls/lighting/strobe-state", [0.05, 1.30], strobe_switch);
+
 #####################################
 setlistener("/sim/signals/fdm-initialized", func {
     props.globals.getNode("/controls/electric/external-power",1).setBoolValue(0);

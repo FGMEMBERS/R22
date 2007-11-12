@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<name>Center Panel</name>
+<background>Aircraft/R22/Panels/transparent-bg.rgb</background>
+<w>174</w>
+<h>230</h>
+
+<instruments>
+
+    <instrument>
+        <name>centerpanel hotspots</name>
+        <x>87</x>
+        <y>115</y>
+        <w>174</w>
+        <h>230</h>
+        <w-base>174</w-base>
+        <h-base>230</h-base>
+
+    <actions>
+
+    <action>
+        <name>key off</name>
+        <button>0</button>
+        <x>36</x>
+        <y>-89</y>
+        <w>16</w>
+        <h>32</h>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/electric/key</property>
+            <step>-1</step>
+            <min>0</min>
+            <max>3</max>
+            <wrap>0</wrap>
+        </binding>
+    </action>
+
+    <action>
+        <name>key on</name>
+        <button>0</button>
+        <x>53</x>
+        <y>-89</y>
+        <w>16</w>
+        <h>32</h>
+        <condition>
+            <less-than>
+                <property>controls/electric/key</property>
+                <value>3</value>
+            </less-than>
+        </condition>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/electric/key</property>
+            <step>1</step>
+            <min>0</min>
+            <max>3</max>
+            <wrap>0</wrap>
+        </binding>
+   </action>
+
+    <action>
+        <name>starter</name>
+        <button>0</button>
+        <x>53</x>
+        <y>-89</y>
+        <w>16</w>
+        <h>32</h>
+        <condition>
+            <equals>
+                <property>controls/electric/key</property>
+                <value>3</value>
+            </equals>
+        </condition>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/engines/engine/starter</property>
+            <value>1</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine/starter</property>
+                <value>0</value>
+            </binding>
+        </mod-up>
+    </action>
+
+    <action>
+        <name>battery switch</name>
+        <button>0</button>
+        <x>12</x>
+        <y>-89</y>
+        <w>16</w>
+        <h>32</h>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/battery-switch</property>
+        </binding>
+    </action>
+
+    <action>
+        <name>alt switch</name>
+        <button>0</button>
+        <x>-5</x>
+        <y>-89</y>
+        <w>16</w>
+        <h>32</h>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/electric/engine/generator</property>
+        </binding>
+    </action>
+
+    <action>
+        <name>clutch switch</name>
+        <button>0</button>
+        <x>-33</x>
+        <y>-89</y>
+        <w>16</w>
+        <h>32</h>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/engines/engine/clutch</property>
+        </binding>
+    </action>
+
+    <action>
+        <name>strobe switch</name>
+        <button>0</button>
+        <x>-60</x>
+        <y>-89</y>
+        <w>16</w>
+        <h>32</h>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/lighting/strobe</property>
+        </binding>
+    </action>
+
+    <action>
+        <name>nav switch</name>
+        <button>0</button>
+        <x>-78</x>
+        <y>-89</y>
+        <w>16</w>
+        <h>32</h>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/lighting/nav-lights</property>
+        </binding>
+    </action>
+
+       </actions>
+
+    </instrument>
+
+</instruments>
+
+</PropertyList>
