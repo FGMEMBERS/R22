@@ -63,7 +63,7 @@
         <pitch>
             <property>/engines/engine/running</property>
             <offset>0</offset>
-            <factor>0.7</factor>
+            <factor>0.8</factor>
         </pitch>
         <position>
             <x>-0.3</x>

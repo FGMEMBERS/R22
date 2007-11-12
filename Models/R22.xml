@@ -239,7 +239,6 @@
     <animation>
         <type>rotate</type>
         <object-name>Mblade1</object-name>
-        <object-name>Fblade1</object-name>
         <object-name>Hinge1</object-name>
         <object-name>Plink1</object-name>
         <property>rotors/main/blade/position-deg</property>
@@ -258,7 +257,6 @@
     <animation>
         <type>rotate</type>
         <object-name>Mblade1</object-name>
-        <object-name>Hinge1</object-name> 
         <property>rotors/main/blade/incidence-deg</property>
         <center>
             <x-m>0</x-m>
@@ -275,8 +273,6 @@
     <animation>
         <type>rotate</type>
         <object-name>Mblade1</object-name>
-        <object-name>Fblade1</object-name>
-        <object-name>Hinge1</object-name>
         <property>rotors/main/blade/flap-deg</property>
         <center>
             <x-m>-0</x-m>
@@ -290,13 +286,44 @@
         </axis>
     </animation>
 
+    <animation>
+        <type>rotate</type>
+        <object-name>Fblade1</object-name>
+        <property>rotors/main/blade/flap-deg</property>
+        <center>
+            <x-m>-0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.0</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Fblade1</object-name>
+        <property>rotors/main/blade/position-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+    </animation>
+
 <!-- Blade 2-->
     <animation>
         <type>rotate</type>
         <object-name>Mblade2</object-name>
         <object-name>Plink2</object-name>
         <object-name>Hinge2</object-name>
-        <object-name>Fblade2</object-name>
         <property>rotors/main/blade[1]/position-deg</property>
         <center>
             <x-m>0</x-m>
@@ -313,7 +340,6 @@
     <animation>
         <type>rotate</type>
         <object-name>Mblade2</object-name>
-        <object-name>Hinge2</object-name>
         <property>rotors/main/blade[1]/incidence-deg</property>
         <center>
             <x-m>0</x-m>
@@ -330,8 +356,38 @@
     <animation>
         <type>rotate</type>
         <object-name>Mblade2</object-name>
+        <property>rotors/main/blade[1]/flap-deg</property>
+        <center>
+            <x-m>-0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.0</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
         <object-name>Fblade2</object-name>
-        <object-name>Hinge2</object-name>
+        <property>rotors/main/blade[1]/position-deg</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Fblade2</object-name>
         <property>rotors/main/blade[1]/flap-deg</property>
         <center>
             <x-m>-0</x-m>
