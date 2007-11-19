@@ -34,6 +34,10 @@
             <max>3</max>
             <wrap>0</wrap>
         </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/model/sound/click</property>
+        </binding>
     </action>
 
     <action>
@@ -56,6 +60,10 @@
             <min>0</min>
             <max>3</max>
             <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/model/sound/click</property>
         </binding>
    </action>
 
@@ -97,6 +105,10 @@
             <command>property-toggle</command>
             <property>controls/electric/battery-switch</property>
         </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/model/sound/click</property>
+        </binding>
     </action>
 
     <action>
@@ -110,6 +122,23 @@
             <command>property-toggle</command>
             <property>controls/electric/engine/generator</property>
         </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/model/sound/click</property>
+        </binding>
+    </action>
+
+    <action>
+        <name>clutch guard</name>
+        <button>0</button>
+        <x>-33</x>
+        <y>-105</y>
+        <w>16</w>
+        <h>16</h>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/engines/engine/clutchguard</property>
+        </binding>
     </action>
 
     <action>
@@ -119,9 +148,16 @@
         <y>-89</y>
         <w>16</w>
         <h>32</h>
+        <condition>
+            <property>controls/engines/engine/clutchguard</property>
+        </condition>
         <binding>
             <command>property-toggle</command>
             <property>controls/engines/engine/clutch</property>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/model/sound/click</property>
         </binding>
     </action>
 
@@ -136,6 +172,14 @@
             <command>property-toggle</command>
             <property>controls/lighting/strobe</property>
         </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/lighting/beacon</property>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/model/sound/click</property>
+        </binding>
     </action>
 
     <action>
@@ -148,6 +192,10 @@
         <binding>
             <command>property-toggle</command>
             <property>controls/lighting/nav-lights</property>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/model/sound/click</property>
         </binding>
     </action>
 

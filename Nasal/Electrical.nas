@@ -98,14 +98,13 @@ var battery = Battery.new(12,30,12,1.0,7.0);
 var alternator1 = Alternator.new("/rotors/main/rpm",250.0,12.0,30.0);
 
 strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
-aircraft.light.new("/controls/lighting/strobe-state", [0.05, 1.30], strobe_switch);
+aircraft.light.new("controls/lighting/strobe-state", [0.05, 1.50], strobe_switch);
+beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
+aircraft.light.new("controls/lighting/beacon-state", [1.0, 1.0], beacon_switch);
 
 #####################################
 setlistener("/sim/signals/fdm-initialized", func {
     props.globals.getNode("/controls/electric/external-power",1).setBoolValue(0);
-    props.globals.getNode("/controls/electric/battery-switch",1).setBoolValue(1); 
-    props.globals.getNode("/controls/electric/engine[0]/generator",1).setBoolValue(1);
-    props.globals.getNode("/controls/electric/engine[1]/generator",1).setBoolValue(1);
     props.globals.getNode("/controls/anti-ice/prop-heat",1).setBoolValue(0);
     props.globals.getNode("/controls/anti-ice/pitot-heat",1).setBoolValue(0);
     props.globals.getNode("/controls/lighting/landing-lights[0]",1).setBoolValue(0);

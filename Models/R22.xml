@@ -157,6 +157,26 @@
 
     <animation>
         <type>select</type>
+        <object-name>Beacon</object-name>
+        <condition>
+                <property>controls/lighting/beacon-state/state</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Nav.red</object-name>
+        <object-name>Nav.green</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/outputs/nav-lights</property>
+                <value>0.1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>Mblade1</object-name>
         <object-name>Mblade2</object-name>
         <condition>
@@ -242,6 +262,7 @@
         <object-name>Hinge1</object-name>
         <object-name>Plink1</object-name>
         <property>rotors/main/blade/position-deg</property>
+        <offset-deg>180</offset-deg>
         <center>
             <x-m>0</x-m>
             <y-m>0</y-m>
@@ -306,6 +327,7 @@
         <type>rotate</type>
         <object-name>Fblade1</object-name>
         <property>rotors/main/blade/position-deg</property>
+        <offset-deg>180</offset-deg>
         <center>
             <x-m>0</x-m>
             <y-m>0</y-m>
@@ -325,6 +347,7 @@
         <object-name>Plink2</object-name>
         <object-name>Hinge2</object-name>
         <property>rotors/main/blade[1]/position-deg</property>
+        <offset-deg>180</offset-deg>
         <center>
             <x-m>0</x-m>
             <y-m>0</y-m>
@@ -373,6 +396,7 @@
         <type>rotate</type>
         <object-name>Fblade2</object-name>
         <property>rotors/main/blade[1]/position-deg</property>
+        <offset-deg>180</offset-deg>
         <center>
             <x-m>0</x-m>
             <y-m>0</y-m>
@@ -425,6 +449,19 @@
                     <property>consumables/fuel/tank/level-gal_us</property>
                     <value>1.0</value>
                 </less-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>alt.annun</object-name>
+        <condition>
+                <and>
+                    <property>engines/engine/running</property>
+                    <not>
+                        <property>controls/electric/engine/generator</property>
+                    </not>
+                </and>
         </condition>
     </animation>
 
@@ -606,6 +643,23 @@
         <axis>
             <x>0</x>
             <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Clutch.guard</object-name>
+        <property>controls/engines/engine/clutchguard</property>
+        <factor>100</factor>
+        <center>
+            <x-m>-1.146</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-1.673</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
             <z>0</z>
         </axis>
     </animation>

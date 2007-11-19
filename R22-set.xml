@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 ############
-Robinson R-22 
+Robinson R-22 Beta II
 Syd Adams
 ############
 -->
@@ -9,11 +9,11 @@ Syd Adams
 <PropertyList>
 
     <sim>
-        <description>Robinson R22</description>
+        <description>Robinson R22 Beta II</description>
         <author>Syd Adams, Maik Justus</author>
         <flight-model>yasim</flight-model>
-        <aero>R22</aero>
-        <fuel-fraction>0.8</fuel-fraction>
+        <aero>R22BetaII</aero>
+        <fuel-fraction>0.5</fuel-fraction>
         <startup>
             <splash-texture>Aircraft/R22/splash.rgb</splash-texture>
         </startup>
@@ -25,6 +25,10 @@ Syd Adams
         <model>
             <path>Aircraft/R22/Models/R22.xml</path>
             <variant type="int">0</variant>
+            <sound>
+                <volume type="double">0</volume>
+                <click type="bool">0</click>
+            </sound>
         </model>
 
         <hud>
@@ -101,7 +105,7 @@ Syd Adams
             <from-model type="bool">true</from-model>
             <from-model-idx type="int">0</from-model-idx>
             <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <default-field-of-view-deg type="double">22.0</default-field-of-view-deg>
+            <default-field-of-view-deg type="double">33.0</default-field-of-view-deg>
             <default-pitch-deg type="double">0</default-pitch-deg>
             <default-heading-deg type="double">0</default-heading-deg>
             <front-direction-deg type="double">0</front-direction-deg>
@@ -115,9 +119,9 @@ Syd Adams
             <x-offset-m archive="y">-0.2</x-offset-m>
             <y-offset-m archive="y">-1.2</y-offset-m>
             <z-offset-m archive="y">-0.55</z-offset-m>
-            <heading-offset-deg>-12.25</heading-offset-deg>
-            <pitch-offset-deg>-20</pitch-offset-deg>
-        </config>
+            <heading-offset-deg>345.5</heading-offset-deg>
+            <pitch-offset-deg>-25.5</pitch-offset-deg>
+        </config> 
     </view>
 
         <chase-distance-m type="double" archive="y">-12.0</chase-distance-m>
@@ -130,7 +134,7 @@ Syd Adams
         </weight>
 
         <weight n="1">
-            <name>Pax</name>
+            <name>Pax/Baggage</name>
             <weight-lb>180</weight-lb>
             <max-lb>240</max-lb>
             <min-lb>0</min-lb>
@@ -143,6 +147,18 @@ Syd Adams
                 <name>y</name>
                 <desc>Toggle yokes on / off</desc>
             </key>
+            <key>
+                <name>{</name>
+                <desc>Turn ignition key off</desc>
+            </key>
+            <key>
+                <name>}</name>
+                <desc>Turn ignition key on</desc>
+            </key>
+            <key>
+                <name>s</name>
+                <desc>Engage starter</desc>
+            </key>
         </help>
 
     <yokes-visible type="bool">1</yokes-visible>
@@ -151,7 +167,7 @@ Syd Adams
 
     <engines>
         <engine>
-            <rpm>0</rpm>
+            <rpm type="double">0</rpm>
             <running type="bool">false</running>
         </engine>
     </engines>
@@ -161,6 +177,7 @@ Syd Adams
             <engine>
                 <throttle>1.0</throttle>
                 <clutch type="bool">0</clutch>
+                <clutchguard type="bool">0</clutchguard>
             </engine>
         </engines>
         <flight>
@@ -172,9 +189,9 @@ Syd Adams
         </gear>
         <electric>
             <key type="int">0</key>
-            <battery-switch>1</battery-switch>
+            <battery-switch>0</battery-switch>
             <engine>
-                <generator>1</generator>
+                <generator>0</generator>
             </engine>
         </electric>
     </controls>
@@ -198,7 +215,33 @@ Syd Adams
         <property>/sim/yokes-visible</property>
         </binding>
         </key>
-    </keyboard>
+
+        <key n="123">
+        <name>{</name>
+        <desc>key off</desc>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/electric/key</property>
+            <step>-1</step>
+            <min>0</min>
+            <max>3</max>
+            <wrap>0</wrap>
+        </binding>
+        </key>
+
+        <key n="125">
+        <name>}</name>
+        <desc>key on</desc>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/electric/key</property>
+            <step>1</step>
+            <min>0</min>
+            <max>3</max>
+            <wrap>0</wrap>
+        </binding>
+        </key>
+</keyboard>
     </input>
 
     <nasal>

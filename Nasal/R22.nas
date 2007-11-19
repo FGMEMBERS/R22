@@ -14,10 +14,7 @@ TotalFuelP=props.globals.getNode("/consumables/fuel/total-fuel-lbs",1);
 NoFuel=props.globals.getNode("/engines/engine/out-of-fuel",1);
 var FDM = 0;
 
-strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
-aircraft.light.new("sim/model/R22/lighting/strobe-state", [0.05, 1.50], strobe_switch);
-beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
-aircraft.light.new("sim/model/R22/lighting/beacon-state", [1.0, 1.0], beacon_switch);
+
 
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 FHmeter.stop();
@@ -28,28 +25,51 @@ setlistener("/sim/signals/fdm-initialized", func {
     RPM_arm.setBoolValue(0);
     print("Systems ... Check");
     settimer(update_systems,2);
+    setprop("sim/model/sound/volume", 0.5);
 });
 
 setlistener("/sim/signals/reinit", func {
     RPM_arm.setBoolValue(0);
 });
 
+setlistener("/sim/current-view/view-number", func(vw) {
+    var nm = vw.getValue();
+    setprop("sim/model/sound/volume", 1.0);
+    if(nm == 0 or nm == 7)setprop("sim/model/sound/volume", 0.5);
+},1,0);
 
-setlistener("/gear/gear[1]/wow", func {
-    if(cmdarg().getBoolValue()){
+setlistener("/gear/gear[1]/wow", func(gr) {
+    if(gr.getBoolValue()){
     FHmeter.stop();
     }else{FHmeter.start();}
-});
+},0,0);
 
-setlistener("/engines/engine/out-of-fuel", func {
-    var nofuel = cmdarg().getBoolValue();
+setlistener("/engines/engine/out-of-fuel", func(fl) {
+    var nofuel = fl.getBoolValue();
     if(nofuel)kill_engine();
-});
+},0,0);
 
-setlistener("/controls/electric/key", func {
-    var key = cmdarg().getValue();
+setlistener("/engines/engine/running", func(eng){
+    var running = eng.getBoolValue();
+    if(running){
+        interpolate("/engines/engine/rpm", 2500, 2);
+        }else{
+        interpolate("/engines/engine/rpm", 0, 2);
+        }
+},1,0);
+
+setlistener("/controls/electric/key", func(ky){
+    var key = ky.getValue();
     if(key == 0)kill_engine();
-});
+},0,0);
+
+setlistener("/sim/crashed", func(ko) {
+    if(ko.getValue()){
+    kill_engine();
+    setprop("/rotors/main/rpm",0);
+    setprop("/rotors/tail/rpm",0);
+    }
+},0,0);
 
 flight_meter = func{
 var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
@@ -99,7 +119,14 @@ flight_meter();
 if(!RPM_arm.getBoolValue()){
 if(getprop("/rotors/main/rpm") > 525)RPM_arm.setBoolValue(1);
 }
-if(getprop("/controls/engines/engine/starter")){
+
+if(getprop("/systems/electrical/outputs/starter") > 6.0){
+    if(getprop("/controls/electric/key") > 2)setprop("/engines/engine/cranking",1);
+    }else{
+    setprop("/engines/engine/cranking",0);
+    }
+
+if(getprop("/engines/engine/cranking") != 0){
     if(!getprop("/engines/engine/running")){
     start_timer +=1;
     }else{start_timer = 0;}

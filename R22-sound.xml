@@ -9,17 +9,17 @@
         <max-dist>5</max-dist>
         <reference-dist>2</reference-dist>
         <condition>
-            <property>controls/engines/engine/starter</property>
+            <property>engines/engine/cranking</property>
             <not>
                 <property>/engines/engine/running</property>
             </not>
         </condition>
         <volume>
-        <offset>-0.5</offset>
+            <property>/sim/model/sound/volume</property>
         </volume>
         <pitch>
         <property>/engines/engine/cranking</property>
-        <factor>2.0</factor>
+        <factor>0.2</factor>
         </pitch>
             <position>
                 <x>-0.3</x>
@@ -35,7 +35,7 @@
         <max-dist>20</max-dist>
         <reference-dist>10</reference-dist>
         <volume>
-            <offset>-0.50</offset>
+            <property>/sim/model/sound/volume</property>
         </volume>
         <pitch>
             <property>/engines/engine/running</property>
@@ -58,12 +58,12 @@
             <property>/engines/engine/running</property>
         </condition>
         <volume>
-            <offset>-0.20</offset>
+            <property>/sim/model/sound/volume</property>
         </volume>
         <pitch>
-            <property>/engines/engine/running</property>
+            <property>/engines/engine/rpm</property>
             <offset>0</offset>
-            <factor>0.8</factor>
+            <factor>0.00025</factor>
         </pitch>
         <position>
             <x>-0.3</x>
@@ -73,61 +73,20 @@
     </engine>
 
         <rotor>
-            <name>main rotor out</name>
-            <condition>
-                <not-equals>
-                    <property>sim/current-view/view-number</property>
-                    <value>0</value>
-                </not-equals>
-            </condition>
+            <name>main rotor</name>
             <mode>looped</mode>
             <path>Sounds/rotor-2blade.wav</path>
-            <max-dist>500</max-dist>
-            <reference-dist>150</reference-dist>
+            <max-dist>100</max-dist>
+            <reference-dist>50</reference-dist>
             <condition>
                 <greater-than>
                 <property>rotors/main/rpm</property>
-                <value>5</value>
+                <value>100</value>
                 </greater-than>
             </condition>
             <volume>
-                <property>rotors/main/rpm</property>
-                <factor>0.005</factor>
-                <min>0</min>
-                <max>0.7</max>
+                <property>/sim/model/sound/volume</property>
             </volume>
-            <pitch>
-                <property>rotors/main/rpm</property>
-                <factor>0.0018</factor>
-                <offset>0.0</offset>
-                <min>0.00</min>
-                <max>1.0</max>
-            </pitch>
-            <position>
-                <x>0</x>
-                <y>0</y>
-                <z>-1</z>
-            </position>
-        </rotor>
-
-        <rotor>
-            <name>main rotor inside</name>
-            <condition>
-                <equals>
-                    <property>sim/current-view/view-number</property>
-                    <value>0</value>
-                </equals>
-            </condition>
-            <mode>looped</mode>
-            <path>Sounds/rotor-2blade.wav</path>
-            <max-dist>500</max-dist>
-            <reference-dist>150</reference-dist>
-            <condition>
-                <greater-than>
-                <property>rotors/main/rpm</property>
-                <value>5</value>
-                </greater-than>
-            </condition>
             <volume>
                 <property>rotors/main/rpm</property>
                 <factor>0.01</factor>
@@ -225,8 +184,8 @@
             <mode>once</mode>
             <path>Sounds/crash.wav</path>
             <property>sim/crashed</property>
-            <max-dist>100</max-dist>
-            <reference-dist>50</reference-dist>
+            <max-dist>50</max-dist>
+            <reference-dist>20</reference-dist>
             <volume>
                 <factor>1</factor>
             </volume>
@@ -253,8 +212,8 @@
                     </less-than>
                 </and>
             </condition>
-            <max-dist>2</max-dist>
-            <reference-dist>1</reference-dist>
+            <max-dist>4</max-dist>
+            <reference-dist>2</reference-dist>
             <volume>
                 <factor>1</factor>
             </volume>
@@ -264,6 +223,46 @@
                 <z>-1.5</z>
             </position>
         </alert>
+
+        <click>
+            <name>switches on</name>
+            <mode>once</mode>
+            <path>Sounds/click.wav</path>
+            <condition>
+                <property>sim/model/sound/click</property>
+            </condition>
+            <max-dist>2</max-dist>
+            <reference-dist>1</reference-dist>
+            <volume>
+                <property>sim/model/sound/volume</property>
+            </volume>
+            <position>
+                <x>1.5</x>
+                <y>0</y>
+                <z>-1.8</z>
+            </position>
+        </click>
+
+        <click>
+            <name>switches off</name>
+            <mode>once</mode>
+            <path>Sounds/click.wav</path>
+            <condition>
+                <not>
+                    <property>sim/model/sound/click</property>
+                </not>
+            </condition>
+            <max-dist>2</max-dist>
+            <reference-dist>1</reference-dist>
+            <volume>
+                <property>sim/model/sound/volume</property>
+            </volume>
+            <position>
+                <x>1.5</x>
+                <y>0</y>
+                <z>-1.8</z>
+            </position>
+        </click>
 
     </fx>
 </PropertyList>

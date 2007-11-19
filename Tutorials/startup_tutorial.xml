@@ -43,7 +43,7 @@
 
     <step>
         <message>
-            Switch on Master battery and alternator.{|.}
+            Switch on Master battery.{|.}
             Press "y" to hide yoke for better visibility.{|.}
         </message>
         <view>
@@ -52,30 +52,24 @@
             <field-of-view>15</field-of-view>
         </view>
         <error>
-            <message>Battery and Generator switches {|.}should be in the "up" position{|.}
+            <message>Battery switch {|.}should be in the "up" position{|.}
             </message>
             <condition>
-                <and>
-                    <not>
-                        <property>/controls/electric/battery-switch</property>
-                        <property>/controls/electric/engine[0]/generator</property>
-                    </not>
-                </and>
+                <not>
+                    <property>/controls/electric/battery-switch</property>
+                </not>
             </condition>
         </error>
         <exit>
             <condition>
-                <and>
-                        <property>/controls/electric/battery-switch</property>
-                        <property>/controls/electric/engine[0]/generator</property>
-                </and>
+                <property>/controls/electric/battery-switch</property>
             </condition>
         </exit>
     </step>
 
     <step>
         <message>
-            Switch on strobe and nav lights.{|.}
+            Switch on strobe light.{|.}
         </message>
         <view>
             <heading-offset-deg>350.7</heading-offset-deg>
@@ -83,23 +77,17 @@
             <field-of-view>15</field-of-view>
         </view>
         <error>
-            <message>Switches should be in the "up" position{|.}
+            <message>Switch on strobe light.{|.}
             </message>
             <condition>
-                <and>
-                    <not>
+                <not>
                         <property>/controls/lighting/strobe</property>
-                        <property>/controls/lighting/nav-lights</property>
-                    </not>
-                </and>
+                </not>
             </condition>
         </error>
         <exit>
             <condition>
-                <and>
-                    <property>/controls/lighting/strobe</property>
-                    <property>/controls/lighting/nav-lights</property>
-                </and>
+                <property>/controls/lighting/strobe</property>
             </condition>
         </exit>
     </step>
@@ -131,7 +119,9 @@
 
     <step>
         <message>
-            After a warmup period , engage the clutch{|.}
+            Click at the bottom {|.}
+            of the red clutch guard to lift it,{|.}
+            and engage the clutch{|.}
             Make sure your collective "throttle" {|.}
             is in the correct position !{|.}
         </message>
@@ -141,7 +131,10 @@
             <field-of-view>15</field-of-view>
         </view>
         <error>
-            <message>Click the clutch engage/disengage switch{|.}
+            <message>Click at the bottom {|.}
+            of the red clutch guard to lift it,{|.}
+            and engage the clutch switch{|.}
+            Close the clutch guard{|.}
             Make sure your collective "throttle" {|.}
             is in the correct position !{|.}
             </message>
@@ -154,6 +147,56 @@
         <exit>
             <condition>
                 <property>/controls/engines/engine[0]/clutch</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>
+            Switch on Alternator.{|.}
+        </message>
+        <view>
+            <heading-offset-deg>347.40</heading-offset-deg>
+            <pitch-offset-deg>-37.65</pitch-offset-deg>
+            <field-of-view>15</field-of-view>
+        </view>
+        <error>
+            <message>Alternator switch {|.}should be in the "up" position{|.}
+            </message>
+            <condition>
+                <not>
+                    <property>/controls/electric/engine[0]/generator</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/electric/engine[0]/generator</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>
+            Switch on nav lights.{|.}
+        </message>
+        <view>
+            <heading-offset-deg>350.7</heading-offset-deg>
+            <pitch-offset-deg>-39.5</pitch-offset-deg>
+            <field-of-view>15</field-of-view>
+        </view>
+        <error>
+            <message>Switch on nav lights.{|.}
+            </message>
+            <condition>
+                <not>
+                    <property>/controls/lighting/nav-lights</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/lighting/nav-lights</property>
             </condition>
         </exit>
     </step>
