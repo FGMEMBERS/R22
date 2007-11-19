@@ -159,6 +159,18 @@ Syd Adams
                 <name>s</name>
                 <desc>Engage starter</desc>
             </key>
+            <key>
+                <name>PageUp</name>
+                <desc>Increase engine throttle</desc>
+            </key>
+            <key>
+                <name>PageDown</name>
+                <desc>Decrease engine throttle</desc>
+            </key>
+            <key>
+                <name>N</name>
+                <desc>toggle rotor brake</desc>
+            </key>
         </help>
 
     <yokes-visible type="bool">1</yokes-visible>
@@ -195,6 +207,10 @@ Syd Adams
                 <generator>0</generator>
             </engine>
         </electric>
+        <rotor>
+            <engine-throttle type="double">0.3</engine-throttle>
+            <brake>0</brake>
+        </rotor>
     </controls>
 
     <instrumentation>
@@ -242,6 +258,42 @@ Syd Adams
             <wrap>0</wrap>
         </binding>
         </key>
+
+        <key n="360">
+        <name>PageUp</name>
+        <desc>Increase engine throttle</desc>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/rotor/engine-throttle</property>
+            <step>0.02</step>
+            <min>0.30</min>
+            <max>1.00</max>
+            <wrap>0</wrap>
+        </binding>
+        </key>
+
+        <key n="361">
+        <name>PageDown</name>
+        <desc>Decrease engine throttle</desc>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/rotor/engine-throttle</property>
+            <step>-0.02</step>
+            <min>0.30</min>
+            <max>1.00</max>
+            <wrap>0</wrap>
+        </binding>
+        </key>
+
+        <key n="78">
+        <name>N</name>
+        <desc>Toggle rotor brake</desc>
+        <binding>
+            <command>property-toggle</command>
+            <property>controls/rotor/brake</property>
+        </binding>
+        </key>
+
 </keyboard>
     </input>
 

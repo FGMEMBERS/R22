@@ -30,6 +30,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 
 setlistener("/sim/signals/reinit", func {
     RPM_arm.setBoolValue(0);
+    setprop("/controls/engines/engine/throttle",1);
 });
 
 setlistener("/sim/current-view/view-number", func(vw) {
@@ -48,15 +49,6 @@ setlistener("/engines/engine/out-of-fuel", func(fl) {
     var nofuel = fl.getBoolValue();
     if(nofuel)kill_engine();
 },0,0);
-
-setlistener("/engines/engine/running", func(eng){
-    var running = eng.getBoolValue();
-    if(running){
-        interpolate("/engines/engine/rpm", 2500, 2);
-        }else{
-        interpolate("/engines/engine/rpm", 0, 2);
-        }
-},1,0);
 
 setlistener("/controls/electric/key", func(ky){
     var key = ky.getValue();
@@ -116,6 +108,7 @@ update_systems = func {
     var time = getprop("/sim/time/elapsed-sec");
     var dt = time - last_time;
     last_time = time;
+    var throttle = getprop("/controls/rotor/engine-throttle");
     if(getprop("engines/engine/running"))update_fuel(dt);
 flight_meter();
 if(!RPM_arm.getBoolValue()){
@@ -133,18 +126,22 @@ if(getprop("/engines/engine/cranking") != 0){
     start_timer +=1;
     }else{start_timer = 0;}
 }
+
 if(start_timer > 50){setprop("/engines/engine/running",1);
     start_timer = 0;
     }
-if(getprop("/controls/engines/engine/clutch")){
-    if(getprop("/engines/engine/running")){
-    setprop("/engines/engine/clutch-engaged",1);
-    }else{
-    setprop("/engines/engine/clutch-engaged",0);
-    }
-}
 
-if(!getprop("/engines/engine/running"))setprop("/engines/engine/clutch-engaged",0);
+if(getprop("/engines/engine/running")){
+    if(getprop("/controls/engines/engine/clutch")){
+        setprop("/engines/engine/clutch-engaged",1);
+        }else{
+            setprop("/engines/engine/clutch-engaged",0);
+            }
+
+    interpolate("/engines/engine/rpm", 2700 * throttle, 0.2);
+    }else{
+        interpolate("/engines/engine/rpm", 0, 0.2);
+        }
 settimer(update_systems,0);
 }
 

@@ -55,7 +55,10 @@
             <max-dist>500</max-dist>
             <reference-dist>150</reference-dist>
         <condition>
-            <property>/engines/engine/running</property>
+            <greater-than>
+                <property>/engines/engine/rpm</property>
+                <value>100</value>
+             </greater-than>
         </condition>
         <volume>
             <property>/sim/model/sound/volume</property>
@@ -63,7 +66,9 @@
         <pitch>
             <property>/engines/engine/rpm</property>
             <offset>0</offset>
-            <factor>0.00025</factor>
+            <factor>0.0005</factor>
+            <min>0.35</min>
+            <max>1.0</max>
         </pitch>
         <position>
             <x>-0.3</x>
@@ -81,7 +86,7 @@
             <condition>
                 <greater-than>
                 <property>rotors/main/rpm</property>
-                <value>100</value>
+                <value>50</value>
                 </greater-than>
             </condition>
             <volume>
@@ -89,9 +94,9 @@
             </volume>
             <volume>
                 <property>rotors/main/rpm</property>
-                <factor>0.01</factor>
+                <factor>0.005</factor>
                 <min>0</min>
-                <max>0.5</max>
+                <max>1.0</max>
             </volume>
             <pitch>
                 <property>rotors/main/rpm</property>
