@@ -60,6 +60,7 @@ setlistener("/engines/engine/running", func(eng){
 
 setlistener("/controls/electric/key", func(ky){
     var key = ky.getValue();
+    if(key > 0)setprop("/controls/engines/engine/magnetos",key);
     if(key == 0)kill_engine();
 },0,0);
 
@@ -80,6 +81,7 @@ setprop("/instrumentation/clock/flight-meter-hour",fhour);
 
 kill_engine=func{
         setprop("/controls/engines/engine/magnetos",0);
+        setprop("/engines/engine/clutch-engaged",0);
         setprop("/engines/engine/running",0);
         start_timer=0;
 }
@@ -114,7 +116,7 @@ update_systems = func {
     var time = getprop("/sim/time/elapsed-sec");
     var dt = time - last_time;
     last_time = time;
-    if(getprop("controls/engines/engine/magnetos") > 0)update_fuel(dt);
+    if(getprop("engines/engine/running"))update_fuel(dt);
 flight_meter();
 if(!RPM_arm.getBoolValue()){
 if(getprop("/rotors/main/rpm") > 525)RPM_arm.setBoolValue(1);
@@ -136,13 +138,13 @@ if(start_timer > 50){setprop("/engines/engine/running",1);
     }
 if(getprop("/controls/engines/engine/clutch")){
     if(getprop("/engines/engine/running")){
-    setprop("/controls/engines/engine/magnetos",1);
+    setprop("/engines/engine/clutch-engaged",1);
+    }else{
+    setprop("/engines/engine/clutch-engaged",0);
     }
-}else{
-    setprop("/controls/engines/engine/magnetos",0);
-    }
+}
 
-if(!getprop("/engines/engine/running"))setprop("/controls/engines/engine/magnetos",0);
+if(!getprop("/engines/engine/running"))setprop("/engines/engine/clutch-engaged",0);
 settimer(update_systems,0);
 }
 

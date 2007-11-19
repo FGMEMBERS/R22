@@ -169,6 +169,7 @@ Syd Adams
         <engine>
             <rpm type="double">0</rpm>
             <running type="bool">false</running>
+            <clutch-engaged type="bool">false</clutch-engaged>
         </engine>
     </engines>
 
