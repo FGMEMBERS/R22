@@ -43,7 +43,7 @@ teetering hinge ...
 <rotor name="main" x="0.0" y="0.0" z="0.0" nx="0" ny="0" nz="1.0" fx="1" fy="0" fz="0" ccw="1"
   maxcollective="18" mincollective="0.0"
   mincyclicele="-5" maxcyclicele="5"
-  mincyclicail="-2.5" maxcyclicail="3.0"
+  mincyclicail="-2.5" maxcyclicail="3.5"
   diameter="7.67" numblades="2" weightperblade="25" relbladecenter="0.5"
   dynamic="0.8" rpm="530" rellenflaphinge="0.0" delta3="0.33"
   delta=".2"
