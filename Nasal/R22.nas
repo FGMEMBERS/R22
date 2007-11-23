@@ -138,7 +138,7 @@ if(getprop("/engines/engine/running")){
             setprop("/engines/engine/clutch-engaged",0);
             }
 
-    interpolate("/engines/engine/rpm", 2700 * throttle, 0.2);
+    interpolate("/engines/engine/rpm", 2700 * throttle, 0.5);
     }else{
         interpolate("/engines/engine/rpm", 0, 0.2);
         }

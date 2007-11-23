@@ -160,14 +160,6 @@ Syd Adams
                 <desc>Engage starter</desc>
             </key>
             <key>
-                <name>PageUp</name>
-                <desc>Increase engine throttle</desc>
-            </key>
-            <key>
-                <name>PageDown</name>
-                <desc>Decrease engine throttle</desc>
-            </key>
-            <key>
                 <name>N</name>
                 <desc>toggle rotor brake</desc>
             </key>
@@ -208,7 +200,7 @@ Syd Adams
             </engine>
         </electric>
         <rotor>
-            <engine-throttle type="double">0.3</engine-throttle>
+            <engine-throttle type="double">1.0</engine-throttle>
             <brake>0</brake>
         </rotor>
     </controls>
@@ -259,6 +251,7 @@ Syd Adams
         </binding>
         </key>
 
+<!--
         <key n="360">
         <name>PageUp</name>
         <desc>Increase engine throttle</desc>
@@ -284,6 +277,7 @@ Syd Adams
             <wrap>0</wrap>
         </binding>
         </key>
+-->
 
         <key n="78">
         <name>N</name>
