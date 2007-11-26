@@ -4,6 +4,17 @@
 
     <path>r22.ac</path>
 
+    <animation>
+      <type>material</type>
+      <object-name>Boom</object-name>
+      <object-name>Fuselage</object-name>
+      <object-name>L.door</object-name>
+      <object-name>R.door</object-name>
+      <property-base>/sim/model/livery</property-base>
+      <texture-prop>texture</texture-prop>
+      <texture>paint1.rgb</texture>
+    </animation>
+
     <panel>
         <name>Center Panel</name>
         <path>Aircraft/R22/Panels/center-panel.xml</path>

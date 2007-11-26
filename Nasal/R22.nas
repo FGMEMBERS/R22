@@ -1,3 +1,4 @@
+aircraft.livery.init("Aircraft/R22/Models/Liveries", "sim/model/livery/name", "sim/model/livery/index");
 var RPM_arm=props.globals.getNode("/instrumentation/alerts/rpm",1);
 var ViewNum=0;
 var EyePoint = 0;
@@ -5,15 +6,13 @@ var last_time = 0;
 var start_timer=0;
 var GPS = 0.002222;  ### avg cruise = 8 gph
 var Fuel_Density=6.0;
-Fuel1_Level= props.globals.getNode("/consumables/fuel/tank/level-gal_us",1);
-Fuel1_LBS= props.globals.getNode("/consumables/fuel/tank/level-lbs",1);
-Fuel2_Level= props.globals.getNode("/consumables/fuel/tank[1]/level-gal_us",1);
-Fuel2_LBS= props.globals.getNode("/consumables/fuel/tank[1]/level-lbs",1);
-TotalFuelG=props.globals.getNode("/consumables/fuel/total-fuel-gals",1);
-TotalFuelP=props.globals.getNode("/consumables/fuel/total-fuel-lbs",1);
-NoFuel=props.globals.getNode("/engines/engine/out-of-fuel",1);
-var FDM = 0;
-
+var Fuel1_Level= props.globals.getNode("/consumables/fuel/tank/level-gal_us",1);
+var Fuel1_LBS= props.globals.getNode("/consumables/fuel/tank/level-lbs",1);
+var Fuel2_Level= props.globals.getNode("/consumables/fuel/tank[1]/level-gal_us",1);
+var Fuel2_LBS= props.globals.getNode("/consumables/fuel/tank[1]/level-lbs",1);
+var TotalFuelG=props.globals.getNode("/consumables/fuel/total-fuel-gals",1);
+var TotalFuelP=props.globals.getNode("/consumables/fuel/total-fuel-lbs",1);
+var NoFuel=props.globals.getNode("/engines/engine/out-of-fuel",1);
 
 
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
@@ -64,21 +63,51 @@ setlistener("/sim/crashed", func(ko) {
     }
 },0,0);
 
-flight_meter = func{
+setlistener("/sim/model/start-idling", func(idle){
+    var run= idle.getBoolValue();
+    if(run){
+    Startup();
+    }else{
+    Shutdown();
+    }
+},0,0);
+
+var Startup = func{
+setprop("controls/electric/engine[0]/generator",1);
+setprop("controls/electric/battery-switch",1);
+setprop("controls/lighting/nav-lights",1);
+setprop("controls/lighting/beacon",1);
+setprop("controls/lighting/strobe",1);
+setprop("controls/engines/engine[0]/magnetos",3);
+setprop("engines/engine[0]/running",1);
+setprop("controls/engines/engine[0]/clutch",1);
+}
+
+var Shutdown = func{
+setprop("controls/electric/engine[0]/generator",0);
+setprop("controls/electric/battery-switch",0);
+setprop("controls/lighting/instrument-lights",0);
+setprop("controls/lighting/nav-lights",0);
+setprop("controls/lighting/beacon",0);
+setprop("controls/engines/engine[0]/magnetos",0);
+setprop("controls/engines/engine[0]/clutch",1);
+}
+
+var flight_meter = func{
 var fmeter = getprop("/instrumentation/clock/flight-meter-sec");
 var fminute = fmeter * 0.016666;
 var fhour = fminute * 0.016666;
 setprop("/instrumentation/clock/flight-meter-hour",fhour);
 }
 
-kill_engine=func{
+var kill_engine=func{
         setprop("/controls/engines/engine/magnetos",0);
         setprop("/engines/engine/clutch-engaged",0);
         setprop("/engines/engine/running",0);
         start_timer=0;
 }
 
-update_fuel = func{
+var update_fuel = func{
     var amnt = arg[0] * GPS;
     amnt = amnt * 0.5;
     var lvl = Fuel1_Level.getValue();
@@ -104,7 +133,7 @@ update_fuel = func{
     }
 }
 
-update_systems = func {
+var update_systems = func {
     var time = getprop("/sim/time/elapsed-sec");
     var dt = time - last_time;
     last_time = time;

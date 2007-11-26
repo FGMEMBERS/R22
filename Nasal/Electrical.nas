@@ -3,18 +3,16 @@
 #### Based on Curtis Olson's nasal electrical code ####
 
 var last_time = 0.0;
-var vbus_volts = 0.0;
 var ammeter_ave = 0.0;
 
-FDM = 0;
-OutPuts = props.globals.getNode("/systems/electrical/outputs",1);
-Volts = props.globals.getNode("/systems/electrical/volts",1);
-Amps = props.globals.getNode("/systems/electrical/amps",1);
-BATT = props.globals.getNode("/controls/electric/battery-switch",1);
-ALT = props.globals.getNode("/controls/electric/engine/generator",1);
-EXT  = props.globals.getNode("/controls/electric/external-power",1);
-NORM = 0.0357;
-DIMMER = props.globals.getNode("/controls/lighting/instruments-norm",1);
+var OutPuts = props.globals.getNode("/systems/electrical/outputs",1);
+var Volts = props.globals.getNode("/systems/electrical/volts",1);
+var Amps = props.globals.getNode("/systems/electrical/amps",1);
+var BATT = props.globals.getNode("/controls/electric/battery-switch",1);
+var ALT = props.globals.getNode("/controls/electric/engine/generator",1);
+var EXT  = props.globals.getNode("/controls/electric/external-power",1);
+var NORM = 0.0357;
+var DIMMER = props.globals.getNode("/controls/lighting/instruments-norm",1);
 Battery={};
 Alternator={};
 
@@ -97,9 +95,9 @@ Alternator = {
 var battery = Battery.new(12,30,12,1.0,7.0);
 var alternator1 = Alternator.new("/rotors/main/rpm",250.0,12.0,30.0);
 
-strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
+var strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
 aircraft.light.new("controls/lighting/strobe-state", [0.05, 1.50], strobe_switch);
-beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
+var beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
 aircraft.light.new("controls/lighting/beacon-state", [1.0, 1.0], beacon_switch);
 
 #####################################
@@ -118,14 +116,12 @@ setlistener("/sim/signals/fdm-initialized", func {
     props.globals.getNode("/controls/cabin/fan",1).setBoolValue(0);
     props.globals.getNode("/controls/cabin/heat",1).setBoolValue(0);
     props.globals.getNode("/controls/lighting/instrument-lights",1).setBoolValue(1);
-    FDM = 1;
     settimer(update_electrical,1);
     print("Electrical System ... OK");
     });
 
 
-update_virtual_bus = func( dt ) {
-    if(FDM != 1 ){return;}
+var update_virtual_bus = func( dt ) {
     var PWR = props.globals.getNode("systems/electrical/serviceable",1).getBoolValue();
     var engine0_state = props.globals.getNode(1"/engines/engine[0]/running").getBoolValue();
     var alternator1_volts = 0.0;
@@ -180,7 +176,7 @@ update_virtual_bus = func( dt ) {
    return load;
 }
 
-electrical_bus = func() {
+var electrical_bus = func() {
     bus_volts = arg[0];
     load = 0.0;
     var starter_switch = props.globals.getNode("/controls/engines/engine[0]/starter").getBoolValue();
@@ -251,7 +247,7 @@ electrical_bus = func() {
 # nav[0] : nav [1] : comm[0] : comm[1]
 ####
 
-avionics_bus = func() {
+var avionics_bus = func() {
     bus_volts = arg[0];
     load = 0.0;
     var INSTR = props.globals.getNode("/intrumentation");
@@ -278,13 +274,11 @@ avionics_bus = func() {
     return load;
 }
 
-update_electrical = func {
-    if(FDM == 1){
+var update_electrical = func {
         time = getprop("/sim/time/elapsed-sec");
         dt = time - last_time;
         last_time = time;
         update_virtual_bus( dt );
-    }
     settimer(update_electrical, 0);
 }
 

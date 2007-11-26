@@ -167,6 +167,36 @@ Syd Adams
 
     <yokes-visible type="bool">1</yokes-visible>
 
+    <menubar>
+        <default>
+            <menu n="10">
+                <label>R22</label>
+                <enabled type="bool">true</enabled>
+                <item>
+                    <label>Start Idling</label>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>sim/model/start-idling</property>
+                    </binding>
+                </item>
+                <item>
+                    <label>Toggle T-Bar</label>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>sim/yokes-visible</property>
+                    </binding>
+                </item>
+                <item>
+                    <label>Select Livery</label>
+                    <binding>
+                        <command>nasal</command>
+                        <script>aircraft.livery.dialog.toggle()</script>
+                    </binding>
+                </item>
+            </menu>
+        </default>
+    </menubar>
+
     </sim>
 
     <engines>
