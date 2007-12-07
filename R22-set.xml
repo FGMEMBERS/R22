@@ -173,7 +173,7 @@ Syd Adams
                 <label>R22</label>
                 <enabled type="bool">true</enabled>
                 <item>
-                    <label>Start Idling</label>
+                    <label>Autostart</label>
                     <binding>
                         <command>property-toggle</command>
                         <property>sim/model/start-idling</property>
