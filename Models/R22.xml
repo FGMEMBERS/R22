@@ -136,19 +136,30 @@
     </model>
 
     <animation>
-        <type>shader</type>
-        <shader>chrome</shader>
-        <texture>chrome2.rgb</texture>
+        <name>Glass</name>
         <object-name>glass</object-name>
         <object-name>Rdoor.glass</object-name>
         <object-name>Ldoor.glass</object-name>
     </animation>
 
     <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>chrome2.rgb</texture>
+        <object-name>Glass</object-name>
+    </animation>
+
+    <animation>
+        <type>noshadow</type>
+        <object-name>Tblades</object-name>
+        <object-name>Glass</object-name>
+        <object-name>Fblade1</object-name>
+        <object-name>Fblade2</object-name>
+    </animation>
+
+    <animation>
         <type>select</type>
-        <object-name>glass</object-name>
-        <object-name>Rdoor.glass</object-name>
-        <object-name>Ldoor.glass</object-name>
+        <object-name>Glass</object-name>
         <condition>
             <not-equals>
                 <property>sim/current-view/view-number</property>
