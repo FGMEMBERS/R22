@@ -15,10 +15,10 @@ var TotalFuelP=props.globals.getNode("/consumables/fuel/total-fuel-lbs",1);
 var NoFuel=props.globals.getNode("/engines/engine/out-of-fuel",1);
 
 var view_list =[];
-var view = props.globals.getNode("/sim").getChildren("view");
-    for(var i=0; i<size(view); i+=1){
-        append(view_list,"sim/view["~i~"]/config/default-field-of-view-deg");
-        }
+var Sview = props.globals.getNode("/sim").getChildren("view");
+foreach (v;Sview) {
+append(view_list,"sim/view["~v.getIndex()~"]/config/default-field-of-view-deg");
+}
 aircraft.data.add(view_list);
 
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
@@ -40,7 +40,6 @@ setlistener("/sim/signals/reinit", func {
 
 setlistener("/sim/current-view/view-number", func(vw) {
     var nm = vw.getValue();
-    setprop("sim/current-view/field-of-view",getprop("sim/view["~ViewNum~"]/config/default-field-of-view-deg"));
     setprop("sim/model/sound/volume", 1.0);
     if(nm == 0 or nm == 7)setprop("sim/model/sound/volume", 0.5);
 },1,0);
