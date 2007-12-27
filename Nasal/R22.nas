@@ -14,13 +14,6 @@ var TotalFuelG=props.globals.getNode("/consumables/fuel/total-fuel-gals",1);
 var TotalFuelP=props.globals.getNode("/consumables/fuel/total-fuel-lbs",1);
 var NoFuel=props.globals.getNode("/engines/engine/out-of-fuel",1);
 
-var view_list =[];
-var Sview = props.globals.getNode("/sim").getChildren("view");
-foreach (v;Sview) {
-append(view_list,"sim/view["~v.getIndex()~"]/config/default-field-of-view-deg");
-}
-aircraft.data.add(view_list);
-
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 FHmeter.stop();
 
