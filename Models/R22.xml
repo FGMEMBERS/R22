@@ -6,7 +6,7 @@
 
     <nasal>
         <load>
-            var livery_update = aircraft.livery.update("Aircraft/R22/Models/Liveries", 10);
+            var livery_update = aircraft.livery_update.new("Aircraft/R22/Models/Liveries", 10);
         </load>
 
         <unload>
