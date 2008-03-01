@@ -8,7 +8,7 @@ OBJECT poly
 name "VOR.bezel"
 data 10
 Circle.028
-texture "vor.rgb"
+texture "vor.png"
 texrep 1 1
 crease 45.000000
 numvert 64
@@ -418,7 +418,7 @@ OBJECT poly
 name "VOR.compass"
 data 10
 Circle.031
-texture "vor.rgb"
+texture "vor.png"
 texrep 1 1
 crease 30.000000
 numvert 48
@@ -673,7 +673,7 @@ OBJECT poly
 name "VOR.face_1"
 data 10
 Circle.027
-texture "vor.rgb"
+texture "vor.png"
 texrep 1 1
 crease 30.000000
 numvert 17
@@ -796,7 +796,7 @@ OBJECT poly
 name "VOR.fail"
 data 9
 Plane.041
-texture "vor.rgb"
+texture "vor.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -817,7 +817,7 @@ OBJECT poly
 name "VOR.from"
 data 9
 Plane.040
-texture "vor.rgb"
+texture "vor.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -857,7 +857,7 @@ OBJECT poly
 name "VOR.obs"
 data 8
 Cylinder
-texture "vor.rgb"
+texture "vor.png"
 texrep 1 1
 crease 30.000000
 numvert 26
@@ -1121,7 +1121,7 @@ OBJECT poly
 name "VOR.to"
 data 9
 Plane.029
-texture "vor.rgb"
+texture "vor.png"
 texrep 1 1
 crease 30.000000
 numvert 4

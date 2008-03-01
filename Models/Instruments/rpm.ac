@@ -8,7 +8,7 @@ OBJECT poly
 name "RPM.Eneedle"
 data 10
 Circle.038
-texture "rpm.rgb"
+texture "rpm.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -29,7 +29,7 @@ OBJECT poly
 name "RPM.Rneedle"
 data 10
 Circle.061
-texture "rpm.rgb"
+texture "rpm.png"
 texrep 1 1
 crease 30.000000
 numvert 4
@@ -50,7 +50,7 @@ OBJECT poly
 name "RPM.bezel"
 data 10
 Circle.030
-texture "rpm.rgb"
+texture "rpm.png"
 texrep 1 1
 crease 45.000000
 numvert 64
@@ -460,7 +460,7 @@ OBJECT poly
 name "RPM.face"
 data 10
 Circle.037
-texture "rpm.rgb"
+texture "rpm.png"
 texrep 1 1
 crease 30.000000
 numvert 17

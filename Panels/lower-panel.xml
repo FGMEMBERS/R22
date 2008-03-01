@@ -2,7 +2,7 @@
 <PropertyList>
 
  <name>Lower Panel</name>
- <background>Aircraft/R22/Panels/transparent-bg.rgb</background>
+ <background>Aircraft/R22/Panels/transparent-bg.png</background>
  <w>174</w>
  <h>200</h>
 

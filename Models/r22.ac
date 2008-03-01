@@ -15,7 +15,7 @@ OBJECT poly
 name "Alt.switch"
 data 8
 Cube.006
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 16
@@ -149,7 +149,7 @@ OBJECT poly
 name "Batt.switch"
 data 8
 Cube.005
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 16
@@ -283,7 +283,7 @@ OBJECT poly
 name "Battery"
 data 8
 Cube.003
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 42
@@ -585,7 +585,7 @@ OBJECT poly
 name "Beacon"
 data 10
 Circle.042
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 33
@@ -844,7 +844,7 @@ OBJECT poly
 name "Boom"
 data 12
 Cylinder.001
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 45.000000
 numvert 181
@@ -2130,7 +2130,7 @@ OBJECT poly
 name "Circle.022"
 data 10
 Circle.060
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 49
@@ -2549,7 +2549,7 @@ OBJECT poly
 name "Clutch.guard"
 data 12
 Cylinder.012
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 45.000000
 numvert 80
@@ -2983,7 +2983,7 @@ OBJECT poly
 name "Clutch.switch"
 data 12
 Cylinder.010
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 45.000000
 numvert 33
@@ -3242,7 +3242,7 @@ OBJECT poly
 name "Collective"
 data 12
 Cylinder.013
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 45.000000
 numvert 42
@@ -3614,7 +3614,7 @@ OBJECT poly
 name "Cube"
 data 8
 Cube.001
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 45.000000
 numvert 176
@@ -4842,7 +4842,7 @@ OBJECT poly
 name "Dimmer"
 data 12
 Cylinder.009
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 25
@@ -5033,7 +5033,7 @@ OBJECT poly
 name "Engine"
 data 4
 Cube
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 1564
@@ -16609,7 +16609,7 @@ OBJECT poly
 name "Fblade1"
 data 10
 Circle.078
-texture "alpha.rgb"
+texture "alpha.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -16641,7 +16641,7 @@ OBJECT poly
 name "Fblade2"
 data 10
 Circle.014
-texture "alpha.rgb"
+texture "alpha.png"
 texrep 1 1
 crease 30.000000
 numvert 8
@@ -16740,7 +16740,7 @@ OBJECT poly
 name "Fuselage_1"
 data 10
 Sphere.002
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 527
@@ -20459,7 +20459,7 @@ OBJECT poly
 name "Hinge1"
 data 6
 Circle
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 69
@@ -21006,7 +21006,7 @@ OBJECT poly
 name "Hinge2"
 data 10
 Circle.011
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 69
@@ -21553,7 +21553,7 @@ OBJECT poly
 name "Hub"
 data 8
 Tube.002
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 56
@@ -22017,7 +22017,7 @@ OBJECT poly
 name "Key"
 data 12
 Cylinder.011
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 26
@@ -22281,7 +22281,7 @@ OBJECT poly
 name "L.door"
 data 6
 Sphere
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 90
@@ -23091,7 +23091,7 @@ OBJECT poly
 name "LHpedal"
 data 12
 Cylinder.007
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 72
@@ -23729,7 +23729,7 @@ OBJECT poly
 name "Labels"
 data 9
 Plane.068
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 52
@@ -23999,7 +23999,7 @@ OBJECT poly
 name "Mblade1"
 data 10
 Circle.009
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 12
@@ -24101,7 +24101,7 @@ OBJECT poly
 name "Mblade2"
 data 10
 Circle.079
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 12
@@ -24203,7 +24203,7 @@ OBJECT poly
 name "Muffler"
 data 10
 Circle.040
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 45.000000
 numvert 234
@@ -25937,7 +25937,7 @@ OBJECT poly
 name "Nav.green"
 data 10
 Sphere.011
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 21
@@ -26076,7 +26076,7 @@ OBJECT poly
 name "Nav.red"
 data 10
 Sphere.010
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 21
@@ -26215,7 +26215,7 @@ OBJECT poly
 name "Nav.switch"
 data 8
 Cube.008
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 16
@@ -26349,7 +26349,7 @@ OBJECT poly
 name "Panel"
 data 9
 Plane.009
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 362
@@ -28929,7 +28929,7 @@ OBJECT poly
 name "Plink1"
 data 8
 Tube.004
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 16
@@ -29011,7 +29011,7 @@ OBJECT poly
 name "Plink2"
 data 8
 Tube.003
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 16
@@ -29093,7 +29093,7 @@ OBJECT poly
 name "R.door"
 data 10
 Sphere.017
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 91
@@ -29904,7 +29904,7 @@ OBJECT poly
 name "RHpedal"
 data 12
 Cylinder.008
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 72
@@ -30659,7 +30659,7 @@ OBJECT poly
 name "Shaft"
 data 8
 Tube.001
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 144
@@ -31597,7 +31597,7 @@ OBJECT poly
 name "Skids"
 data 4
 Tube
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 100
@@ -32251,7 +32251,7 @@ OBJECT poly
 name "Strobe"
 data 12
 Cylinder.014
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 45.000000
 numvert 37
@@ -32538,7 +32538,7 @@ OBJECT poly
 name "Strobe.switch"
 data 8
 Cube.007
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 16
@@ -32672,7 +32672,7 @@ OBJECT poly
 name "Tailshaft"
 data 8
 Tube.006
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 33
@@ -32931,7 +32931,7 @@ OBJECT poly
 name "Tblades"
 data 12
 Cylinder.004
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 20
@@ -33113,7 +33113,7 @@ OBJECT poly
 name "Tdisc"
 data 12
 Cylinder.005
-texture "alpha.rgb"
+texture "alpha.png"
 texrep 1 1
 crease 30.000000
 numvert 34
@@ -33349,7 +33349,7 @@ OBJECT poly
 name "Yoke"
 data 12
 Cylinder.006
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 45.000000
 numvert 62
@@ -33933,7 +33933,7 @@ OBJECT poly
 name "Yokeshaft"
 data 8
 Tube.008
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 45.000000
 numvert 42
@@ -34249,7 +34249,7 @@ OBJECT poly
 name "alt.annun"
 data 10
 Sphere.007
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 45.000000
 numvert 25
@@ -36195,7 +36195,7 @@ OBJECT poly
 name "cOCKPIT"
 data 10
 Sphere.018
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 30.000000
 numvert 268
@@ -38168,7 +38168,7 @@ OBJECT poly
 name "fuel.annun"
 data 10
 Sphere.006
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 45.000000
 numvert 33
@@ -39291,7 +39291,7 @@ OBJECT poly
 name "rpm.annun"
 data 10
 Sphere.020
-texture "paint1.rgb"
+texture "paint1.png"
 texrep 1 1
 crease 45.000000
 numvert 33

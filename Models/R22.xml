@@ -4,15 +4,25 @@
 
     <path>r22.ac</path>
 
+    <nasal>
+        <load>
+            var livery_update = aircraft.livery.update("Aircraft/R22/Models/Liveries", 10);
+        </load>
+
+        <unload>
+            livery_update.stop();
+        </unload>
+    </nasal>
+
     <animation>
       <type>material</type>
       <object-name>Boom</object-name>
       <object-name>Fuselage</object-name>
       <object-name>L.door</object-name>
       <object-name>R.door</object-name>
-      <property-base>/sim/model/livery</property-base>
+      <property-base>sim/model/livery</property-base>
       <texture-prop>texture</texture-prop>
-      <texture>paint1.rgb</texture>
+      <texture>paint1.png</texture>
     </animation>
 
     <panel>
@@ -145,7 +155,7 @@
     <animation>
         <type>shader</type>
         <shader>chrome</shader>
-        <texture>chrome2.rgb</texture>
+        <texture>chrome2.png</texture>
         <object-name>Glass</object-name>
     </animation>
 

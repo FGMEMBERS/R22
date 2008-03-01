@@ -15,7 +15,7 @@ Syd Adams
         <aero>R22BetaII</aero>
         <fuel-fraction>0.5</fuel-fraction>
         <startup>
-            <splash-texture>Aircraft/R22/splash.rgb</splash-texture>
+            <splash-texture>Aircraft/R22/splash.png</splash-texture>
         </startup>
 
         <tutorials>
@@ -29,6 +29,10 @@ Syd Adams
                 <volume type="double">0</volume>
                 <click type="bool">0</click>
             </sound>
+
+            <livery>
+                <file type="string">Red</file>
+            </livery>
         </model>
 
         <hud>

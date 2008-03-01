@@ -8,7 +8,7 @@ OBJECT poly
 name "VSI.bezel"
 data 10
 Circle.010
-texture "vsi.rgb"
+texture "vsi.png"
 texrep 1 1
 crease 45.000000
 numvert 64
@@ -418,7 +418,7 @@ OBJECT poly
 name "VSI.face"
 data 10
 Circle.013
-texture "vsi.rgb"
+texture "vsi.png"
 texrep 1 1
 crease 30.000000
 numvert 17
@@ -541,7 +541,7 @@ OBJECT poly
 name "VSI.needle"
 data 10
 Circle.015
-texture "vsi.rgb"
+texture "vsi.png"
 texrep 1 1
 crease 30.000000
 numvert 12

@@ -8,7 +8,7 @@ OBJECT poly
 name "ALT.bezel"
 data 10
 Circle.021
-texture "alt.rgb"
+texture "alt.png"
 texrep 1 1
 crease 45.000000
 numvert 64
@@ -418,7 +418,7 @@ OBJECT poly
 name "ALT.face"
 data 10
 Circle.022
-texture "alt.rgb"
+texture "alt.png"
 texrep 1 1
 crease 30.000000
 numvert 17
@@ -541,7 +541,7 @@ OBJECT poly
 name "ALTneedle.1"
 data 10
 Circle.023
-texture "alt.rgb"
+texture "alt.png"
 texrep 1 1
 crease 30.000000
 numvert 20
@@ -660,7 +660,7 @@ OBJECT poly
 name "ALTneedle.2"
 data 10
 Circle.024
-texture "alt.rgb"
+texture "alt.png"
 texrep 1 1
 crease 30.000000
 numvert 20
@@ -779,7 +779,7 @@ OBJECT poly
 name "ALTneedle.3"
 data 10
 Circle.025
-texture "alt.rgb"
+texture "alt.png"
 texrep 1 1
 crease 30.000000
 numvert 25

@@ -8,7 +8,7 @@ OBJECT poly
 name "PIA-700"
 data 10
 Circle.045
-texture "compass.rgb"
+texture "compass.png"
 texrep 1 1
 crease 30.000000
 numvert 203
@@ -1259,7 +1259,7 @@ OBJECT poly
 name "PIA.card"
 data 10
 Circle.044
-texture "compass.rgb"
+texture "compass.png"
 texrep 1 1
 crease 30.000000
 numvert 17
@@ -1382,7 +1382,7 @@ OBJECT poly
 name "PIA.lubber"
 data 9
 Plane.054
-texture "compass.rgb"
+texture "compass.png"
 texrep 1 1
 crease 30.000000
 numvert 53
