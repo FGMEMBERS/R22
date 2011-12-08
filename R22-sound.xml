@@ -6,19 +6,14 @@
         <name>crank</name>
         <mode>looped</mode>
         <path>Sounds/cranking.wav</path>
+        <property>controls/engines/engine/starter</property>
         <max-dist>5</max-dist>
         <reference-dist>2</reference-dist>
-        <condition>
-            <property>engines/engine/cranking</property>
-            <not>
-                <property>/engines/engine/running</property>
-            </not>
-        </condition>
         <volume>
-            <property>/sim/model/sound/volume</property>
+            <property>/sim/model/sound/volume1</property>
         </volume>
         <pitch>
-        <property>/engines/engine/cranking</property>
+        <property>/engines/engine/starter</property>
         <factor>0.2</factor>
         </pitch>
             <position>
@@ -31,14 +26,14 @@
     <crank>
         <name>cough</name>
         <path>Sounds/coughing.wav</path>
-        <property>/engines/engine/running</property>
+        <property>/engines/engine/on</property>
         <max-dist>20</max-dist>
         <reference-dist>10</reference-dist>
         <volume>
-            <property>/sim/model/sound/volume</property>
+            <property>/sim/model/sound/volume1</property>
         </volume>
         <pitch>
-            <property>/engines/engine/running</property>
+            <property>/engines/engine/on</property>
             <factor>1.0</factor>
         </pitch>
         <position>
@@ -61,7 +56,7 @@
              </greater-than>
         </condition>
         <volume>
-            <property>/sim/model/sound/volume</property>
+            <property>/sim/model/sound/volume1</property>
         </volume>
         <pitch>
             <property>/engines/engine/rpm</property>
@@ -90,7 +85,7 @@
                 </greater-than>
             </condition>
             <volume>
-                <property>/sim/model/sound/volume</property>
+                <property>/sim/model/sound/volume1</property>
             </volume>
             <volume>
                 <property>rotors/main/rpm</property>

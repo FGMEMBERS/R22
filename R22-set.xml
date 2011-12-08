@@ -43,10 +43,13 @@ Syd Adams
             <electrical>
                 <path></path>
             </electrical>
+            <autopilot>
+            <path>Aircraft/R22/Systems/auto-assist.xml</path>
+        </autopilot>
         </systems>
 
         <instrumentation>
-            <path>Aircraft/R22/instrumentation.xml</path>
+            <path>Aircraft/R22/Systems/instrumentation.xml</path>
         </instrumentation>
 
         <sound>
@@ -180,7 +183,7 @@ Syd Adams
                     <label>Autostart</label>
                     <binding>
                         <command>property-toggle</command>
-                        <property>sim/model/start-idling</property>
+                        <property>sim/model/autostart</property>
                     </binding>
                 </item>
                 <item>
@@ -198,13 +201,36 @@ Syd Adams
                     </binding>
                 </item>
             </menu>
+            <menu n="9">
+                <item>
+                    <label>auto-rudder(no pedals)</label>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>controls/flight/auto-pedals</property>
+                    </binding>
+                </item>
+            </menu>
         </default>
     </menubar>
+
+    <rendering>
+        <shaders>
+            <aircraft>
+                <reflection>
+                    <quality-level type="int" userarchive="y">1</quality-level>
+                </reflection>
+                <lightmap>
+                    <quality-level type="int" userarchive="y">1</quality-level>
+                </lightmap>
+            </aircraft>
+        </shaders>
+    </rendering>
 
     </sim>
 
     <engines>
         <engine>
+            <cranking type="bool">0</cranking>
             <rpm type="double">0</rpm>
             <running type="bool">false</running>
             <clutch-engaged type="bool">false</clutch-engaged>
@@ -222,6 +248,7 @@ Syd Adams
         <flight>
             <aileron-trim>0</aileron-trim>
             <elevator-trim>0</elevator-trim>
+            <auto-pedals>0</auto-pedals><!-- when no pedal controller available -->
         </flight>
         <gear>
             <brake-parking>1</brake-parking>

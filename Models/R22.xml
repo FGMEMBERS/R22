@@ -25,45 +25,13 @@
       <texture>paint1.png</texture>
     </animation>
 
-    <panel>
-        <name>Center Panel</name>
-        <path>Aircraft/R22/Panels/center-panel.xml</path>
-        <bottom-left>
-            <x-m>-1.121</x-m>
-            <y-m>-0.087</y-m>
-            <z-m>-1.683</z-m>
-        </bottom-left>
-        <bottom-right>
-            <x-m>-1.121</x-m>
-            <y-m>0.087</y-m>
-            <z-m>-1.683</z-m>
-        </bottom-right>
-        <top-left>
-            <x-m>-1.328</x-m>
-            <y-m>-0.087</y-m>
-            <z-m>-1.587</z-m>
-        </top-left>			
-    </panel>
-
-    <panel>
-        <name>Lower Panel</name>
-        <path>Aircraft/R22/Panels/lower-panel.xml</path>
-        <bottom-left>
-            <x-m>-1.033</x-m>
-            <y-m>-0.087</y-m>
-            <z-m>-1.864</z-m>
-        </bottom-left>
-        <bottom-right>
-            <x-m>-1.033</x-m>
-            <y-m>0.087</y-m>
-            <z-m>-1.864</z-m>
-        </bottom-right>
-        <top-left>
-            <x-m>-1.120</x-m>
-            <y-m>-0.087</y-m>
-            <z-m>-1.684</z-m>
-        </top-left>
-    </panel>
+    <effect>
+      <inherits-from>Aircraft/R22/Models/Effects/skin-reflect</inherits-from>
+      <object-name>Ldoor</object-name>
+      <object-name>Rdoor</object-name>
+      <object-name>Fuselage</object-name>
+      <object-name>Boom</object-name>
+    </effect>
 
     <model>
         <path>Aircraft/R22/Models/Instruments/alt.xml</path>
@@ -160,21 +128,12 @@
     </animation>
 
     <animation>
-        <type>noshadow</type>
-        <object-name>Tblades</object-name>
-        <object-name>Glass</object-name>
-        <object-name>Fblade1</object-name>
-        <object-name>Fblade2</object-name>
-    </animation>
-
-    <animation>
         <type>select</type>
         <object-name>Glass</object-name>
         <condition>
-            <not-equals>
-                <property>sim/current-view/view-number</property>
-                <value>0</value>
-            </not-equals>
+            <not>
+                <property>sim/current-view/internal</property>
+            </not>
         </condition>
     </animation>
 
@@ -278,31 +237,17 @@
         </axis>
     </animation>
 
-    <animation>
-        <type>rotate</type>
-        <object-name>Hub</object-name>
-        <object-name>Shaft</object-name>
-        <property>rotors/main/blade/position-deg</property>
-        <center>
-            <x-m>0</x-m>
-            <y-m>0</y-m>
-            <z-m>0</z-m>
-        </center>
-        <axis>
-            <x>0.0</x>
-            <y>0.0</y>
-            <z>1.0</z>
-        </axis>
-    </animation>
 
 <!-- Blade 1-->
     <animation>
         <type>rotate</type>
+        <object-name>Hub</object-name>
+        <object-name>Shaft</object-name>
         <object-name>Mblade1</object-name>
+        <object-name>Fblade1</object-name>
         <object-name>Hinge1</object-name>
         <object-name>Plink1</object-name>
         <property>rotors/main/blade/position-deg</property>
-        <offset-deg>180</offset-deg>
         <center>
             <x-m>0</x-m>
             <y-m>0</y-m>
@@ -318,6 +263,7 @@
     <animation>
         <type>rotate</type>
         <object-name>Mblade1</object-name>
+        <object-name>Fblade1</object-name>
         <property>rotors/main/blade/incidence-deg</property>
         <center>
             <x-m>0</x-m>
@@ -325,7 +271,7 @@
             <z-m>0</z-m>
         </center>
         <axis>
-            <x>-1.0</x>
+            <x>1.0</x>
             <y>0.0</y>
             <z>0.0</z>
         </axis>
@@ -334,21 +280,6 @@
     <animation>
         <type>rotate</type>
         <object-name>Mblade1</object-name>
-        <property>rotors/main/blade/flap-deg</property>
-        <center>
-            <x-m>-0</x-m>
-            <y-m>0</y-m>
-            <z-m>0.0</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>1.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
         <object-name>Fblade1</object-name>
         <property>rotors/main/blade/flap-deg</property>
         <center>
@@ -358,36 +289,21 @@
         </center>
         <axis>
             <x>0</x>
-            <y>1.0</y>
+            <y>-1.0</y>
             <z>0.0</z>
         </axis>
     </animation>
 
-    <animation>
-        <type>rotate</type>
-        <object-name>Fblade1</object-name>
-        <property>rotors/main/blade/position-deg</property>
-        <offset-deg>180</offset-deg>
-        <center>
-            <x-m>0</x-m>
-            <y-m>0</y-m>
-            <z-m>0</z-m>
-        </center>
-        <axis>
-            <x>0.0</x>
-            <y>0.0</y>
-            <z>1.0</z>
-        </axis>
-    </animation>
+
 
 <!-- Blade 2-->
     <animation>
         <type>rotate</type>
         <object-name>Mblade2</object-name>
+        <object-name>Fblade2</object-name>
         <object-name>Plink2</object-name>
         <object-name>Hinge2</object-name>
         <property>rotors/main/blade[1]/position-deg</property>
-        <offset-deg>180</offset-deg>
         <center>
             <x-m>0</x-m>
             <y-m>0</y-m>
@@ -403,6 +319,7 @@
     <animation>
         <type>rotate</type>
         <object-name>Mblade2</object-name>
+        <object-name>Fblade2</object-name>
         <property>rotors/main/blade[1]/incidence-deg</property>
         <center>
             <x-m>0</x-m>
@@ -410,57 +327,26 @@
             <z-m>0</z-m>
         </center>
         <axis>
-            <x>-1.0</x>
+            <x>1.0</x>
             <y>0.0</y>
             <z>0.0</z>
         </axis>
     </animation>
+
 
     <animation>
         <type>rotate</type>
         <object-name>Mblade2</object-name>
-        <property>rotors/main/blade[1]/flap-deg</property>
-        <center>
-            <x-m>-0</x-m>
-            <y-m>0</y-m>
-            <z-m>0.0</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>1.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
         <object-name>Fblade2</object-name>
-        <property>rotors/main/blade[1]/position-deg</property>
-        <offset-deg>180</offset-deg>
+        <property>rotors/main/blade[1]/flap-deg</property>
         <center>
             <x-m>0</x-m>
             <y-m>0</y-m>
-            <z-m>0</z-m>
-        </center>
-        <axis>
-            <x>0.0</x>
-            <y>0.0</y>
-            <z>1.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>Fblade2</object-name>
-        <property>rotors/main/blade[1]/flap-deg</property>
-        <center>
-            <x-m>-0</x-m>
-            <y-m>0</y-m>
             <z-m>0.0</z-m>
         </center>
         <axis>
             <x>0</x>
-            <y>1.0</y>
+            <y>-1.0</y>
             <z>0.0</z>
         </axis>
     </animation>
@@ -736,6 +622,191 @@
             <y>-1</y>
             <z>0</z>
         </axis>
+    </animation>
+
+<!-- hotspots-->
+
+    <animation>
+        <type>pick</type>
+        <object-name>key.cylinder</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <condition>
+                    <less-than>
+                        <property>controls/electric/key</property>
+                        <value>3</value>
+                    </less-than>
+                </condition>
+                <command>property-adjust</command>
+                <property>controls/electric/key</property>
+                <step>1</step>
+                <min>0</min>
+                <max>3</max>
+                <wrap>0</wrap>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine/magnetos</property>
+                <property>controls/electric/key</property>
+         </binding>
+        <binding>
+            <condition>
+                <equals>
+                    <property>controls/electric/key</property>
+                    <value>3</value>
+                </equals>
+            </condition>
+            <command>property-assign</command>
+            <property>controls/engines/engine/starter</property>
+             <value>1</value>
+        </binding>
+        <mod-up>
+            <binding>
+            <condition>
+                <equals>
+                    <property>controls/electric/key</property>
+                    <value>3</value>
+                </equals>
+            </condition>
+                <command>property-assign</command>
+                <property>controls/engines/engine/starter</property>
+                <value>0</value>
+            </binding>
+        </mod-up>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/model/sound/click</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>key.cylinder</object-name>
+        <action>
+            <button>1</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/electric/key</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>3</max>
+                <wrap>0</wrap>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine/magnetos</property>
+                <property>controls/electric/key</property>
+         </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>sim/model/sound/click</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Batt.switch</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electric/battery-switch</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/model/sound/click</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Alt.switch</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electric/engine/generator</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/model/sound/click</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Clutch.guard</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engines/engine/clutchguard</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/model/sound/click</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Clutch.switch</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <condition>
+                    <property>controls/engines/engine/clutchguard</property>
+                </condition>
+                <command>property-toggle</command>
+                <property>controls/engines/engine/clutch</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/model/sound/click</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Strobe.switch</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/strobe</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/beacon</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/model/sound/click</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Nav.switch</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/nav-lights</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/model/sound/click</property>
+            </binding>
+        </action>
     </animation>
 
 </PropertyList>
