@@ -52,6 +52,9 @@ setlistener("/sim/model/autostart", func(idle){
     }
 },0,0);
 
+setlistener("controls/engines/engine/magnetos", func(mg){
+    if(mg.getValue() == 0)engine_on.setValue(0);
+},1,0);
 
 var Startup = func{
 setprop("controls/electric/engine[0]/generator",1);
@@ -59,7 +62,8 @@ setprop("controls/electric/battery-switch",1);
 setprop("controls/lighting/nav-lights",1);
 setprop("controls/lighting/beacon",1);
 setprop("controls/lighting/strobe",1);
-setprop("controls/engines/engine[0]/magnetos",3);
+setprop("controls/electric/key",3);
+setprop("controls/engines/engine/magnetos",3);
 engine_on.setValue(1);
 setprop("controls/engines/engine[0]/clutch",1);
 }
@@ -70,8 +74,9 @@ setprop("controls/electric/battery-switch",0);
 setprop("controls/lighting/instrument-lights",0);
 setprop("controls/lighting/nav-lights",0);
 setprop("controls/lighting/beacon",0);
-setprop("controls/engines/engine[0]/magnetos",0);
-setprop("controls/engines/engine[0]/clutch",1);
+setprop("controls/electric/key",0);
+setprop("controls/engines/engine/magnetos",0);
+setprop("controls/engines/engine[0]/clutch",0);
 engine_on.setValue(0);
 }
 
@@ -107,19 +112,17 @@ if(!running){
         start_timer=0;
         engine_on.setValue(running);
     }
+    setprop("/engines/engine/clutch-engaged",running);
 }
 
 if(running){
     if(getprop("/controls/engines/engine/clutch")){
-        setprop("/engines/engine/clutch-engaged",1);
+        setprop("/engines/engine/clutch-engaged",running);
         }else{
             setprop("/engines/engine/clutch-engaged",0);
-            }
-
-    interpolate("/engines/engine/rpm", 2700 * throttle, 0.5);
-    }else{
-        interpolate("/engines/engine/rpm", 0, 0.2);
         }
+    }
+
 settimer(update_systems,0);
 }
 

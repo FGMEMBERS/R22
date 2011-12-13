@@ -41,32 +41,32 @@ teetering hinge ...
 
 
     <rotor name="main" x="0.0" y="0.0" z="0.0" nx="0" ny="0" nz="1.0" fx="1" fy="0" fz="0" ccw="1"
-    maxcollective="20" mincollective="0.0"
-    mincyclicele="-10" maxcyclicele="9"
-    mincyclicail="-9" maxcyclicail="10"
+    maxcollective="15" mincollective="0.0"
+    mincyclicele="-9" maxcyclicele="11"
+    mincyclicail="-9.5" maxcyclicail="6.0"
     diameter="7.67" numblades="2" weightperblade="26" relbladecenter="0.51"
-    dynamic="0.85" rpm="530" rellenflaphinge="0.02" delta3="0"
+    dynamic="0.85" rpm="530" rellenflaphinge="0.02" delta3="0.3"
     delta=".25"
     pitch-a="10"
     pitch-b="15"
     flapmin="-5"
-    flapmax="18"
+    flapmax="15"
     flap0="-5"
     phi0="1"
     flap0factor="0"
     notorque="0"
-    dragfactor="0.20"
-    translift-ve="10"
+    dragfactor="0.30"
+    translift-ve="20"
     translift-maxfactor="1.2"
-    ground-effect-constant="0.2"
-    twist="0"
+    ground-effect-constant="0.3"
+    twist="-7"
     taper="1"
     chord="0.18288"
     number-of-segments="8"
     number-of-parts="8"
-    rel-len-where-incidence-is-measured="0.7"
+    rel-len-where-incidence-is-measured="0.75"
     rel-len-blade-start="0.002"
-    airfoil-lift-coefficient="5.5"
+    airfoil-lift-coefficient="5.0"
     airfoil-drag-coefficient0="0.0025"
     airfoil-drag-coefficient1="0.15"
     incidence-stall-zero-speed="19.25"
@@ -74,14 +74,14 @@ teetering hinge ...
     lift-factor-stall="0.18"
     stall-change-over="5.5"
     drag-factor-stall="6.0"
-    cyclic-factor="0.9"
+    cyclic-factor="0.8"
     rotor-correction-factor="0.95"
-    downwashfactor="0.15"
+    downwashfactor="0.25"
     >
     <control-input axis="/controls/flight/aileron-trim" control="CYCLICAIL" split="true"/>
     <control-input axis="/controls/flight/aileron" control="CYCLICAIL"
         src0="-1.0" src1="1.0"
-        dst0="-0.30" dst1="0.20"/>
+        dst0="-1" dst1="1"/>
     <control-input axis="/controls/flight/elevator-trim" control="CYCLICELE"/>
     <control-input axis="/controls/flight/elevator" control="CYCLICELE"
         src0="-1.0" src1="1.0"
@@ -93,9 +93,9 @@ teetering hinge ...
 
 
 <rotor name="tail" x="-4.41" y="-0.2" z="-0.94" nx="0.0" ny="-1" nz="0.0" fx="1" fy="0" fz="0" ccw="1"
-  maxcollective="38" mincollective="-32"
+  maxcollective="28" mincollective="-24"
   diameter="1.0668" numblades="2" weightperblade="2" relbladecenter="0.55"
-  dynamic="0.90" rpm="3356" rellenflaphinge="0.01" delta3="0" translift="0" delta="0.15"
+  dynamic="0.90" rpm="3356" rellenflaphinge="0.01" delta3="1" translift="0" delta="0.25"
   pitch-a="10"
   pitch-b="15"
   airfoil-lift-coefficient="4.0"
@@ -105,7 +105,7 @@ teetering hinge ...
   incidence-stall-half-sonic-speed="10.5"
   lift-factor-stall="0.26"
   stall-change-over="7"
-  drag-factor-stall="9.0"
+  drag-factor-stall="6.0"
   notorque="0"
   taper="1"
   chord="0.116"
@@ -128,8 +128,8 @@ teetering hinge ...
 <rotorgear
   max-power-engine="125"
   max-power-rotor-brake="10"
-  rotorgear-friction="0.1"
-  engine-prop-factor="0.005"
+  rotorgear-friction="0.2"
+  engine-prop-factor="0.02"
   engine-accel-limit="5"
 
   yasimdragfactor="20"
@@ -192,7 +192,7 @@ spring="0.1" sfric="1" dfric="1"/>
 <weight x="0.5" y="-0.3" z="-1.5" mass-prop="/sim/weight[1]/weight-lb"/><!-- right seat-->
 
 
-<ballast x="0.0" y="0.0" z="-2.0" mass="250"/>
+<ballast x="0.02" y="0.0" z="-2.0" mass="200"/>
 
 
 

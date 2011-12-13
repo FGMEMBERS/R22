@@ -48,10 +48,6 @@ This file selects the instrumentation modules that should be available.
         <suction>/systems/vacuum/suction-inhg</suction>
     </heading-indicator>
 
-    <heading-indicator-dg>
-        <name>heading-indicator-dg</name>
-        <number>0</number>
-    </heading-indicator-dg>
 
     <magnetic-compass>
         <name>magnetic-compass</name>
@@ -61,11 +57,6 @@ This file selects the instrumentation modules that should be available.
     <nav-radio>
         <name>nav</name>
         <number>0</number>
-    </nav-radio>
-
-    <nav-radio>
-        <name>nav</name>
-        <number>1</number>
     </nav-radio>
 
     <slip-skid-ball>
@@ -84,31 +75,10 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </turn-indicator>
 
-    <inst-vertical-speed-indicator>
-        <name>inst-vertical-speed-indicator</name>
+    <vertical-speed-indicator>
+        <name>vertical-speed-indicator</name>
         <number>0</number>
-        <static-pressure>systems/static/pressure-inhg</static-pressure>
-        <serviceable type="bool">true</serviceable>
-    </inst-vertical-speed-indicator>
-
-    <mk-viii>
-        <name>mk-viii</name>
-        <number>0</number>
-    </mk-viii>
-
-    <radar>
-        <name>radar</name>
-        <number>0</number>
-    </radar>
-
-    <tacan>
-        <name>tacan</name>
-        <number>0</number>
-    </tacan>
-
-    <master-reference-gyro>
-        <name>master-reference-gyro</name>
-        <number>0</number>
-    </master-reference-gyro>
+        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+    </vertical-speed-indicator>
 
 </PropertyList>

@@ -18,8 +18,8 @@
       <type>material</type>
       <object-name>Boom</object-name>
       <object-name>Fuselage</object-name>
-      <object-name>L.door</object-name>
-      <object-name>R.door</object-name>
+      <object-name>Ldoor</object-name>
+      <object-name>Rdoor</object-name>
       <property-base>sim/model/livery</property-base>
       <texture-prop>texture</texture-prop>
       <texture>paint1.png</texture>
@@ -34,102 +34,42 @@
     </effect>
 
     <model>
-        <path>Aircraft/R22/Models/Instruments/alt.xml</path>
+        <path>Aircraft/R22/Models/interior.xml</path>
         <offsets>
-            <x-m>-1.331</x-m>
-            <y-m>-0.078</y-m>
-            <z-m>-1.539</z-m>
-            <pitch-deg>-5.0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <path>Aircraft/R22/Models/Instruments/vor.xml</path>
-        <offsets>
-            <x-m>-1.331</x-m>
-            <y-m>0.0</y-m>
-            <z-m>-1.539</z-m>
-            <pitch-deg>-5.0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <path>Aircraft/R22/Models/Instruments/plug.xml</path>
-        <offsets>
-            <x-m>-1.331</x-m>
-            <y-m>0.078</y-m>
-            <z-m>-1.539</z-m>
-            <pitch-deg>-5.0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <path>Aircraft/R22/Models/Instruments/vsi.xml</path>
-        <offsets>
-            <x-m>-1.338</x-m>
-            <y-m>-0.116</y-m>
-            <z-m>-1.457</z-m>
-            <pitch-deg>-5.0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <path>Aircraft/R22/Models/Instruments/plug.xml</path>
-        <offsets>
-            <x-m>-1.338</x-m>
-            <y-m>-0.039</y-m>
-            <z-m>-1.457</z-m>
-            <pitch-deg>-5.0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <path>Aircraft/R22/Models/Instruments/asi.xml</path>
-        <offsets>
-            <x-m>-1.338</x-m>
-            <y-m>0.039</y-m>
-            <z-m>-1.457</z-m>
-            <pitch-deg>-5.0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <path>Aircraft/R22/Models/Instruments/rpm.xml</path>
-        <offsets>
-            <x-m>-1.338</x-m>
-            <y-m>0.116</y-m>
-            <z-m>-1.457</z-m>
-            <pitch-deg>-5.0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <path>Aircraft/R22/Models/Instruments/compass.xml</path>
-        <offsets>
-            <x-m>-1.102</x-m>
+            <x-m>0</x-m>
             <y-m>0</y-m>
-            <z-m>-1.099</z-m>
-            <pitch-deg>0.0</pitch-deg>
+            <z-m>0</z-m>
+            <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
 
     <animation>
-        <name>Glass</name>
-        <object-name>glass</object-name>
-        <object-name>Rdoor.glass</object-name>
+        <type>select</type>
+        <object-name>Ldoor</object-name>
+        <object-name>Ldoor.panel</object-name>
+        <object-name>Rdoor</object-name>
+        <object-name>Rdoor.panel</object-name>
         <object-name>Ldoor.glass</object-name>
+        <object-name>Rdoor.glass</object-name>
+        <condition>
+                <property>sim/model/doors-installed</property>
+        </condition>
     </animation>
 
     <animation>
         <type>shader</type>
         <shader>chrome</shader>
         <texture>chrome2.png</texture>
-        <object-name>Glass</object-name>
+        <object-name>glass</object-name>
+        <object-name>Rdoor.glass</object-name>
+        <object-name>Ldoor.glass</object-name>
     </animation>
 
     <animation>
         <type>select</type>
-        <object-name>Glass</object-name>
+        <object-name>glass</object-name>
+        <object-name>Rdoor.glass</object-name>
+        <object-name>Ldoor.glass</object-name>
         <condition>
             <not>
                 <property>sim/current-view/internal</property>
@@ -139,26 +79,10 @@
 
     <animation>
         <type>select</type>
-        <object-name>Yoke</object-name>
-        <object-name>Yokeshaft</object-name>
-        <condition>
-                <property>sim/yokes-visible</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
         <object-name>Beacon</object-name>
-        <condition>
-                <property>controls/lighting/beacon-state/state</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
         <object-name>Strobe</object-name>
         <condition>
-                <property>controls/lighting/strobe-state/state</property>
+                <property>systems/electrical/outputs/norm/strobe</property>
         </condition>
     </animation>
 
@@ -333,7 +257,6 @@
         </axis>
     </animation>
 
-
     <animation>
         <type>rotate</type>
         <object-name>Mblade2</object-name>
@@ -351,462 +274,47 @@
         </axis>
     </animation>
 
-<!-- annunciators-->
+<!-- cockpit material test-->
 
-    <animation>
-        <type>select</type>
-        <object-name>rpm.annun</object-name>
-        <condition>
-            <and>
-                <property>instrumentation/alerts/rpm</property>
-                <less-than>
-                    <property>rotors/main/rpm</property>
-                    <value>503</value>
-                </less-than>
-            </and>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>fuel.annun</object-name>
-        <condition>
-                <less-than>
-                    <property>consumables/fuel/tank/level-gal_us</property>
-                    <value>1.0</value>
-                </less-than>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>alt.annun</object-name>
-        <condition>
-                <and>
-                    <property>engines/engine/running</property>
-                    <not>
-                        <property>controls/electric/engine/generator</property>
-                    </not>
-                </and>
-        </condition>
-    </animation>
-
-<!-- Controls -->
-
-    <animation>
-        <type>rotate</type>
-        <object-name>Yokeshaft</object-name>
-        <object-name>Yoke</object-name>
-        <property>controls/flight/elevator</property>
-        <factor>15</factor>
-        <center>
-            <x-m>-0.954</x-m>
-            <y-m>0</y-m>
-            <z-m>-1.846</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>Yoke</object-name>
-        <object-name>Yokeshaft</object-name>
-        <property>controls/flight/aileron</property>
-        <factor>15</factor>
-        <center>
-            <x-m>-0.954</x-m>
-            <y-m>0</y-m>
-            <z-m>-1.846</z-m>
-        </center>
-        <axis>
-            <x>-1</x>
-            <y>0.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>RHpedal</object-name>
-        <property>controls/flight/rudder</property>
-        <factor>20</factor>
-        <center>
-            <x-m>-1.333</x-m>
-            <y-m>0</y-m>
-            <z-m>-1.982</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>LHpedal</object-name>
-        <property>controls/flight/rudder</property>
-        <factor>-20</factor>
-        <center>
-            <x-m>-1.333</x-m>
-            <y-m>0</y-m>
-            <z-m>-1.982</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
+    <!--animation>
+        <name>nosun</name>
+        <type>material</type>
+        <object-name>Ldoor.panel</object-name>
+        <object-name>Rdoor.panel</object-name>
+        <object-name>cabin</object-name>
+        <object-name>seats</object-name>
         <object-name>Collective</object-name>
-        <property>controls/engines/engine/throttle</property>
-        <factor>30</factor>
-        <center>
-            <x-m>-0.469</x-m>
-            <y-m>0</y-m>
-            <z-m>-1.969</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
-
-<!-- panel switches-->
-
-    <animation>
-        <type>rotate</type>
-        <object-name>Key</object-name>
-        <property>controls/electric/key</property>
-        <factor>-20</factor>
-        <center>
-            <x-m>-1.157</x-m>
-            <y-m>0.052</y-m>
-            <z-m>-1.665</z-m>
-        </center>
-        <axis>
-            <x>0.423</x>
-            <y>0</y>
-            <z>0.906</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>Key</object-name>
-        <condition>
-            <equals>
-                <property>controls/electric/key</property>
-                <value>3</value>
-            </equals>
-        </condition>
-        <property>controls/engines/engine/starter</property>
-        <factor>-20</factor>
-        <center>
-            <x-m>-1.157</x-m>
-            <y-m>0.052</y-m>
-            <z-m>-1.665</z-m>
-        </center>
-        <axis>
-            <x>0.423</x>
-            <y>0</y>
-            <z>0.906</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>Nav.switch</object-name>
-        <property>controls/lighting/nav-lights</property>
-        <factor>20</factor>
-        <center>
-            <x-m>-1.158</x-m>
-            <y-m>0.0</y-m>
-            <z-m>-1.667</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>Strobe.switch</object-name>
-        <property>controls/lighting/strobe</property>
-        <factor>20</factor>
-        <center>
-            <x-m>-1.158</x-m>
-            <y-m>0.0</y-m>
-            <z-m>-1.667</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>Alt.switch</object-name>
-        <property>controls/electric/engine/generator</property>
-        <factor>20</factor>
-        <center>
-            <x-m>-1.158</x-m>
-            <y-m>0.0</y-m>
-            <z-m>-1.667</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>Batt.switch</object-name>
-        <property>controls/electric/battery-switch</property>
-        <factor>20</factor>
-        <center>
-            <x-m>-1.158</x-m>
-            <y-m>0.0</y-m>
-            <z-m>-1.667</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
+        <object-name>Yokeshaft</object-name>
+        <object-name>Yoke</object-name>
+        <object-name>RHpedal</object-name>
+        <object-name>LHpedal</object-name>
+        <object-name>Panel</object-name>
+        <object-name>Mid.panel</object-name>
+        <object-name>Dimmer</object-name>
         <object-name>Clutch.guard</object-name>
-        <property>controls/engines/engine/clutchguard</property>
-        <factor>100</factor>
-        <center>
-            <x-m>-1.146</x-m>
-            <y-m>0.0</y-m>
-            <z-m>-1.673</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>Clutch.switch</object-name>
-        <property>controls/engines/engine/clutch</property>
-        <factor>30</factor>
-        <center>
-            <x-m>-1.158</x-m>
-            <y-m>0.0</y-m>
-            <z-m>-1.667</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-<!-- hotspots-->
-
-    <animation>
-        <type>pick</type>
         <object-name>key.cylinder</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <condition>
-                    <less-than>
-                        <property>controls/electric/key</property>
-                        <value>3</value>
-                    </less-than>
-                </condition>
-                <command>property-adjust</command>
-                <property>controls/electric/key</property>
-                <step>1</step>
-                <min>0</min>
-                <max>3</max>
-                <wrap>0</wrap>
-            </binding>
-            <binding>
-                <command>property-assign</command>
-                <property>controls/engines/engine/magnetos</property>
-                <property>controls/electric/key</property>
-         </binding>
-        <binding>
-            <condition>
-                <equals>
-                    <property>controls/electric/key</property>
-                    <value>3</value>
-                </equals>
-            </condition>
-            <command>property-assign</command>
-            <property>controls/engines/engine/starter</property>
-             <value>1</value>
-        </binding>
-        <mod-up>
-            <binding>
-            <condition>
-                <equals>
-                    <property>controls/electric/key</property>
-                    <value>3</value>
-                </equals>
-            </condition>
-                <command>property-assign</command>
-                <property>controls/engines/engine/starter</property>
-                <value>0</value>
-            </binding>
-        </mod-up>
-        <binding>
-            <command>property-toggle</command>
-            <property>sim/model/sound/click</property>
-        </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>key.cylinder</object-name>
-        <action>
-            <button>1</button>
-            <binding>
-                <command>property-adjust</command>
-                <property>controls/electric/key</property>
-                <step>-1</step>
-                <min>0</min>
-                <max>3</max>
-                <wrap>0</wrap>
-            </binding>
-            <binding>
-                <command>property-assign</command>
-                <property>controls/engines/engine/magnetos</property>
-                <property>controls/electric/key</property>
-         </binding>
-        <binding>
-            <command>property-toggle</command>
-            <property>sim/model/sound/click</property>
-        </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Batt.switch</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/electric/battery-switch</property>
-            </binding>
-            <binding>
-                <command>property-toggle</command>
-                <property>sim/model/sound/click</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Alt.switch</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/electric/engine/generator</property>
-            </binding>
-            <binding>
-                <command>property-toggle</command>
-                <property>sim/model/sound/click</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Clutch.guard</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/engines/engine/clutchguard</property>
-            </binding>
-            <binding>
-                <command>property-toggle</command>
-                <property>sim/model/sound/click</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Clutch.switch</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <condition>
-                    <property>controls/engines/engine/clutchguard</property>
-                </condition>
-                <command>property-toggle</command>
-                <property>controls/engines/engine/clutch</property>
-            </binding>
-            <binding>
-                <command>property-toggle</command>
-                <property>sim/model/sound/click</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Strobe.switch</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/strobe</property>
-            </binding>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/beacon</property>
-            </binding>
-            <binding>
-                <command>property-toggle</command>
-                <property>sim/model/sound/click</property>
-            </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Nav.switch</object-name>
-        <action>
-            <button>0</button>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/nav-lights</property>
-            </binding>
-            <binding>
-                <command>property-toggle</command>
-                <property>sim/model/sound/click</property>
-            </binding>
-        </action>
-    </animation>
+        <object-name>Key</object-name>
+        <object-name>AIR.knob</object-name>
+         <emission>
+            <red-prop>rendering/scene/diffuse/red</red-prop>
+            <green-prop>rendering/scene/diffuse/green</green-prop>
+            <blue-prop>rendering/scene/diffuse/blue</blue-prop>
+        </emission>
+        <ambient>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </ambient>
+        <diffuse>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </diffuse>
+        <specular>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </specular>
+    </animation-->
 
 </PropertyList>
