@@ -4,25 +4,25 @@
 
     <parameters>
         <!-- Normal Map 
-        <normalmap_enabled type="int">0</normalmap_enabled>
-        <normalmap_dds type="int">0</normalmap_dds>
+        <normalmap-enabled type="int">0</normalmap-enabled>
+        <normalmap-dds type="int">0</normalmap-dds>
         <texture n="2">
             <image></image>
         </texture>
         -->
         <!-- Light Map -->
-        <lightmap_enabled>
+        <lightmap-enabled>
             <use>sim/rendering/shaders/aircraft/lightmap/quality-level</use>
-        </lightmap_enabled>
-        <lightmap_multi type="int">0</lightmap_multi>
-        <lightmap_factor type="float" n="0"><use>/controls/lighting/beacon-light</use></lightmap_factor>
-        <lightmap_color type="vec3d" n="0">0.95 0.08 0.05</lightmap_color>
-        <lightmap_factor type="float" n="1">0.0</lightmap_factor>
-        <lightmap_color type="vec3d" n="1"> 0.0 1.0 0.0 </lightmap_color>
-        <lightmap_factor type="float" n="2">0.0</lightmap_factor>
-        <lightmap_color type="vec3d" n="2">0.0 0.0 1.0 </lightmap_color>
-        <lightmap_factor type="float" n="3">0.0</lightmap_factor>
-        <lightmap_color type="vec3d" n="3">0.0 0.0 0.0 </lightmap_color>
+        </lightmap-enabled>
+        <lightmap-multi type="int">0</lightmap-multi>
+        <lightmap-factor type="float" n="0"><use>/controls/lighting/beacon-light</use></lightmap-factor>
+        <lightmap-color type="vec3d" n="0">0.95 0.08 0.05</lightmap-color>
+        <lightmap-factor type="float" n="1">0.0</lightmap-factor>
+        <lightmap-color type="vec3d" n="1"> 0.0 1.0 0.0 </lightmap-color>
+        <lightmap-factor type="float" n="2">0.0</lightmap-factor>
+        <lightmap-color type="vec3d" n="2">0.0 0.0 1.0 </lightmap-color>
+        <lightmap-factor type="float" n="3">0.0</lightmap-factor>
+        <lightmap-color type="vec3d" n="3">0.0 0.0 0.0 </lightmap-color>
         <texture n="3">
             <image>Aircraft/R22/Models/Effects/lightmap.png</image>
             <filter>linear-mipmap-linear</filter>
@@ -53,6 +53,7 @@
         </texture>
 
         <!-- Reflection -->
+<<<<<<< HEAD
         <reflection_enabled type="int">1</reflection_enabled>
         <reflect_map_enabled type="int">1</reflect_map_enabled>
         <reflection_dynamic type="int">1</reflection_dynamic>
@@ -61,11 +62,21 @@
         <reflection_noise type="float">0.1</reflection_noise>
         <reflection_correction type="float">0.05</reflection_correction>
         <ambient_correction type="float">0.1</ambient_correction>
+=======
+        <reflection-enabled type="int">1</reflection-enabled>
+        <reflect-map-enabled type="int">1</reflect-map-enabled>
+        <reflection-dynamic type="int">1</reflection-dynamic>
+        <reflection-fresnel type="float">0.1</reflection-fresnel>
+        <reflection-rainbow type="float">0.05</reflection-rainbow>
+        <reflection-noise type="float">0.1</reflection-noise>
+        <reflection-correction type="float">0.05</reflection-correction>
+        <ambient-correction type="float">0.2</ambient-correction>
+>>>>>>> d14f25f4c65fd09606196619d0e9c795b01d2ea2
 
         <!-- quality slider -->
-        <shader_quality>
+        <shader-quality>
         <use>/sim/rendering/shaders/aircraft/reflection/quality-level</use>
-        </shader_quality>
+        </shader-quality>
         <vertex-program-two-side type="bool">false</vertex-program-two-side>
         <cull-face>back</cull-face>
     </parameters>
