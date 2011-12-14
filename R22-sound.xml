@@ -25,6 +25,7 @@
 
     <crank>
         <name>cough</name>
+        <mode>once</mode>
         <path>Sounds/coughing.wav</path>
         <property>/engines/engine/on</property>
         <max-dist>20</max-dist>
@@ -46,22 +47,17 @@
     <engine>
         <name>engine</name>
         <path>Sounds/wasp.wav</path>
+        <property>/engines/engine/on</property>
         <mode>looped</mode>
             <max-dist>500</max-dist>
             <reference-dist>150</reference-dist>
-        <condition>
-            <greater-than>
-                <property>/engines/engine/rpm</property>
-                <value>100</value>
-             </greater-than>
-        </condition>
         <volume>
             <property>/sim/model/sound/volume1</property>
         </volume>
         <pitch>
-            <property>/engines/engine/rpm</property>
+            <property>/engines/engine/n1</property>
             <offset>0</offset>
-            <factor>0.0005</factor>
+            <factor>0.01</factor>
             <min>0.35</min>
             <max>1.0</max>
         </pitch>
@@ -151,7 +147,7 @@
             <max-dist>5</max-dist>
             <reference-dist>2</reference-dist>
             <volume>
-                <property>/sim/sound/S76C/Cvolume</property>
+                <property>/sim/model/sound/volume1</property>
             </volume>
             <volume>
                 <property>position/altitude-ft</property>
@@ -201,16 +197,14 @@
 
         <alert>
             <name>rpm warning</name>
+            <type>avionics</type>
             <mode>once</mode>
             <path>Sounds/beep.wav</path>
             <condition>
-                <and>
-                    <property>instrumentation/alerts/rpm</property>
-                    <less-than>
-                        <property>rotors/main/rpm</property>
-                        <value>500</value>
-                    </less-than>
-                </and>
+                <less-than>
+                    <property>rotors/main/rpm</property>
+                    <value>500</value>
+                </less-than>
             </condition>
             <max-dist>4</max-dist>
             <reference-dist>2</reference-dist>
@@ -226,6 +220,7 @@
 
         <click>
             <name>switches on</name>
+            <type>avionics</type>
             <mode>once</mode>
             <path>Sounds/click.wav</path>
             <condition>
@@ -245,6 +240,7 @@
 
         <click>
             <name>switches off</name>
+            <type>avionics</type>
             <mode>once</mode>
             <path>Sounds/click.wav</path>
             <condition>
