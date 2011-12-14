@@ -4,7 +4,7 @@ MATERIAL "instr.metal" rgb 0.8 0.8 0.8 amb 0.8 0.8 0.8 emis 0 0 0 spec 0.8 0.8 0
 OBJECT world
 kids 1
 OBJECT poly
-name "Circle.028"
+name "plug"
 data 10
 Circle.111
 texture "plug.png"

@@ -274,47 +274,4 @@
         </axis>
     </animation>
 
-<!-- cockpit material test-->
-
-    <!--animation>
-        <name>nosun</name>
-        <type>material</type>
-        <object-name>Ldoor.panel</object-name>
-        <object-name>Rdoor.panel</object-name>
-        <object-name>cabin</object-name>
-        <object-name>seats</object-name>
-        <object-name>Collective</object-name>
-        <object-name>Yokeshaft</object-name>
-        <object-name>Yoke</object-name>
-        <object-name>RHpedal</object-name>
-        <object-name>LHpedal</object-name>
-        <object-name>Panel</object-name>
-        <object-name>Mid.panel</object-name>
-        <object-name>Dimmer</object-name>
-        <object-name>Clutch.guard</object-name>
-        <object-name>key.cylinder</object-name>
-        <object-name>Key</object-name>
-        <object-name>AIR.knob</object-name>
-         <emission>
-            <red-prop>rendering/scene/diffuse/red</red-prop>
-            <green-prop>rendering/scene/diffuse/green</green-prop>
-            <blue-prop>rendering/scene/diffuse/blue</blue-prop>
-        </emission>
-        <ambient>
-            <red>0</red>
-            <green>0</green>
-            <blue>0</blue>
-        </ambient>
-        <diffuse>
-            <red>0</red>
-            <green>0</green>
-            <blue>0</blue>
-        </diffuse>
-        <specular>
-            <red>0</red>
-            <green>0</green>
-            <blue>0</blue>
-        </specular>
-    </animation-->
-
 </PropertyList>

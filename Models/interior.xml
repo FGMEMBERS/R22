@@ -709,7 +709,7 @@
 
 <!-- cockpit material test-->
 
-    <!--animation>
+    <animation>
         <name>nosun</name>
         <type>material</type>
         <object-name>Ldoor.panel</object-name>
@@ -728,10 +728,12 @@
         <object-name>key.cylinder</object-name>
         <object-name>Key</object-name>
         <object-name>AIR.knob</object-name>
+        <object-name>plug</object-name>
          <emission>
-            <red-prop>rendering/scene/diffuse/red</red-prop>
-            <green-prop>rendering/scene/diffuse/green</green-prop>
-            <blue-prop>rendering/scene/diffuse/blue</blue-prop>
+            <red>1.2</red>
+            <green>1.2</green>
+            <blue>1.2</blue>
+            <factor-prop>rendering/scene/ambient/blue</factor-prop>
         </emission>
         <ambient>
             <red>0</red>
@@ -748,6 +750,6 @@
             <green>0</green>
             <blue>0</blue>
         </specular>
-    </animation-->
+    </animation>
 
 </PropertyList>
