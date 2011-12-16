@@ -24,17 +24,11 @@ Syd Adams
 
         <model>
             <path>Aircraft/R22/Models/R22.xml</path>
-            <variant type="int">0</variant>
-            <sound>
-                <volume type="double">0</volume>
-                <click type="bool">0</click>
-            </sound>
-
             <livery>
                 <file type="string">Red</file>
             </livery>
-
-            <doors-installed type="bool">1</doors-installed>
+            <doors-installed type="bool" userarchive="y">1</doors-installed>
+            <shadeless type="bool" userarchive="y">1</shadeless>
         </model>
 
         <hud>
@@ -54,6 +48,8 @@ Syd Adams
 
         <sound>
             <path>Aircraft/R22/R22-sound.xml</path>
+            <volume1 type="double">0.5</volume1>
+            <click type="bool">0</click>
         </sound>
 
         <virtual-cockpit archive="y">true</virtual-cockpit>
@@ -179,9 +175,13 @@ Syd Adams
                 <name>N</name>
                 <desc>toggle rotor brake</desc>
             </key>
+            <key>
+                <name>Ctrl A</name>
+                <desc>toggle auto-pedals</desc>
+            </key>
         </help>
 
-    <yokes-visible type="bool">1</yokes-visible>
+    <yokes-visible type="bool" userarchive="y">1</yokes-visible>
 
     <menubar>
         <default>
@@ -196,10 +196,10 @@ Syd Adams
                     </binding>
                 </item>
                 <item>
-                    <label>Toggle T-Bar</label>
+                    <label>Options</label>
                     <binding>
-                        <command>property-toggle</command>
-                        <property>sim/yokes-visible</property>
+                        <command>nasal</command>
+                        <script>dialogs.options.open()</script>
                     </binding>
                 </item>
                 <item>
@@ -210,34 +210,15 @@ Syd Adams
                     </binding>
                 </item>
             </menu>
-            <menu n="9">
-                <item>
-                    <label>auto-rudder(no pedals)</label>
-                    <binding>
-                        <command>property-toggle</command>
-                        <property>controls/flight/auto-pedals</property>
-                    </binding>
-                </item>
-            </menu>
         </default>
     </menubar>
-
-    <rendering>
-        <shaders>
-            <aircraft>
-                <reflection>
-                    <quality-level type="int" userarchive="y">1</quality-level>
-                </reflection>
-            </aircraft>
-        </shaders>
-    </rendering>
 
     </sim>
 
     <engines>
         <engine>
             <cranking type="bool">0</cranking>
-            <rpm type="double">0</rpm>
+            <rpm type="double">500</rpm>
             <running type="bool">false</running>
             <clutch-engaged type="bool">false</clutch-engaged>
         </engine>
@@ -254,7 +235,7 @@ Syd Adams
         <flight>
             <aileron-trim>0</aileron-trim>
             <elevator-trim>0</elevator-trim>
-            <auto-pedals>0</auto-pedals><!-- when no pedal controller available -->
+            <auto-pedals userarchive="y">0</auto-pedals><!-- when no pedal controller available -->
         </flight>
         <gear>
             <brake-parking>1</brake-parking>
@@ -286,62 +267,41 @@ Syd Adams
         </fuel>
     </consumables>
 
-    <instrumentation>
-        <gsdi>
-            <serviceable type="bool">true</serviceable>
-        </gsdi>
-            <inst-vertical-speed-indicator>
-                <serviceable type="bool">true</serviceable>
-            </inst-vertical-speed-indicator>
-    </instrumentation>
-
     <input>
         <keyboard>
-        <key n="121">
-        <name>y</name>
-        <desc>Toggle yokes</desc>
-        <binding>
-        <command>property-toggle</command>
-        <property>/sim/yokes-visible</property>
-        </binding>
-        </key>
-
-        <key n="123">
-        <name>{</name>
-        <desc>key off</desc>
-        <binding>
-            <command>property-adjust</command>
-            <property>controls/electric/key</property>
-            <step>-1</step>
-            <min>0</min>
-            <max>3</max>
-            <wrap>0</wrap>
-        </binding>
-        </key>
-
-        <key n="125">
-        <name>}</name>
-        <desc>key on</desc>
-        <binding>
-            <command>property-adjust</command>
-            <property>controls/electric/key</property>
-            <step>1</step>
-            <min>0</min>
-            <max>3</max>
-            <wrap>0</wrap>
-        </binding>
-        </key>
-
-        <key n="78">
-        <name>N</name>
-        <desc>Toggle rotor brake</desc>
-        <binding>
-            <command>property-toggle</command>
-            <property>controls/rotor/brake</property>
-        </binding>
-        </key>
-
-</keyboard>
+            <key n="123">
+                <name>{</name>
+                <desc>key off</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>controls/electric/key</property>
+                    <step>-1</step>
+                    <min>0</min>
+                    <max>3</max>
+                    <wrap>0</wrap>
+                </binding>
+            </key>
+            <key n="125">
+                <name>}</name>
+                <desc>key on</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>controls/electric/key</property>
+                    <step>1</step>
+                    <min>0</min>
+                    <max>3</max>
+                    <wrap>0</wrap>
+                </binding>
+            </key>
+            <key n="78">
+                <name>N</name>
+                <desc>Toggle rotor brake</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/rotor/brake</property>
+                </binding>
+            </key>
+        </keyboard>
     </input>
 
     <systems>
@@ -360,6 +320,9 @@ Syd Adams
             <file>Aircraft/R22/Nasal/Electrical.nas</file>
             <file>Aircraft/R22/Nasal/R22.nas</file>
         </R22>
+        <dialogs>
+            <file>Aircraft/R22/Nasal/dialogs.nas</file>
+        </dialogs>
     </nasal>
 
 </PropertyList>

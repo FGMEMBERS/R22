@@ -207,9 +207,9 @@
         <property>controls/flight/elevator</property>
         <factor>15</factor>
         <center>
-            <x-m>-0.954</x-m>
-            <y-m>0</y-m>
-            <z-m>-1.846</z-m>
+            <x-m>-0.933</x-m>
+            <y-m>0.001</y-m>
+            <z-m>-1.845</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -225,9 +225,9 @@
         <property>controls/flight/aileron</property>
         <factor>15</factor>
         <center>
-            <x-m>-0.954</x-m>
-            <y-m>0</y-m>
-            <z-m>-1.846</z-m>
+            <x-m>-0.933</x-m>
+            <y-m>0.001</y-m>
+            <z-m>-1.845</z-m>
         </center>
         <axis>
             <x>-1</x>
@@ -348,6 +348,23 @@
 
     <animation>
         <type>rotate</type>
+        <object-name>Llight.switch</object-name>
+        <property>controls/lighting/landing-lights</property>
+        <factor>30</factor>
+        <center>
+            <x-m>-1.112</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-1.712</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
         <object-name>Strobe.switch</object-name>
         <property>controls/lighting/strobe</property>
         <factor>20</factor>
@@ -431,6 +448,7 @@
         </axis>
     </animation>
 
+
 <!-- hotspots-->
 
     <animation>
@@ -483,7 +501,7 @@
         </mod-up>
         <binding>
             <command>property-toggle</command>
-            <property>sim/model/sound/click</property>
+            <property>sim/sound/click</property>
         </binding>
         </action>
     </animation>
@@ -508,7 +526,7 @@
          </binding>
         <binding>
             <command>property-toggle</command>
-            <property>sim/model/sound/click</property>
+            <property>sim/sound/click</property>
         </binding>
         </action>
     </animation>
@@ -524,7 +542,7 @@
             </binding>
             <binding>
                 <command>property-toggle</command>
-                <property>sim/model/sound/click</property>
+                <property>sim/sound/click</property>
             </binding>
         </action>
     </animation>
@@ -540,7 +558,7 @@
             </binding>
             <binding>
                 <command>property-toggle</command>
-                <property>sim/model/sound/click</property>
+                <property>sim/sound/click</property>
             </binding>
         </action>
     </animation>
@@ -556,7 +574,7 @@
             </binding>
             <binding>
                 <command>property-toggle</command>
-                <property>sim/model/sound/click</property>
+                <property>sim/sound/click</property>
             </binding>
         </action>
     </animation>
@@ -575,7 +593,7 @@
             </binding>
             <binding>
                 <command>property-toggle</command>
-                <property>sim/model/sound/click</property>
+                <property>sim/sound/click</property>
             </binding>
         </action>
     </animation>
@@ -595,7 +613,7 @@
             </binding>
             <binding>
                 <command>property-toggle</command>
-                <property>sim/model/sound/click</property>
+                <property>sim/sound/click</property>
             </binding>
         </action>
     </animation>
@@ -611,7 +629,23 @@
             </binding>
             <binding>
                 <command>property-toggle</command>
-                <property>sim/model/sound/click</property>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Llight.switch</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/landing-lights</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
             </binding>
         </action>
     </animation>
@@ -684,6 +718,11 @@
         <object-name>RPM.Rneedle</object-name>
         <object-name>VOR.compass</object-name>
         <object-name>VOR.face</object-name>
+        <object-name>VOR.needle</object-name>
+        <object-name>VOR.from</object-name>
+        <object-name>VOR.to</object-name>
+        <object-name>VOR.fail</object-name>
+        <object-name>PIA.card</object-name>
          <emission>
             <red>1</red>
             <green>0.3</green>
@@ -710,7 +749,10 @@
 <!-- cockpit material test-->
 
     <animation>
-        <name>nosun</name>
+        <name>shadeless</name>
+            <condition>
+                <property>sim/model/shadeless</property>
+            </condition>
         <type>material</type>
         <object-name>Ldoor.panel</object-name>
         <object-name>Rdoor.panel</object-name>
@@ -729,10 +771,11 @@
         <object-name>Key</object-name>
         <object-name>AIR.knob</object-name>
         <object-name>plug</object-name>
+        <object-name>PIA-700</object-name>
          <emission>
-            <red>1.2</red>
-            <green>1.2</green>
-            <blue>1.2</blue>
+            <red>1.5</red>
+            <green>1.5</green>
+            <blue>1.5</blue>
             <factor-prop>rendering/scene/ambient/blue</factor-prop>
         </emission>
         <ambient>

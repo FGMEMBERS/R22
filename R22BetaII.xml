@@ -31,7 +31,7 @@ teetering hinge ...
 -->
 <airplane mass="855">
 
-    <approach speed="35" aoa="16">
+    <approach speed="40" aoa="16">
     <solve-weight idx="0" weight="180"/>
     </approach>
 
@@ -45,7 +45,7 @@ teetering hinge ...
     mincyclicele="-9" maxcyclicele="11"
     mincyclicail="-9.5" maxcyclicail="6.0"
     diameter="7.67" numblades="2" weightperblade="26" relbladecenter="0.51"
-    dynamic="0.85" rpm="530" rellenflaphinge="0.02" delta3="0.3"
+    dynamic="0.85" rpm="530" rellenflaphinge="0.02" delta3="0.5"
     delta=".25"
     pitch-a="10"
     pitch-b="15"
@@ -57,8 +57,8 @@ teetering hinge ...
     notorque="0"
     dragfactor="0.30"
     translift-ve="20"
-    translift-maxfactor="1.2"
-    ground-effect-constant="0.3"
+    translift-maxfactor="1.1"
+    ground-effect-constant="0.2"
     twist="-7"
     taper="1"
     chord="0.18288"
@@ -67,15 +67,15 @@ teetering hinge ...
     rel-len-where-incidence-is-measured="0.75"
     rel-len-blade-start="0.002"
     airfoil-lift-coefficient="5.0"
-    airfoil-drag-coefficient0="0.0025"
-    airfoil-drag-coefficient1="0.15"
-    incidence-stall-zero-speed="19.25"
-    incidence-stall-half-sonic-speed="10.5"
-    lift-factor-stall="0.18"
+    airfoil-drag-coefficient0="0.002"
+    airfoil-drag-coefficient1="0.1"
+    incidence-stall-zero-speed="18.0"
+    incidence-stall-half-sonic-speed="9.0"
+    lift-factor-stall="0.15"
     stall-change-over="5.5"
-    drag-factor-stall="6.0"
-    cyclic-factor="0.8"
-    rotor-correction-factor="0.95"
+    drag-factor-stall="4.0"
+    cyclic-factor="0.60"
+    rotor-correction-factor="0.90"
     downwashfactor="0.25"
     >
     <control-input axis="/controls/flight/aileron-trim" control="CYCLICAIL" split="true"/>
@@ -93,18 +93,19 @@ teetering hinge ...
 
 
 <rotor name="tail" x="-4.41" y="-0.2" z="-0.94" nx="0.0" ny="-1" nz="0.0" fx="1" fy="0" fz="0" ccw="1"
-  maxcollective="28" mincollective="-24"
+  maxcollective="19" mincollective="-21.0"
   diameter="1.0668" numblades="2" weightperblade="2" relbladecenter="0.55"
-  dynamic="0.90" rpm="3356" rellenflaphinge="0.01" delta3="1" translift="0" delta="0.25"
+  dynamic="0.90" rpm="3356" rellenflaphinge="0.002" delta3="1" translift="0" delta="0.25"
+  sharedflaphinge="1"
   pitch-a="10"
   pitch-b="15"
-  airfoil-lift-coefficient="4.0"
-  airfoil-drag-coefficient0="0.01"
+  airfoil-lift-coefficient="5.5"
+  airfoil-drag-coefficient0="0.002"
   airfoil-drag-coefficient1="0.05"
-  incidence-stall-zero-speed="19.25"
+  incidence-stall-zero-speed="15"
   incidence-stall-half-sonic-speed="10.5"
   lift-factor-stall="0.26"
-  stall-change-over="7"
+  stall-change-over="5"
   drag-factor-stall="6.0"
   notorque="0"
   taper="1"
@@ -144,9 +145,9 @@ teetering hinge ...
 <!--fake engine-->
 
   <jet x="-0.193" y="0" z="-0.75" mass="275" thrust="1"
-   tsfc="53" rotate="0.0" egt="840" spool-time="5"
+   tsfc="53" rotate="0.0" egt="840" spool-time="2"
    n1-idle="0.0" n1-max="100" n2-idle="0.0" n2-max="100">
-    <control-input axis="/controls/engines/engine[0]/magnetos" control="THROTTLE" src0="0" dst0="0" src1="1" dst1="1"/>
+    <control-input axis="engines/engine/on" control="THROTTLE"/>
     </jet>
 
 <cockpit x="0.5" y=".33" z="-1.2"/>
@@ -169,16 +170,16 @@ teetering hinge ...
 </vstab>
 
 <gear x="1.5" y="0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0.2" sfric="0.4" dfric="0.3" initial-load="0.5">
+spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.75">
   </gear>
 <gear x="1.5" y="-0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0.2" sfric="0.4" dfric="0.3" initial-load="0.5">
+spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.75">
   </gear>
 <gear x="-0.5" y="0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0.2" sfric="0.4" dfric="0.3" initial-load="0.5">
+spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.75">
   </gear>
 <gear x="-0.5" y="-0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0.2" sfric="0.4" dfric="0.3" initial-load="0.5">
+spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.75">
   </gear>
 
 <!-- tail rotor guard-->
@@ -192,7 +193,7 @@ spring="0.1" sfric="1" dfric="1"/>
 <weight x="0.5" y="-0.3" z="-1.5" mass-prop="/sim/weight[1]/weight-lb"/><!-- right seat-->
 
 
-<ballast x="0.02" y="0.0" z="-2.0" mass="200"/>
+<ballast x="-0.4" y="0.0" z="-1.8" mass="200"/>
 
 
 

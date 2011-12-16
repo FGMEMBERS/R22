@@ -20,13 +20,13 @@
         </input>
         <reference>
             <property>orientation/roll-deg</property>
-            <scale>0.3</scale>
+            <scale>0.5</scale>
         </reference>
         <output>
             <property>controls/flight/rudder</property>
         </output>
         <config>
-            <Kp>0.015</Kp>
+            <Kp>0.15</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>

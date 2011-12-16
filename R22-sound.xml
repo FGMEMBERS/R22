@@ -72,7 +72,7 @@
             <name>main rotor</name>
             <mode>looped</mode>
             <path>Sounds/rotor-2blade.wav</path>
-            <max-dist>100</max-dist>
+            <max-dist>500</max-dist>
             <reference-dist>50</reference-dist>
             <condition>
                 <greater-than>
@@ -224,12 +224,12 @@
             <mode>once</mode>
             <path>Sounds/click.wav</path>
             <condition>
-                <property>sim/model/sound/click</property>
+                <property>sim/sound/click</property>
             </condition>
             <max-dist>2</max-dist>
             <reference-dist>1</reference-dist>
             <volume>
-                <property>sim/model/sound/volume</property>
+                <property>sim/sound/volume1</property>
             </volume>
             <position>
                 <x>1.5</x>
@@ -245,13 +245,13 @@
             <path>Sounds/click.wav</path>
             <condition>
                 <not>
-                    <property>sim/model/sound/click</property>
+                    <property>sim/sound/click</property>
                 </not>
             </condition>
             <max-dist>2</max-dist>
             <reference-dist>1</reference-dist>
             <volume>
-                <property>sim/model/sound/volume</property>
+                <property>sim/sound/volume1</property>
             </volume>
             <position>
                 <x>1.5</x>
