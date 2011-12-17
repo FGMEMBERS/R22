@@ -772,6 +772,7 @@
         <object-name>AIR.knob</object-name>
         <object-name>plug</object-name>
         <object-name>PIA-700</object-name>
+        <object-name>PIA.lubber</object-name>
          <emission>
             <red>1.5</red>
             <green>1.5</green>

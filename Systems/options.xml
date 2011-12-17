@@ -30,7 +30,7 @@
     <checkbox>
         <halign>left</halign>
         <label>Remove Doors</label>
-        <property>sim/model/doors-installed</property>
+        <property>sim/model/doors-removed</property>
         <binding>
             <command>dialog-apply</command>
         </binding>

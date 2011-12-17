@@ -30,7 +30,6 @@ var update_bus=func {
 var update_outputs=func {
     var outprop="systems/electrical/outputs/";
     var power = getprop("systems/electrical/sources/bus");
-    setprop(outprop~"nav-lights",power);
     setprop(outprop~"adf",power);
     setprop(outprop~"nav",power);
     setprop(outprop~"transponder",power);
@@ -44,6 +43,8 @@ var update_variables=func {
     var dimmer = getprop("controls/lighting/dimmer-switch");
     setprop(outprop~"instrument-lights",power_norm * dimmer);
     setprop(outprop~"strobe",power_norm * getprop("controls/lighting/strobe-state/state"));
+    setprop(outprop~"landing-lights",power_norm * getprop("controls/lighting/landing-lights"));
+    setprop(outprop~"nav-lights",power_norm * getprop("controls/lighting/nav-lights"));
 }
 
 var update_electrical = func {

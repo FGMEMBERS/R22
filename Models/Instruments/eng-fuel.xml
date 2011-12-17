@@ -47,7 +47,7 @@
     <animation>
         <type>rotate</type>
         <object-name>fuel1.needle</object-name>
-        <property>consumables/fuel/tank[0]/level-norm</property>
+        <property>consumables/fuel/tank[1]/level-norm</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
             <entry><ind>1.0</ind><dep>80.0</dep></entry>
@@ -87,7 +87,7 @@
     <animation>
         <type>rotate</type>
         <object-name>fuel2.needle</object-name>
-        <property>consumables/fuel/tank[1]/level-norm</property>
+        <property>consumables/fuel/tank[0]/level-norm</property>
         <interpolation>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
             <entry><ind>1.0</ind><dep>80.0</dep></entry>

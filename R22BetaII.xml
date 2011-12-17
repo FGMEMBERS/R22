@@ -66,7 +66,7 @@ teetering hinge ...
     number-of-parts="8"
     rel-len-where-incidence-is-measured="0.75"
     rel-len-blade-start="0.002"
-    airfoil-lift-coefficient="5.0"
+    airfoil-lift-coefficient="5.5"
     airfoil-drag-coefficient0="0.002"
     airfoil-drag-coefficient1="0.1"
     incidence-stall-zero-speed="18.0"
@@ -75,7 +75,7 @@ teetering hinge ...
     stall-change-over="5.5"
     drag-factor-stall="4.0"
     cyclic-factor="0.60"
-    rotor-correction-factor="0.90"
+    rotor-correction-factor="0.95"
     downwashfactor="0.25"
     >
     <control-input axis="/controls/flight/aileron-trim" control="CYCLICAIL" split="true"/>
@@ -193,7 +193,7 @@ spring="0.1" sfric="1" dfric="1"/>
 <weight x="0.5" y="-0.3" z="-1.5" mass-prop="/sim/weight[1]/weight-lb"/><!-- right seat-->
 
 
-<ballast x="-0.4" y="0.0" z="-1.8" mass="200"/>
+<ballast x="-0.3" y="0.0" z="-1.8" mass="200"/>
 
 
 

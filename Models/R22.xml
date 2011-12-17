@@ -52,7 +52,9 @@
         <object-name>Ldoor.glass</object-name>
         <object-name>Rdoor.glass</object-name>
         <condition>
-                <property>sim/model/doors-installed</property>
+            <not>
+                <property>sim/model/doors-removed</property>
+            </not>
         </condition>
     </animation>
 
@@ -92,9 +94,18 @@
         <object-name>Nav.green</object-name>
         <condition>
             <greater-than>
-                <property>systems/electrical/outputs/nav-lights</property>
+                <property>systems/electrical/outputs/norm/nav-lights</property>
                 <value>0.1</value>
             </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>flare</object-name>
+        <object-name>Llights.001</object-name>
+        <condition>
+            <property>systems/electrical/outputs/norm/landing-lights</property>
         </condition>
     </animation>
 

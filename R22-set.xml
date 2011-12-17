@@ -27,7 +27,7 @@ Syd Adams
             <livery>
                 <file type="string">Red</file>
             </livery>
-            <doors-installed type="bool" userarchive="y">1</doors-installed>
+            <doors-removed type="bool" userarchive="y">0</doors-removed>
             <shadeless type="bool" userarchive="y">1</shadeless>
         </model>
 
@@ -253,6 +253,7 @@ Syd Adams
         </rotor>
         <lighting>
             <dimmer-switch type="double">0.5</dimmer-switch>
+            <landing-lights type="bool">0</landing-lights>
         </lighting>
     </controls>
 
