@@ -28,7 +28,7 @@
     <animation>
         <type>rotate</type>
         <object-name>VOR.compass</object-name>
-        <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+        <property>instrumentation/nav/radials/selected-deg</property>
         <axis>
             <x>1</x>
             <y>0</y>
@@ -50,6 +50,40 @@
         <condition>
             <property>instrumentation/nav/from-flag</property>
         </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>VOR.obs</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>VOR.obs</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
     </animation>
 
 </PropertyList>

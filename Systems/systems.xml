@@ -20,13 +20,13 @@
     <vacuum>
         <name>vacuum</name>
         <number>0</number>
-        <rpm>engines/engine/rpm</rpm>
+        <rpm>/engines/engine/rpm</rpm>
     </vacuum>
 
        <vacuum>
         <name>vacuum</name>
-        <number>0</number>
-        <rpm>engines/engine/rpm</rpm>
+        <number>1</number>
+        <rpm>/engines/engine/rpm</rpm>
     </vacuum>
 
 </PropertyList>

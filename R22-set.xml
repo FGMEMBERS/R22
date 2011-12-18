@@ -36,7 +36,7 @@ Syd Adams
         </hud>
 
         <systems>
-            <path>Aircraft/Citation/Systems/systems.xml</path>
+            <path>Aircraft/R22/Systems/systems.xml</path>
             <autopilot>
                 <path>Aircraft/R22/Systems/auto-assist.xml</path>
             </autopilot>
