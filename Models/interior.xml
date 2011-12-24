@@ -154,9 +154,34 @@
         <object-name>fuel.annun</object-name>
         <condition>
                 <less-than>
-                    <property>consumables/fuel/tank/level-gal_us</property>
+                    <property>consumables/fuel/total-fuel-gals</property>
                     <value>1.0</value>
                 </less-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>clutch.annun</object-name>
+        <condition>
+            <and>
+                <property>controls/engines/engine/clutch</property>
+                <less-than>
+                    <property>rotors/main/rpm</property>
+                    <value>300</value>
+                </less-than>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>starter.annun</object-name>
+        <condition>
+            <and>
+                <property>controls/engines/engine/starter</property>
+                <property>engines/engine/on</property>
+            </and>
         </condition>
     </animation>
 

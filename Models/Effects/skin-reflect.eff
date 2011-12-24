@@ -11,9 +11,11 @@
         </texture>
         
         <!-- Light Map -->
-        <lightmap-enabled type="int">0</lightmap-enabled>
+        <lightmap-enabled type="int">1</lightmap-enabled>
         <lightmap-multi type="int">0</lightmap-multi>
-        <lightmap-factor type="float" n="0"><use>/controls/lighting/beacon-light</use></lightmap-factor>
+        <lightmap-factor type="float" n="0">
+            <use>systems/electrical/outputs/norm/strobe</use>
+        </lightmap-factor>
         <lightmap-color type="vec3d" n="0">0.95 0.08 0.05</lightmap-color>
         <lightmap-factor type="float" n="1">0.0</lightmap-factor>
         <lightmap-color type="vec3d" n="1"> 0.0 1.0 0.0 </lightmap-color>

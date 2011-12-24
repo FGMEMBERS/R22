@@ -56,6 +56,7 @@ setlistener("controls/engines/engine/magnetos", func(mg){
     if(mg.getValue() == 0)engine_on.setValue(0);
 },1,0);
 
+
 var Startup = func{
 setprop("controls/electric/engine[0]/generator",1);
 setprop("controls/electric/battery-switch",1);
@@ -98,24 +99,28 @@ var kill_engine=func{
 
 
 var update_systems = func {
-    var running =engine_on.getValue();
+
+    
+    var fuel = 1 - getprop("engines/engine/out-of-fuel");
+    var running =engine_on.getValue() * fuel;
+    if(running==0)engine_on.setValue(running);
      var throttle = getprop("/controls/rotor/engine-throttle");
     flight_meter();
 if(!RPM_arm.getBoolValue()){
 if(getprop("/rotors/main/rpm") > 525)RPM_arm.setBoolValue(1);
 }
 
+
+
 if(!running){
     if(getprop("controls/engines/engine/starter")) start_timer+=1 else start_timer = 0;
     if(start_timer >60){
-        running=1;
+        running=1 * fuel;
         start_timer=0;
         engine_on.setValue(running);
     }
     setprop("/engines/engine/clutch-engaged",running);
-}
-
-if(running){
+}elsif(running){
     if(getprop("/controls/engines/engine/clutch")){
         setprop("/engines/engine/clutch-engaged",running);
         }else{

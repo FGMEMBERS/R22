@@ -13,7 +13,7 @@ Syd Adams
         <author>Syd Adams, Maik Justus</author>
         <flight-model>yasim</flight-model>
         <aero>R22BetaII</aero>
-        <fuel-fraction>0.5</fuel-fraction>
+        <fuel-fraction>0.2</fuel-fraction>
         <startup>
             <splash-texture>Aircraft/R22/splash.png</splash-texture>
         </startup>
@@ -58,8 +58,8 @@ Syd Adams
         <view>
             <internal archive="y">true</internal>
             <config>
-                <ground-level-nearplane-m type="double">0.2f</ground-level-nearplane-m>
-                <x-offset-m archive="y">-0.20</x-offset-m>
+                <ground-level-nearplane-m type="double">0.1f</ground-level-nearplane-m>
+                <x-offset-m archive="y">0.20</x-offset-m>
                 <y-offset-m archive="y">-1.04</y-offset-m>
                 <z-offset-m archive="y">-0.4</z-offset-m>
                 <pitch-offset-deg>-12</pitch-offset-deg>
@@ -69,6 +69,7 @@ Syd Adams
 
     <view n="1">
         <config>
+            <ground-level-nearplane-m type="double">0.1f</ground-level-nearplane-m>
             <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
             <target-z-offset-m archive="y" type="double">-0.5</target-z-offset-m>
             <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
@@ -77,6 +78,7 @@ Syd Adams
         
     <view n="2">
         <config>
+            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
             <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
             <target-z-offset-m archive="y" type="double">-0.5</target-z-offset-m>
             <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
@@ -86,6 +88,7 @@ Syd Adams
         
     <view n="4">
         <config>
+            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
             <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
             <target-z-offset-m archive="y" type="double">-1</target-z-offset-m>
             <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
@@ -103,6 +106,7 @@ Syd Adams
 
     <view n="7">
         <config>
+            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
             <target-y-offset-m archive="y" type="double">-1.5</target-y-offset-m>
             <target-z-offset-m archive="y" type="double">-0.5</target-z-offset-m>
             <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
@@ -114,10 +118,11 @@ Syd Adams
         <type>lookfrom</type>
         <internal type="bool">true</internal>
         <config>
+            <ground-level-nearplane-m type="double">0.1f</ground-level-nearplane-m>
             <from-model type="bool">true</from-model>
             <from-model-idx type="int">0</from-model-idx>
             <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <default-field-of-view-deg type="double">33.0</default-field-of-view-deg>
+            <default-field-of-view-deg type="double">35.0</default-field-of-view-deg>
             <default-pitch-deg type="double">0</default-pitch-deg>
             <default-heading-deg type="double">0</default-heading-deg>
             <front-direction-deg type="double">0</front-direction-deg>
@@ -128,28 +133,28 @@ Syd Adams
             <back-right-direction-deg type="double">225</back-right-direction-deg>
             <right-direction-deg type="double">270</right-direction-deg>
             <front-right-direction-deg type="double">315</front-right-direction-deg>
-            <x-offset-m archive="y">-0.2</x-offset-m>
+            <x-offset-m archive="y">0.2</x-offset-m>
             <y-offset-m archive="y">-1.2</y-offset-m>
             <z-offset-m archive="y">-0.55</z-offset-m>
-            <heading-offset-deg>345.5</heading-offset-deg>
-            <pitch-offset-deg>-25.5</pitch-offset-deg>
+            <heading-offset-deg>15.5</heading-offset-deg>
+            <pitch-offset-deg>-27.5</pitch-offset-deg>
         </config> 
     </view>
 
-        <chase-distance-m type="double" archive="y">-12.0</chase-distance-m>
+        <chase-distance-m type="double" archive="y">-15.0</chase-distance-m>
 
     <weight n="0">
-            <name>Pilot</name>
-            <weight-lb>180</weight-lb>
-            <max-lb>240</max-lb>
-            <min-lb>140</min-lb>
-        </weight>
-
-        <weight n="1">
-            <name>Pax/Baggage</name>
+            <name>Pax</name>
             <weight-lb>180</weight-lb>
             <max-lb>240</max-lb>
             <min-lb>0</min-lb>
+        </weight>
+
+        <weight n="1">
+            <name>Pilot</name>
+            <weight-lb>180</weight-lb>
+            <max-lb>240</max-lb>
+            <min-lb>100</min-lb>
         </weight>
 
         <help>
@@ -261,9 +266,13 @@ Syd Adams
         <fuel>
             <tank n="0">
                 <name>Main</name>
+                <level-lbs>10.0</level-lbs>
+                <selected type="bool">1</selected>
             </tank>
             <tank n="1">
                 <name>Auxilary</name>
+                <level-lbs>0</level-lbs>
+                <selected type="bool">1</selected>
             </tank>
         </fuel>
     </consumables>

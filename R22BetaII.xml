@@ -23,20 +23,22 @@ Rate-of-Climb at 10,000 Feet Over 600 fpm
 Maximum Operating Altitude 14,000 feet
 Hover Ceiling IGE @ 1370 GW 9,400 feet
 
+0 Fuel - Long. Arm 0.097536in
+Lat Arm 0.0in
+
+
 Rotor
-18 degree delta3
+18 degree psuedo delta3
 530 rpm
 Airfoil NACA 63-015
 teetering hinge ...
 -->
 <airplane mass="855">
 
-    <approach speed="40" aoa="16">
-    <solve-weight idx="0" weight="180"/>
+    <approach speed="40" aoa="16" fuel="0">
     </approach>
 
-    <cruise speed="102" alt="0">
-    <solve-weight idx="0" weight="360"/>
+    <cruise speed="102" alt="0" fuel="0">
     </cruise>
 
 
@@ -45,7 +47,7 @@ teetering hinge ...
     mincyclicele="-9" maxcyclicele="11"
     mincyclicail="-9.5" maxcyclicail="6.0"
     diameter="7.67" numblades="2" weightperblade="26" relbladecenter="0.51"
-    dynamic="0.85" rpm="530" rellenflaphinge="0.02" delta3="0.5"
+    dynamic="0.95" rpm="530" rellenflaphinge="0.02" delta3="0.5"
     delta=".25"
     pitch-a="10"
     pitch-b="15"
@@ -93,13 +95,13 @@ teetering hinge ...
 
 
 <rotor name="tail" x="-4.41" y="-0.2" z="-0.94" nx="0.0" ny="-1" nz="0.0" fx="1" fy="0" fz="0" ccw="1"
-  maxcollective="19" mincollective="-21.0"
+  maxcollective="24" mincollective="-26.0"
   diameter="1.0668" numblades="2" weightperblade="2" relbladecenter="0.55"
-  dynamic="0.90" rpm="3356" rellenflaphinge="0.002" delta3="1" translift="0" delta="0.25"
+  dynamic="0.90" rpm="3356" rellenflaphinge="0.002" delta3="1" translift="0" delta="0.5"
   sharedflaphinge="1"
   pitch-a="10"
   pitch-b="15"
-  airfoil-lift-coefficient="5.5"
+  airfoil-lift-coefficient="6.5"
   airfoil-drag-coefficient0="0.002"
   airfoil-drag-coefficient1="0.05"
   incidence-stall-zero-speed="15"
@@ -113,8 +115,8 @@ teetering hinge ...
   number-of-segments="5"
   number-of-parts="4"
   rel-len-blade-start="0.2"
-  rotor-correction-factor="0.8"
-  downwashfactor="0.3"
+  rotor-correction-factor="0.9"
+  downwashfactor="0.2"
 
 >
 <control-input axis="/controls/flight/rudder" control="COLLECTIVE"
@@ -165,7 +167,7 @@ teetering hinge ...
 </vstab>
 
 
-<vstab x="-4.408" y="0" z="-1.493" taper="1" length="1.06" chord="0.22" effectiveness="0.5">
+<vstab x="-4.408" y="0" z="-1.493" taper="1" length="1.06" chord="0.22">
   <stall aoa="16" width="4" peak="1.5"/>
 </vstab>
 
@@ -193,7 +195,7 @@ spring="0.1" sfric="1" dfric="1"/>
 <weight x="0.5" y="-0.3" z="-1.5" mass-prop="/sim/weight[1]/weight-lb"/><!-- right seat-->
 
 
-<ballast x="-0.2" y="0.0" z="-1.2" mass="250"/>
+<ballast x="-0.10" y="0.0" z="-1.8" mass="300"/>
 
 
 

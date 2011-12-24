@@ -10,6 +10,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 
 
 var update_bus=func {
+    var amps=0;
     var batt_vlt = getprop("systems/electrical/sources/battery");
     var batt_swt= getprop("controls/electric/battery-switch");
     var batt_output=batt_vlt * batt_swt;
@@ -22,8 +23,10 @@ var update_bus=func {
     var alt_output=(alt_vlt * alt_swt) * n1;
     if(batt_output>alt_output){
         setprop("systems/electrical/sources/bus",batt_output);
+        setprop("systems/electrical/amps",batt_output * -2.5);
     }else{
         setprop("systems/electrical/sources/bus",alt_output);
+        setprop("systems/electrical/amps",alt_output * 0.8);
     }
 }
 
