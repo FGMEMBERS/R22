@@ -172,16 +172,16 @@ teetering hinge ...
 </vstab>
 
 <gear x="1.5" y="0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.75">
+spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8">
   </gear>
 <gear x="1.5" y="-0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.75">
+spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8">
   </gear>
 <gear x="-0.5" y="0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.75">
+spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8">
   </gear>
 <gear x="-0.5" y="-0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.75">
+spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8">
   </gear>
 
 <!-- tail rotor guard-->
@@ -195,7 +195,7 @@ spring="0.1" sfric="1" dfric="1"/>
 <weight x="0.5" y="-0.3" z="-1.5" mass-prop="/sim/weight[1]/weight-lb"/><!-- right seat-->
 
 
-<ballast x="-0.10" y="0.0" z="-1.8" mass="300"/>
+<ballast x="-0.2" y="0.0" z="-1.5" mass="250"/>
 
 
 

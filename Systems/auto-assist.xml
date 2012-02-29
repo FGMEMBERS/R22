@@ -22,11 +22,11 @@
             <property>controls/flight/rudder</property>
         </output>
         <config>
-            <Kp>0.1</Kp>
+            <Kp>0.15</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
-            <Ti>1</Ti>
+            <Ti>2</Ti>
             <Td>0.00001</Td>
             <min>-1</min>
             <max>1</max>
@@ -45,7 +45,7 @@
                     </not>
                     <less-than>
                         <property>velocities/airspeed-kt</property>
-                        <value>30</value>
+                        <value>50</value>
                     </less-than>
                 </and>
             </condition>
@@ -55,6 +55,7 @@
         </input>
         <reference>
             <property>orientation/roll-deg</property>
+            <scale>0.5</scale>
         </reference>
         <output>
             <property>controls/flight/rudder</property>
