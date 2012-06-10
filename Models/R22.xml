@@ -14,6 +14,17 @@
         </unload>
     </nasal>
 
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>glass</object-name>
+        <object-name>Rdoor.glass</object-name>
+        <object-name>Ldoor.glass</object-name>
+        <object-name>flare</object-name>
+        <object-name>Tdisc</object-name>
+        <object-name>Fblade1</object-name>
+        <object-name>Fblade2</object-name>
+    </effect>
+
     <animation>
       <type>material</type>
       <object-name>Boom</object-name>
