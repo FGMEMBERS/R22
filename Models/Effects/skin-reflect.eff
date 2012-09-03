@@ -12,15 +12,13 @@
         
         <!-- Light Map -->
         <lightmap-enabled type="int">1</lightmap-enabled>
-        <lightmap-multi type="int">0</lightmap-multi>
-        <lightmap-factor type="float" n="0">
-            <use>systems/electrical/outputs/norm/strobe</use>
-        </lightmap-factor>
+        <lightmap-multi type="int">1</lightmap-multi>
+        <lightmap-factor type="float" n="0"><use>systems/electrical/outputs/norm/strobe</use></lightmap-factor>
         <lightmap-color type="vec3d" n="0">0.95 0.08 0.05</lightmap-color>
-        <lightmap-factor type="float" n="1">0.0</lightmap-factor>
+        <lightmap-factor type="float" n="1"><use>systems/electrical/outputs/norm/nav-lights</use></lightmap-factor>
         <lightmap-color type="vec3d" n="1"> 0.0 1.0 0.0 </lightmap-color>
-        <lightmap-factor type="float" n="2">0.0</lightmap-factor>
-        <lightmap-color type="vec3d" n="2">0.0 0.0 1.0 </lightmap-color>
+        <lightmap-factor type="float" n="2"><use>systems/electrical/outputs/norm/nav-lights</use></lightmap-factor>
+        <lightmap-color type="vec3d" n="2">1.0 0.0 0.0 </lightmap-color>
         <lightmap-factor type="float" n="3">0.0</lightmap-factor>
         <lightmap-color type="vec3d" n="3">0.0 0.0 0.0 </lightmap-color>
         <texture n="3">
@@ -59,11 +57,11 @@
         <reflection-fresnel type="float">0.1</reflection-fresnel>
         <reflection-rainbow type="float">0.05</reflection-rainbow>
         <reflection-noise type="float">0.1</reflection-noise>
-        <reflection-correction type="float">0.05</reflection-correction>
+        <reflection-correction type="float">0.02</reflection-correction>
         <ambient-correction type="float">0.2</ambient-correction>
     </parameters>
 
-    <!-- ####################
+<!-- ####################
 ### NORMALMAP INCLUDE ###
 ######################### -->
     <generate>
@@ -71,7 +69,22 @@
         <binormal type="int">7</binormal>
     </generate>
 
-    <technique n="10">
+  <technique n="8">
+    <pass>
+      <program>
+        <attribute>
+          <name>tangent</name>
+          <index>6</index>
+        </attribute>
+        <attribute>
+          <name>binormal</name>
+          <index>7</index>
+        </attribute>
+      </program>
+    </pass>
+  </technique>
+
+    <technique n="9">
         <pass>
             <program>
                 <attribute>
