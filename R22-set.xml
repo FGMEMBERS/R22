@@ -9,6 +9,14 @@ Syd Adams
 <PropertyList>
 
     <sim>
+
+    <rating>
+        <FDM type="int">3</FDM>
+        <systems type="int">2</systems>
+        <cockpit type="int">4</cockpit>
+        <model type="int">4</model>
+    </rating>
+
         <description>Robinson R22 Beta II</description>
         <author>Syd Adams, Maik Justus</author>
         <flight-model>yasim</flight-model>
