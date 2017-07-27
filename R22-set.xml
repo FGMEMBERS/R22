@@ -23,8 +23,18 @@ Syd Adams
         <aero>R22BetaII</aero>
         <fuel-fraction>0.2</fuel-fraction>
         <startup>
-            <splash-texture>Aircraft/R22/splash.png</splash-texture>
+            <splash-texture>Aircraft/R22/Splash/splash.png</splash-texture>
         </startup>
+        <previews>
+        	<preview>
+        		<splash type="bool">true</splash>
+        		<path>Splash/splash1.jpg</path>
+        	</preview>
+        	<preview>
+        		<splash type="bool">true</splash>
+        		<path>Splash/splash2.jpg</path>
+        	</preview>
+        </previews>
 
         <tutorials>
         <tutorial include="Tutorials/startup_tutorial.xml"/>
