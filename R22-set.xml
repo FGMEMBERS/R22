@@ -2,7 +2,22 @@
 <!--
 ############
 Robinson R-22 Beta II
-Syd Adams
+
+    This file is part of FlightGear, the free flight simulator
+	http://www.flightgear.org/
+    
+    Copyright (C)  Syd Adams
+    Modified 2019by Heiko Schulz (HHS), Email: hhs_fgfs@web.de
+
+    This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License as
+	published by the Free Software Foundation; either version 2 of the
+	License, or (at your option) any later version.
+
+	This program is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+	General Public License for more details.
 ############
 -->
 
@@ -18,7 +33,7 @@ Syd Adams
     </rating>
 
         <description>Robinson R22 Beta II</description>
-        <author>Syd Adams, Maik Justus</author>
+        <author>Syd Adams, Maik Justus, Heiko Schulz</author>
         <flight-model>yasim</flight-model>
         <aero>R22BetaII</aero>
         <fuel-fraction>0.2</fuel-fraction>
@@ -164,6 +179,8 @@ Syd Adams
             <max-lb>240</max-lb>
             <min-lb>100</min-lb>
         </weight>
+        
+		<flight-recorder include="Systems/flight-recorder.xml"/>
 
         <help>
             <title>Robinson R-22</title>
