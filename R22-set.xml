@@ -71,7 +71,7 @@ Syd Adams
                 <y-offset-m archive="y">-1.04</y-offset-m>
                 <z-offset-m archive="y">-0.4</z-offset-m>
                 <pitch-offset-deg>-12</pitch-offset-deg>
-                <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+                <default-field-of-view-deg type="double">94.0</default-field-of-view-deg>
             </config>
         </view>
 

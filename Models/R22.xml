@@ -15,7 +15,7 @@
     </nasal>
 
     <effect>
-        <inherits-from>Effects/model-transparent</inherits-from>
+        <inherits-from>Aircraft/R22/Models/Effects/reflectglas-uber</inherits-from>
         <object-name>glass</object-name>
         <object-name>Rdoor.glass</object-name>
         <object-name>Ldoor.glass</object-name>

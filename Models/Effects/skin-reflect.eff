@@ -1,8 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <PropertyList>
     <name>skin-reflect</name>
-    <inherits-from>/Effects/model-combined-deferred</inherits-from>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
 
     <parameters>
+        <rain-enabled type="int">2</rain-enabled>
         <!-- Normal Map -->
         <normalmap-enabled type="int">1</normalmap-enabled>
         <normalmap-dds type="int">0</normalmap-dds>
@@ -40,14 +42,14 @@
 
         <texture n="5">
             <type>cubemap</type>
-            <images>
-                <positive-x>Aircraft/Generic/Effects/fgfs-sky2/1.png</positive-x>
-                <negative-x>Aircraft/Generic/Effects/fgfs-sky2/4.png</negative-x>
-                <positive-y>Aircraft/Generic/Effects/fgfs-sky2/2.png</positive-y>
-                <negative-y>Aircraft/Generic/Effects/fgfs-sky2/3.png</negative-y>
-                <positive-z>Aircraft/Generic/Effects/fgfs-sky2/6.png</positive-z>
-                <negative-z>Aircraft/Generic/Effects/fgfs-sky2/5.png</negative-z>
-            </images>
+			<images>
+				<positive-x>Aircraft/Generic/Effects/fgfs-sky2/1.png</positive-x>
+				<negative-x>Aircraft/Generic/Effects/fgfs-sky2/4.png</negative-x>
+				<positive-y>Aircraft/Generic/Effects/fgfs-sky2/2.png</positive-y>
+				<negative-y>Aircraft/Generic/Effects/fgfs-sky2/3.png</negative-y>
+				<positive-z>Aircraft/Generic/Effects/fgfs-sky2/6.png</positive-z>
+				<negative-z>Aircraft/Generic/Effects/fgfs-sky2/5.png</negative-z>
+			</images>
         </texture>
 
         <!-- Reflection -->
@@ -58,7 +60,7 @@
         <reflection-rainbow type="float">0.05</reflection-rainbow>
         <reflection-noise type="float">0.1</reflection-noise>
         <reflection-correction type="float">0.02</reflection-correction>
-        <ambient-correction type="float">0.2</ambient-correction>
+        <ambient-correction type="float">0.1</ambient-correction>
     </parameters>
 
 <!-- ####################

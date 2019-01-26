@@ -32,6 +32,9 @@ Rotor
 530 rpm
 Airfoil NACA 63-015
 teetering hinge ...
+
+Sources: https://robinsonheli.com/wp-content/uploads/2016/03/r22_poh_1.pdf
+https://robinsonheli.com/wp-content/uploads/2018/11/r22_mm_full_book.pdf
 -->
 <airplane mass="855">
 
@@ -61,7 +64,7 @@ teetering hinge ...
     translift-ve="20"
     translift-maxfactor="1.1"
     ground-effect-constant="0.2"
-    twist="-7"
+    twist="-8"
     taper="1"
     chord="0.18288"
     number-of-segments="8"
@@ -94,8 +97,8 @@ teetering hinge ...
     </rotor>
 
 
-<rotor name="tail" x="-4.41" y="-0.2" z="-0.94" nx="0.0" ny="-1" nz="0.0" fx="1" fy="0" fz="0" ccw="1"
-  maxcollective="24" mincollective="-26.0"
+<rotor name="tail" x="-4.41" y="0.2" z="-0.94" nx="0.0" ny="-1" nz="0.0" fx="1" fy="0" fz="0" ccw="0"
+  maxcollective="19" mincollective="-19.5"
   diameter="1.0668" numblades="2" weightperblade="2" relbladecenter="0.55"
   dynamic="0.90" rpm="3356" rellenflaphinge="0.002" delta3="1" translift="0" delta="0.5"
   sharedflaphinge="1"
@@ -152,7 +155,7 @@ teetering hinge ...
     <control-input axis="engines/engine/on" control="THROTTLE"/>
     </jet>
 
-<cockpit x="0.5" y=".33" z="-1.2"/>
+<cockpit x="0.5" y="-.33" z="-1.2"/>
 
 <fuselage ax="1.348" ay="0" az="-1.574"
   bx="-0.6" by="0" bz="-1.46" idrag="0"
@@ -172,16 +175,16 @@ teetering hinge ...
 </vstab>
 
 <gear x="1.5" y="0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8">
+spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8" stiction="1">
   </gear>
 <gear x="1.5" y="-0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8">
+spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8" stiction="1">
   </gear>
 <gear x="-0.5" y="0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8">
+spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8" stiction="1">
   </gear>
 <gear x="-0.5" y="-0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8">
+spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8" stiction="1">
   </gear>
 
 <!-- tail rotor guard-->

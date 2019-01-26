@@ -1,10 +1,10 @@
 AC3Db
-MATERIAL "paint" rgb 0.8 0.8 0.8 amb 0.8 0.8 0.8 emis 0 0 0 spec 1 1 1 shi 32 trans 0
+MATERIAL "paint" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 1 1 1 shi 128 trans 0
 MATERIAL "illum" rgb 1 1 1 amb 1 1 1 emis 1 1 1 spec 1 1 1 shi 32 trans 0
-MATERIAL "trans" rgb 0.8 0.8 0.8 amb 0.8 0.8 0.8 emis 0 0 0 spec 1 1 1 shi 12 trans 0.5
+MATERIAL "trans" rgb 0.8 0.8 0.8 amb 0.8 0.8 0.8 emis 0 0 0 spec 1 1 1 shi 128 trans 0.5
 MATERIAL "skids" rgb 0.197939 0.197939 0.197939 amb 0.197939 0.197939 0.197939 emis 0 0 0 spec 0.651323 0.651323 0.651323 shi 32 trans 0
 MATERIAL "BLACK.001" rgb 0 0 0 amb 0 0 0 emis 0 0 0 spec 0 0 0 shi 58 trans 0
-MATERIAL "paint.003" rgb 0.801371 0.801371 0.801371 amb 0.801371 0.801371 0.801371 emis 0 0 0 spec 1 1 1 shi 32 trans 0
+MATERIAL "paint.003" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 1 1 1 shi 128 trans 0
 MATERIAL "glass" rgb 0.130493 0.206213 0.277425 amb 0.130493 0.206213 0.277425 emis 0 0 0 spec 0.924587 0.924587 0.924587 shi 64 trans 0.3
 MATERIAL "redlighton.001" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 0 0 0 shi 0 trans 0
 MATERIAL "trans.001" rgb 0.8 0.8 0.8 amb 0.8 0.8 0.8 emis 0 0 0 spec 0.884127 0.884127 0.884127 shi 12 trans 0.5
