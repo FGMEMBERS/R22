@@ -24,7 +24,18 @@ Robinson R-22 Beta II
 <PropertyList>
 
     <sim>
-
+  <description>Robinson R22 Beta II</description>
+   <long-description>The Robinson R22 is a two-bladed, single-engine light utility helicopter manufactured by Robinson Helicopter Company. The two-seat R22 was designed in 1973 by Frank Robinson and has been in production since 1979. 
+        </long-description><tags>
+            <tag>helicopter</tag>
+            <tag>Robinson</tag>
+            <tag>piston</tag>
+            <tag>90's</tag>
+            <tag>80's</tag>
+            <tag>single-engine</tag>
+            <tag>fixed-gear</tag>
+        </tags>
+    <minimum-fg-version>2017.3.1</minimum-fg-version>
     <rating>
         <FDM type="int">3</FDM>
         <systems type="int">2</systems>
