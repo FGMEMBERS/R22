@@ -308,11 +308,13 @@ Robinson R-22 Beta II
             <tank n="0">
                 <name>Main</name>
                 <level-lbs>10.0</level-lbs>
+                <unusable-gal_us type="double">1.4</unusable-gal_us>
                 <selected type="bool">1</selected>
             </tank>
             <tank n="1">
                 <name>Auxilary</name>
                 <level-lbs>0</level-lbs>
+            <unusable-gal_us type="double">0.3</unusable-gal_us>
                 <selected type="bool">1</selected>
             </tank>
         </fuel>
