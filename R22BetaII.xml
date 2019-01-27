@@ -28,13 +28,22 @@ Lat Arm 0.0in
 
 
 Rotor
-18 degree psuedo delta3
+18 degree psuedo delta3 according the Book "Helicopter Principles Of Flight" , p. 3-32
+question: according the yasim.doc delta3 is a proportional factor. But in some publications delta3 is described by an angle. The
+value in YASim is the atan of this angle. As atan is the inverse tangent delta3 needs the tangens of the angle described in some publications?
 530 rpm
 Airfoil NACA 63-015
 teetering hinge ...
+twist of 8deg according POH, 7deg according pprune[1]
 
-Sources: https://robinsonheli.com/wp-content/uploads/2016/03/r22_poh_1.pdf
+Sources: 
+https://robinsonheli.com/wp-content/uploads/2016/03/r22_poh_1.pdf
 https://robinsonheli.com/wp-content/uploads/2018/11/r22_mm_full_book.pdf
+Helicopter Principles Of Flight
+[1]https://www.pprune.org/rotorheads/101314-blade-pitch-stall-margin.html
+https://forum.flightgear.org/viewtopic.php?f=41&t=8229
+https://www.aopa.org/training-and-safety/learn-to-fly/helicopter-trainers
+
 -->
 <airplane mass="855">
 
@@ -50,7 +59,7 @@ https://robinsonheli.com/wp-content/uploads/2018/11/r22_mm_full_book.pdf
     mincyclicele="-9" maxcyclicele="11"
     mincyclicail="-9.5" maxcyclicail="6.0"
     diameter="7.67" numblades="2" weightperblade="26" relbladecenter="0.51"
-    dynamic="0.95" rpm="530" rellenflaphinge="0.02" delta3="0.5"
+    dynamic="0.95" rpm="530" rellenflaphinge="0.02" delta3="0.325"
     delta=".25"
     pitch-a="10"
     pitch-b="15"
@@ -79,7 +88,7 @@ https://robinsonheli.com/wp-content/uploads/2018/11/r22_mm_full_book.pdf
     lift-factor-stall="0.15"
     stall-change-over="5.5"
     drag-factor-stall="4.0"
-    cyclic-factor="0.60"
+    cyclic-factor="0.90"
     rotor-correction-factor="0.95"
     downwashfactor="0.25"
     >
@@ -191,8 +200,8 @@ spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8" stiction="1">
 <gear x="-4.47" y="0.00" z="-1.8" skid="1" compression="0.01"
 spring="0.1" sfric="1" dfric="1"/>
 
-<tank x="-0.2185" y="-0.2794" z="-1.8" capacity="115.2"/><!--main-->
-<tank x="-0.09652" y="0.2718" z="-1.8" capacity="63"/><!--auxilary-->
+<tank x="-0.2185" y="-0.2794" z="-1.8" capacity="115.2"/><!--total main-->
+<tank x="-0.09652" y="0.2718" z="-1.8" capacity="63"/><!--total auxilary-->
 
 <weight x="0.5" y="0.3"  z="-1.5" mass-prop="/sim/weight[0]/weight-lb"/><!-- left seat-->
 <weight x="0.5" y="-0.3" z="-1.5" mass-prop="/sim/weight[1]/weight-lb"/><!-- right seat-->

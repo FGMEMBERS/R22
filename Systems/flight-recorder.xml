@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- EC135 P2 custom flight recorder configuration
-     Heiko Schulz, 2012
-     Based on Thorsten Brehms work
+<!--
+Robinson R-22 Beta II
+
+    This file is part of FlightGear, the free flight simulator
+	http://www.flightgear.org/
+    
+    Copyright (C) 2019  Heiko Schulz (HHS), Email: hhs_fgfs@web.de
+   
+
+    This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License as
+	published by the Free Software Foundation; either version 2 of the
+	License, or (at your option) any later version.
+
+	This program is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+	General Public License for more details.
+############
 -->
 
 <PropertyList>
@@ -15,7 +31,7 @@
  -->
 
 <config n="0">
-	<name type="string">EC135 P2 Flight Recorder</name>
+	<name type="string">Robinson R22 Flight Recorder</name>
 	
 	<!-- include generic stuff -->
 	<signals include="/Aircraft/Generic/flightrecorder/components/position.xml"/>
@@ -102,48 +118,23 @@
 		<signal>
 			<type>float</type><property type="string">/rotors/main/blade[3]/position-deg</property>
 		</signal>
+
 		
 		<signal>
-			<type>float</type><property type="string">sim/multiplay/generic/float[0]</property>
-		</signal>
-		
-		<signal>
-			<type>bool</type><property type="string">/controls/lighting/landing-lights</property>
+			<type>double</type><property type="string">systems/electrical/outputs/norm/landing-lights</property>
 		</signal>
 		
 		<signal>
-			<type>bool</type><property type="string">/controls/lighting/nav-lights</property>
+			<type>double</type><property type="string">systems/electrical/outputs/norm/nav-lights</property>
 		</signal>
 		<signal>
-			<type>bool</type><property type="string">/controls/lighting/beacon</property>
+			<type>double</type><property type="string">systems/electrical/outputs/norm/strobe</property>
 		</signal>
+		<signal>
+			<type>double</type><property type="string">engines/engine[0]/rpm</property>
+		</signal>
+
 		
-		<signal>
-			<type>string</type><property type="string">/engines/engine/tot-degc</property>
-		</signal>
-		<signal>
-			<type>string</type><property type="string">engines/engine[0]/rpm</property>
-		</signal>
-		<signal>
-			<type>string</type><property type="string">/engines/engine/n1-pct</property>
-		</signal>
-		<signal>
-			<type>string</type><property type="string">/engines/engine[1]/tot-degc</property>
-		</signal>
-		<signal>
-			<type>string</type><property type="string">engines/engine[1]/rpm</property>
-		</signal>
-		<signal>
-			<type>string</type><property type="string">/engines/engine[1]/n1-pct</property>
-		</signal>
-		
-		<signal>
-			<type>string</type><property type="string">/instrumentation/VEMD/FLI/FLI-filter</property>
-		</signal>
-		
-		<signal>
-			<type>double</type><property type="string">/sim/model/ec135/torque-pct</property>
-		</signal>
 		
 		<signal>
 			<type>double</type><property type="string">/rotors/main/stall-filtered</property>
