@@ -184,16 +184,16 @@ https://www.aopa.org/training-and-safety/learn-to-fly/helicopter-trainers
 </vstab>
 
 <gear x="1.5" y="0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8" stiction="1">
+spring="5.0" damp="1" sfric="0.2" dfric="0.5" initial-load="0.8" stiction="1">
   </gear>
 <gear x="1.5" y="-0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8" stiction="1">
+spring="5.0" damp="1" sfric="0.2" dfric="0.5" initial-load="0.8" stiction="1">
   </gear>
 <gear x="-0.5" y="0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8" stiction="1">
+spring="5.0" damp="1" sfric="0.2" dfric="0.5" initial-load="0.8" stiction="1">
   </gear>
 <gear x="-0.5" y="-0.92" z="-2.558" skid="1" compression="0.10"
-spring="10.0" damp="0" sfric="0.2" dfric="0.5" initial-load="0.8" stiction="1">
+spring="5.0" damp="1" sfric="0.2" dfric="0.5" initial-load="0.8" stiction="1">
   </gear>
 
 <!-- tail rotor guard-->

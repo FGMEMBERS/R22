@@ -297,6 +297,11 @@ Robinson R-22 Beta II
             <landing-lights type="bool">0</landing-lights>
         </lighting>
     </controls>
+    
+<limits>
+<vne>102</vne>
+<MTOW>1370</MTOW>
+</limits>
 
     <consumables>
         <fuel>
@@ -353,8 +358,8 @@ Robinson R-22 Beta II
     <systems>
         <electrical>
             <sources>
-                <battery type="double">12</battery>
-                <alternator type="double">12</alternator>
+                <battery type="double">14</battery>
+                <alternator type="double">14</alternator>
                 <bus type="double">0</bus>
             </sources>
         </electrical>
@@ -365,6 +370,7 @@ Robinson R-22 Beta II
         <R22>
             <file>Aircraft/R22/Nasal/Electrical.nas</file>
             <file>Aircraft/R22/Nasal/R22.nas</file>
+            <file>Aircraft/R22/Nasal/limits.nas</file>
         </R22>
         <dialogs>
             <file>Aircraft/R22/Nasal/dialogs.nas</file>
