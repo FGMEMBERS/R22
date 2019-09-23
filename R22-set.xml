@@ -2,14 +2,40 @@
 <!--
 ############
 Robinson R-22 Beta II
-Syd Adams
+
+    This file is part of FlightGear, the free flight simulator
+	http://www.flightgear.org/
+    
+    Copyright (C)  Syd Adams
+    Modified 2019by Heiko Schulz (HHS), Email: hhs_fgfs@web.de
+
+    This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License as
+	published by the Free Software Foundation; either version 2 of the
+	License, or (at your option) any later version.
+
+	This program is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+	General Public License for more details.
 ############
 -->
 
 <PropertyList>
 
     <sim>
-
+  <description>Robinson R22 Beta II</description>
+   <long-description>The Robinson R22 is a two-bladed, single-engine light utility helicopter manufactured by Robinson Helicopter Company. The two-seat R22 was designed in 1973 by Frank Robinson and has been in production since 1979. 
+        </long-description><tags>
+            <tag>helicopter</tag>
+            <tag>Robinson</tag>
+            <tag>piston</tag>
+            <tag>90's</tag>
+            <tag>80's</tag>
+            <tag>single-engine</tag>
+            <tag>fixed-gear</tag>
+        </tags>
+    <minimum-fg-version>2017.3.1</minimum-fg-version>
     <rating>
         <FDM type="int">3</FDM>
         <systems type="int">2</systems>
@@ -18,23 +44,13 @@ Syd Adams
     </rating>
 
         <description>Robinson R22 Beta II</description>
-        <author>Syd Adams, Maik Justus</author>
+        <author>Syd Adams, Maik Justus, Heiko Schulz</author>
         <flight-model>yasim</flight-model>
         <aero>R22BetaII</aero>
         <fuel-fraction>0.2</fuel-fraction>
         <startup>
-            <splash-texture>Aircraft/R22/Splash/splash.png</splash-texture>
+            <splash-texture>Aircraft/R22/splash.png</splash-texture>
         </startup>
-        <previews>
-        	<preview>
-        		<splash type="bool">true</splash>
-        		<path>Splash/splash1.jpg</path>
-        	</preview>
-        	<preview>
-        		<splash type="bool">true</splash>
-        		<path>Splash/splash2.jpg</path>
-        	</preview>
-        </previews>
 
         <tutorials>
         <tutorial include="Tutorials/startup_tutorial.xml"/>
@@ -81,7 +97,7 @@ Syd Adams
                 <y-offset-m archive="y">-1.04</y-offset-m>
                 <z-offset-m archive="y">-0.4</z-offset-m>
                 <pitch-offset-deg>-12</pitch-offset-deg>
-                <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+                <default-field-of-view-deg type="double">94.0</default-field-of-view-deg>
             </config>
         </view>
 
@@ -174,6 +190,8 @@ Syd Adams
             <max-lb>240</max-lb>
             <min-lb>100</min-lb>
         </weight>
+        
+		<flight-recorder include="Systems/flight-recorder.xml"/>
 
         <help>
             <title>Robinson R-22</title>
@@ -279,17 +297,24 @@ Syd Adams
             <landing-lights type="bool">0</landing-lights>
         </lighting>
     </controls>
+    
+<limits>
+<vne>102</vne>
+<MTOW>1370</MTOW>
+</limits>
 
     <consumables>
         <fuel>
             <tank n="0">
                 <name>Main</name>
                 <level-lbs>10.0</level-lbs>
+                <unusable-gal_us type="double">1.4</unusable-gal_us>
                 <selected type="bool">1</selected>
             </tank>
             <tank n="1">
                 <name>Auxilary</name>
                 <level-lbs>0</level-lbs>
+            <unusable-gal_us type="double">0.3</unusable-gal_us>
                 <selected type="bool">1</selected>
             </tank>
         </fuel>
@@ -335,8 +360,8 @@ Syd Adams
     <systems>
         <electrical>
             <sources>
-                <battery type="double">12</battery>
-                <alternator type="double">12</alternator>
+                <battery type="double">14</battery>
+                <alternator type="double">14</alternator>
                 <bus type="double">0</bus>
             </sources>
         </electrical>
@@ -347,6 +372,7 @@ Syd Adams
         <R22>
             <file>Aircraft/R22/Nasal/Electrical.nas</file>
             <file>Aircraft/R22/Nasal/R22.nas</file>
+            <file>Aircraft/R22/Nasal/limits.nas</file>
         </R22>
         <dialogs>
             <file>Aircraft/R22/Nasal/dialogs.nas</file>
